@@ -91,27 +91,25 @@
       </div>
     </v-content>
 
-    <!-- 
-    <v-dialog v-model="dialog_information" width="600px">
-      <v-card>
-        <v-card-title class="headline">このツールの説明</v-card-title>
-
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-
-          <v-btn color="secondary" @click="dialog_information = false">閉じる</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    -->
-
     <v-dialog v-model="dialog_settings" width="600px">
       <v-card>
         <v-card-title class="headline">設定</v-card-title>
 
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+        <v-card-text>
+
+          <v-text-field
+            v-model="layout"
+            label="表示レイアウト Ex. 1x1, 2x2, ..."
+            class="my-5"
+          ></v-text-field>
+        
+          <v-switch
+            v-for="(obj, index) in selected_manifests"
+            :key="index"
+            v-model="obj.selected"
+            :label="obj.label"
+          ></v-switch>
+        </v-card-text>
 
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -167,7 +165,11 @@ export default {
   mounted: function() {
     window.addEventListener("resize", this.handleResize);
 
-    let u = this.$route.query.u ? this.$route.query.u : "https://nakamura196.github.io/genji/pt/koui/config.json";
+    if(this.$route.query.u == null && location.hostname != "localhost"){
+      location.href = "https://github.com/TEI-EAJ/parallel_text_viewer/"
+    }
+
+    let u = this.$route.query.u;
 
     axios.get(u).then(response => {
       let result = response.data;
@@ -216,7 +218,10 @@ export default {
             manifest: manifest
           });
           //選択済み（表示用）manifestの一覧
-          this.selected_manifests.push(selection_label);
+          this.selected_manifests.push({
+            "label": selection_label,
+            "selected": true
+          });
 
           let members = selection.members;
           for (let j = 0; j < members.length; j++) {
@@ -253,7 +258,11 @@ export default {
       let selected_manifests = this.selected_manifests;
       let params = [];
       for (let i = 0; i < selected_manifests.length; i++) {
-        let manifest_label = selected_manifests[i];
+        let selected_manifest = selected_manifests[i]
+        if(!selected_manifest.selected){
+          continue
+        }
+        let manifest_label = selected_manifest.label;
         let manifest_map = this.image_map[manifest_label].data;
         if (manifest_map[line_id]) {
           params.push({
