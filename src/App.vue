@@ -99,7 +99,7 @@
 
           <v-text-field
             v-model="layout"
-            label="表示レイアウト Ex. 1x1, 2x2, ..."
+            label="Mirador表示レイアウト Ex. 1x1, 2x2, ..."
             class="my-5"
           ></v-text-field>
         
@@ -226,7 +226,12 @@ export default {
           let members = selection.members;
           for (let j = 0; j < members.length; j++) {
             let member = members[j];
-            let manifest_line_id = member.label;
+
+            if(!member.line_id){
+              continue
+            }
+
+            let manifest_line_id = member.line_id;
             if (!manifest_lines[manifest_line_id]) {
               manifest_lines.push(manifest_line_id);
             }
