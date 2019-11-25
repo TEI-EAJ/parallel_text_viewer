@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" type="text/css" href="https://utda.github.io/mirador/css/mirador-combined.css">
+  <title>Mirador Viewer</title>
+  <style type="text/css">
+    #viewer {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="viewer"></div>
+  <script src="https://utda.github.io/mirador/mirador.min.js"></script>
+  <script type="text/javascript">
+
+    $(function () {
+
+      var vars = {};
+      var param = location.search.substring(1).split('&');
+      for (var i = 0; i < param.length; i++) {
+        var keySearch = param[i].search(/=/);
+        var key = '';
+        if (keySearch != -1) key = param[i].slice(0, keySearch);
+        var val = param[i].slice(param[i].indexOf('=', 0) + 1);
+        if (key != '') vars[key] = decodeURI(val);
+      }
+
+      var bottomPanel = vars["bottomPanel"] && vars["bottomPanel"] == "false" ? false : true
+      var layout = vars["layout"]
+
+      var windowObjects = new Array();
+      var layout;
+
+      var data = new Array()
+
+      if (vars["params"]) {
+
+        var params = JSON.parse(decodeURIComponent(vars["params"]))
+
+        for (var i = 0; i < params.length; i++) {
+
+          var param = params[i]
+
+          if (param.manifest) {
+            var manifest = param.manifest
+
+            var obj = new Object();
+            obj["loadedManifest"] = manifest;
+            obj["viewType"] = "ImageView";
+            obj["bottomPanel"] = false; //bottomPanel;
+            obj["sidePanel"] = false;
+
+            if (param.pos) {
+
+              $.ajaxSetup({
+                async: false
+              });
+
+              $.getJSON(manifest, function (m) {
+                var canvases = m.sequences[0].canvases
+                obj["canvasID"] = canvases[Number(param.pos - 1)]["@id"]
+              })
+
+            } else if (param.canvas) {
+              canvas = param.canvas
+              if (canvas.indexOf("#xywh=") != -1) {
+                tmp = canvas.split("#xywh=")
+                canvas_id = tmp[0]
+                area = tmp[1].split(",")
+                obj["windowOptions"] = {
+                  "osdBounds": {
+                    "x": Number(area[0]),
+                    "y": Number(area[1]),
+                    "width": Number(area[2]),
+                    "height": Number(area[3])
+                  }
+                }
+              } else {
+                canvas_id = canvas
+              }
+              obj["canvasID"] = canvas_id;
+            }
+
+            obj["viewType"] = "ImageView";
+            obj["id"] = "window_" + i;
+
+            windowObjects.push(obj);
+
+            var obj = new Object();
+            obj["manifestUri"] = manifest;
+            data.push(obj);
+
+          } else {
+            var annotationlist = param.annotationlist
+
+            $.ajaxSetup({
+              async: false
+            });
+
+            $.getJSON(annotationlist, function (json) {
+
+              var manifest = json["resources"][0]["on"][0]["within"]["@id"]
+
+              var obj = new Object();
+              obj["loadedManifest"] = manifest;
+              obj["viewType"] = "ImageView";
+              obj["bottomPanel"] = false;
+              obj["sidePanel"] = false;
+
+              //var on = json["resources"][0]["on"].split("#xywh=")
+              var canvas_id = json["resources"][0]["on"][0]["full"]
+              var area = json["resources"][0]["on"][0]["selector"]["default"]["value"].split("=")[1]
+
+              obj["canvasID"] = canvas_id;
+              obj["viewType"] = "ImageView";
+              obj["id"] = "window_" + i;
+
+              $.getJSON(manifest, function (m) {
+                var canvases = m.sequences[0].canvases
+                for (var j = 0; j < canvases.length; j++) {
+                  if (canvases[j]["@id"] == canvas_id) {
+                    h = canvases[j].height
+                  }
+                }
+              })
+
+              obj["windowOptions"] = {
+                "osdBounds": {
+                  "x": Number(area[0]),
+                  "y": Number(area[1]),
+                  "width": Number(area[2]),
+                  "height": h
+                }
+              }
+              obj["xywh"] = area
+
+              windowObjects.push(obj);
+
+              var obj = new Object();
+              obj["manifestUri"] = manifest;
+              data.push(obj);
+            })
+          }
+        }
+
+        if(layout == null){
+          layout = "1x" + params.length;
+        }
+        
+
+      } else if (vars["manifest"]) {
+        var manifests = vars["manifest"];
+        var array = manifests.split(";");
+
+        for (var i = 0; i < array.length; i++) {
+          var manifest = array[i];
+          var obj = new Object();
+          obj["loadedManifest"] = manifest;
+          obj["viewType"] = "ImageView";
+          if (vars["canvas"]) {
+            obj["canvasID"] = vars["canvas"];
+          }
+          obj["bottomPanel"] = bottomPanel;
+          windowObjects.push(obj);
+
+          var obj = new Object();
+          obj["manifestUri"] = manifest;
+          data.push(obj);
+
+        }
+
+        if(layout == null){
+          layout = "1x" + array.length;
+        }
+
+      } else {
+
+        if(layout == null){
+          layout = "1x1"
+        }
+
+
+      }
+      var windowSettings = new Object()
+      if (vars["annotationState"] == "on") {
+        windowSettings["canvasControls"] = {
+          "annotations": {
+            "annotationState": "on",
+            "annotationCreation": true
+          }
+        }
+      }
+
+      var sidePanelOptions = {}
+      if (vars["sidePanelOptions"] == "on") {
+        sidePanelOptions = {
+          "tocTabAvailable": true,
+          "layersTabAvailable": true,
+          "searchTabAvailable": true
+        }
+      }
+
+      Mirador({
+        "id": "viewer",
+        "layout": layout,
+        "data": data,
+        buildPath: "mirador/",
+        "windowObjects": windowObjects,
+        "windowSettings": windowSettings,
+        "annotationEndpoint": { "name": "Local Storage", "module": "LocalStorageEndpoint" },
+        "sidePanelOptions": sidePanelOptions
+      });
+    });
+
+  </script>
+</body>
+
+</html>
