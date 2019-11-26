@@ -96,13 +96,8 @@
         <v-card-title class="headline">設定</v-card-title>
 
         <v-card-text>
+          <v-text-field v-model="layout" label="Mirador表示レイアウト Ex. 1x1, 2x2, ..." class="my-5"></v-text-field>
 
-          <v-text-field
-            v-model="layout"
-            label="Mirador表示レイアウト Ex. 1x1, 2x2, ..."
-            class="my-5"
-          ></v-text-field>
-        
           <v-switch
             v-for="(obj, index) in selected_manifests"
             :key="index"
@@ -126,10 +121,16 @@
 import { Splitpanes, Pane } from "splitpanes";
 import axios from "axios";
 
-let mirador_prefix =
-  "mirador/";
+let mirador_prefix = "mirador/";
 
 //var convert = require("xml-js");
+
+("use strict");
+const crypto = require("crypto");
+function md5hex(str /*: string */) {
+  const md5 = crypto.createHash("md5");
+  return md5.update(str, "binary").digest("hex");
+}
 
 export default {
   components: { Splitpanes, Pane },
@@ -165,8 +166,8 @@ export default {
   mounted: function() {
     window.addEventListener("resize", this.handleResize);
 
-    if(this.$route.query.u == null && location.hostname != "localhost"){
-      location.href = "https://github.com/TEI-EAJ/parallel_text_viewer/"
+    if (this.$route.query.u == null && location.hostname != "localhost") {
+      location.href = "https://github.com/TEI-EAJ/parallel_text_viewer/";
     }
 
     let u = this.$route.query.u;
@@ -186,8 +187,8 @@ export default {
 
       this.direction = result.direction;
 
-      if(result.layout){
-        this.layout = result.layout
+      if (result.layout) {
+        this.layout = result.layout;
       }
 
       //画像との対応表の作成
@@ -219,19 +220,21 @@ export default {
           });
           //選択済み（表示用）manifestの一覧
           this.selected_manifests.push({
-            "label": selection_label,
-            "selected": true
+            label: selection_label,
+            selected: true
           });
 
           let members = selection.members;
           for (let j = 0; j < members.length; j++) {
             let member = members[j];
 
-            if(!member.line_id){
-              continue
+            if (!member.line_id) {
+              continue;
             }
 
             let manifest_line_id = member.line_id;
+            // line idの置換（http対応）
+            manifest_line_id = this.convert_uri(manifest_line_id)
             if (!manifest_lines[manifest_line_id]) {
               manifest_lines.push(manifest_line_id);
             }
@@ -245,7 +248,8 @@ export default {
           mirador_prefix +
           "?params=" +
           encodeURIComponent(JSON.stringify(params)) +
-          "&annotationState=on&layout="+this.layout;
+          "&annotationState=on&layout=" +
+          this.layout;
 
         this.exec2map(result.url_map);
         this.exec2main(result.url_main, manifest_lines, query_main);
@@ -263,9 +267,9 @@ export default {
       let selected_manifests = this.selected_manifests;
       let params = [];
       for (let i = 0; i < selected_manifests.length; i++) {
-        let selected_manifest = selected_manifests[i]
-        if(!selected_manifest.selected){
-          continue
+        let selected_manifest = selected_manifests[i];
+        if (!selected_manifest.selected) {
+          continue;
         }
         let manifest_label = selected_manifest.label;
         let manifest_map = this.image_map[manifest_label].data;
@@ -279,7 +283,8 @@ export default {
           mirador_prefix +
           "?params=" +
           encodeURIComponent(JSON.stringify(params)) +
-          "&annotationState=on&layout="+this.layout;
+          "&annotationState=on&layout=" +
+          this.layout;
       }
     },
     scroll(id) {
@@ -293,7 +298,7 @@ export default {
         query = "main";
       }
 
-      if (target_ids != null) {
+      if (target_ids.length > 0) {
         let target_id = target_ids[0];
         if (this.direction == "vertical") {
           this.$SmoothScroll(
@@ -383,6 +388,18 @@ export default {
       axios.get(url).then(response => {
         let s_m_id_map = response.data;
 
+        // scroll用にidの置換
+        for (let sub_id in s_m_id_map) {
+          let main_id_arr = s_m_id_map[sub_id];
+          let new_main_id_arr = [];
+          for (let i = 0; i < main_id_arr.length; i++) {
+            let main_id = main_id_arr[i];
+            let new_main_id = this.convert_uri(main_id);
+            new_main_id_arr.push(new_main_id);
+          }
+          s_m_id_map[sub_id] = new_main_id_arr;
+        }
+
         //create m_s_map
         let m_s_id_map = {};
         for (let sub_id in s_m_id_map) {
@@ -406,8 +423,8 @@ export default {
           let tmp = main_id.split("#");
           let line_id = tmp[0];
           let range = tmp[1].split(":");
-          let start = range[0];
-          let end = range[1];
+          let start = Number(range[0]);
+          let end = Number(range[1]);
 
           l_w_id_map[main_id] = [];
           for (let i = start; i < end; i++) {
@@ -436,6 +453,8 @@ export default {
           for (let i = 0; i < lines.length; i++) {
             let line = lines[i];
             let line_id = line.attributes[0].value;
+            // scroll用にidの置換
+            line_id = this.convert_uri(line_id);
 
             let nodes = line.childNodes;
 
@@ -510,6 +529,14 @@ export default {
 
           this.data_sub = data_sub;
         });
+    },
+    convert_uri: function(id) {
+      let tmp = id.split("#");
+      if (tmp.length != 2) {
+        return "id-"+md5hex(id);
+      }
+
+      return "id-"+md5hex(tmp[0]) + "#" + tmp[1];
     }
   },
 
