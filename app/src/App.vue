@@ -9,11 +9,9 @@
         <v-btn icon @click.stop="dialog_settings = true">
           <v-icon>mdi-settings</v-icon>
         </v-btn>
-        <!-- 
         <v-btn icon @click.stop="dialog_information = true">
           <v-icon>mdi-information</v-icon>
         </v-btn>
-        -->
         <v-toolbar-items v-show="return_url">
           <v-btn text :href="return_url">{{return_label}}</v-btn>
         </v-toolbar-items>
@@ -91,12 +89,26 @@
       </div>
     </v-content>
 
+    <v-dialog v-model="dialog_information" width="600px">
+      <v-card>
+        <v-card-title class="headline">Information</v-card-title>
+
+        <v-card-text class="mt-5">
+          <a target="_blank" :href="this.$route.query.u">{{this.$route.query.u}}</a>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn color="secondary" @click="dialog_information = false">閉じる</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
     <v-dialog v-model="dialog_settings" width="600px">
       <v-card>
-        <v-card-title class="headline">設定</v-card-title>
+        <v-card-title class="headline">Settings</v-card-title>
 
-        <v-card-text>
-          <v-text-field v-model="layout" label="Mirador表示レイアウト Ex. 1x1, 2x2, ..." class="my-5"></v-text-field>
+        <v-card-text class="mt-5">
 
           <v-switch
             v-for="(obj, index) in selected_manifests"
@@ -234,7 +246,7 @@ export default {
 
             let manifest_line_id = member.line_id;
             // line idの置換（http対応）
-            manifest_line_id = this.convert_uri(manifest_line_id)
+            manifest_line_id = this.convert_uri(manifest_line_id);
             if (!manifest_lines[manifest_line_id]) {
               manifest_lines.push(manifest_line_id);
             }
@@ -533,10 +545,10 @@ export default {
     convert_uri: function(id) {
       let tmp = id.split("#");
       if (tmp.length != 2) {
-        return "id-"+md5hex(id);
+        return "id-" + md5hex(id);
       }
 
-      return "id-"+md5hex(tmp[0]) + "#" + tmp[1];
+      return "id-" + md5hex(tmp[0]) + "#" + tmp[1];
     }
   },
 

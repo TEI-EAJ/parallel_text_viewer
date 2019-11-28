@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <link rel="stylesheet" type="text/css" href="https://utda.github.io/mirador/css/mirador-combined.css">
+  <link rel="stylesheet" type="text/css" href="mirador/css/mirador-combined.css">
   <title>Mirador Viewer</title>
   <style type="text/css">
     #viewer {
@@ -17,7 +17,7 @@
 
 <body>
   <div id="viewer"></div>
-  <script src="https://utda.github.io/mirador/mirador.min.js"></script>
+  <script src="mirador/mirador.min.js"></script>
   <script type="text/javascript">
 
     $(function () {
@@ -33,10 +33,9 @@
       }
 
       var bottomPanel = vars["bottomPanel"] && vars["bottomPanel"] == "false" ? false : true
-      var layout = vars["layout"]
+      var layout = null //vars["layout"]
 
       var windowObjects = new Array();
-      var layout;
 
       var data = new Array()
 
@@ -90,6 +89,11 @@
 
             obj["viewType"] = "ImageView";
             obj["id"] = "window_" + i;
+
+            if (params.length > 1) {
+              obj["slotAddress"] = "row1.column" + (i + 1)
+            }
+
 
             windowObjects.push(obj);
 
@@ -150,10 +154,10 @@
           }
         }
 
-        if(layout == null){
+        if (layout == null) {
           layout = "1x" + params.length;
         }
-        
+
 
       } else if (vars["manifest"]) {
         var manifests = vars["manifest"];
@@ -176,13 +180,13 @@
 
         }
 
-        if(layout == null){
+        if (layout == null) {
           layout = "1x" + array.length;
         }
 
       } else {
 
-        if(layout == null){
+        if (layout == null) {
           layout = "1x1"
         }
 
