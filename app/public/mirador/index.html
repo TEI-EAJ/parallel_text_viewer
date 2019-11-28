@@ -33,7 +33,23 @@
       }
 
       var bottomPanel = vars["bottomPanel"] && vars["bottomPanel"] == "false" ? false : true
-      var layout = null //vars["layout"]
+      var layout = vars["layout"]
+
+      let layout_map = {}
+      let x = -1
+      let y = -1
+      if(layout != null){
+        let tmp = layout.split("x")
+        x = Number(tmp[0])
+        y = Number(tmp[1])
+        let index = 0
+        for(let i = 0; i < x; i++){
+          for(let j = 0; j < y; j++){
+            layout_map[index] = [i+1, j+1]
+            index+=1
+          }
+        }
+      }
 
       var windowObjects = new Array();
 
@@ -89,11 +105,17 @@
 
             obj["viewType"] = "ImageView";
             obj["id"] = "window_" + i;
+            
+            if (layout_map[i]) {
+              let tmp = layout_map[i]
+              if(x == 1 && y == 1){
 
-            if (params.length > 1) {
-              obj["slotAddress"] = "row1.column" + (i + 1)
+              } else if(x == 1){
+                obj["slotAddress"] = "row1.column" + tmp[1]
+              } else {
+                obj["slotAddress"] = "row1.column" + tmp[1]+".row"+tmp[0]
+              }
             }
-
 
             windowObjects.push(obj);
 
@@ -211,7 +233,7 @@
         }
       }
 
-      Mirador({
+      let config = {
         "id": "viewer",
         "layout": layout,
         "data": data,
@@ -220,7 +242,9 @@
         "windowSettings": windowSettings,
         "annotationEndpoint": { "name": "Local Storage", "module": "LocalStorageEndpoint" },
         "sidePanelOptions": sidePanelOptions
-      });
+      }
+
+      Mirador(config);
     });
 
   </script>

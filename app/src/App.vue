@@ -110,6 +110,8 @@
 
         <v-card-text class="mt-5">
 
+          <v-text-field v-model="layout" label="Mirador表示レイアウト Ex. 1x1, 2x2, ..." class="mb-5"></v-text-field>
+
           <v-switch
             v-for="(obj, index) in selected_manifests"
             :key="index"
