@@ -59,17 +59,16 @@
                       <h2 class="text--primary">異文</h2>
                       <br />
 
-                      <v-card v-for="(test4, index2) in test5" :key="index2" class="my-5">
+                      <v-card v-for="(test4, index2) in test5" :key="index2" class="mx-5">
                         <v-card-text class="mx-2 text--primary">
                           <span @click="close_panel(index2)"><i class="fas fa-times-circle"></i></span>
                           <br/>
-                          <span v-for="(element, index) in test4" :key="index">
-                            <template v-if="element.type=='lem'">{{element.text}} （{{witness[index]}}）</template>
+                          <p v-for="(element, index) in test4" :key="index">
+                            <template v-if="element.type=='lem'">{{element.text}} （{{index}}）</template>
                             <template v-else>
-                              <b>{{element.text}} （{{witness[index]}}）</b>
+                              <b>{{element.text}} （{{index}}）</b>
                             </template>
-                          &nbsp;・&nbsp;
-                          </span>
+                          </p>
                         </v-card-text>
                       </v-card>
 
@@ -277,23 +276,22 @@ export default {
         for (let i = 0; i < apps.length; i++) {
           let app = apps[i];
           let elements = app.elements;
-          let wits = [];
+          let wit = "";
           if (app.attributes) {
-            wits = app.attributes.wit.split(" ");
+            wit = app.attributes.wit
           }
           if (elements != null) {
             for (let j = 0; j < elements.length; j++) {
               let element = elements[j];
 
-              for (let k = 0; k < wits.length; k++) {
-                let wit = wits[k];
-                if (wit != "") {
-                  test2[wit] = {
-                    text: element.text,
-                    type: app.name
-                  };
-                }
+            
+              if (wit != "") {
+                test2[wit] = {
+                  text: element.text,
+                  type: app.name
+                };
               }
+              
             }
           }
         }
