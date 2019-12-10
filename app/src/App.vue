@@ -5,7 +5,6 @@
         <v-toolbar-title>日本風な校本を作るための可視化ツール</v-toolbar-title>
 
         <v-spacer></v-spacer>
-
       </v-toolbar>
 
       <div :style="'height: '+height+'px;'">
@@ -32,16 +31,20 @@
 
                     <p v-for="(test_arr2, index) in test_arr" :key="index">
                       <span v-for="(element, index2) in test_arr2" :key="index2">
-                        <template v-if="element.type == 'zone'"><p @click="clickIcon(element.id)"><img
-                          src="https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png"
-                          style="width: 30px"
-                          class="mr-2"
-                        /></p></template>
+                        <template v-if="element.type == 'zone'">
+                          <p @click="clickIcon(element.id)">
+                            <img
+                              src="https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png"
+                              style="width: 30px"
+                              class="mr-2"
+                            />
+                          </p>
+                        </template>
                         <template v-if="element.type == 'text'">{{element.text}}</template>
                         <template v-if="element.type == 'app'">
                           <span
                             style="background-color : yellow;"
-                            @click="test(element.app)"
+                            @click="test(element.app, element.id)"
                           >{{element.text}}</span>
                         </template>
                       </span>
@@ -56,12 +59,20 @@
                       <h2 class="text--primary">異文</h2>
                       <br />
 
-                      <p v-for="(element, index) in test2" :key="index">
-                        <template v-if="element.type=='lem'">{{element.text}} （{{witness[index]}}）</template>
-                        <template v-else>
-                          <b>{{element.text}} （{{witness[index]}}）</b>
-                        </template>
-                      </p>
+                      <v-card v-for="(test4, index2) in test5" :key="index2" class="my-5">
+                        <v-card-text class="mx-2 text--primary">
+                          <span @click="close_panel(index2)"><i class="fas fa-times-circle"></i></span>
+                          <br/>
+                          <span v-for="(element, index) in test4" :key="index">
+                            <template v-if="element.type=='lem'">{{element.text}} （{{witness[index]}}）</template>
+                            <template v-else>
+                              <b>{{element.text}} （{{witness[index]}}）</b>
+                            </template>
+                          &nbsp;・&nbsp;
+                          </span>
+                        </v-card-text>
+                      </v-card>
+
                     </v-card-text>
                   </v-list-item>
                 </v-card>
@@ -71,10 +82,6 @@
         </splitpanes>
       </div>
     </v-content>
-
- 
-
-    
   </v-app>
 </template>
 
@@ -99,7 +106,8 @@ export default {
       layout: "1x1",
 
       test_arr: [],
-      test2: {},
+      test4: {},
+      test5 : {},
       witness: {},
       test_map: {}
     };
@@ -110,15 +118,15 @@ export default {
   },
   methods: {
     clickIcon(zone_id) {
+      let obj = this.test_map[zone_id];
 
-      let obj = this.test_map[zone_id]
+      let params = [
+        {
+          manifest: obj.manifest,
+          canvas: obj.canvas
+        }
+      ];
 
-      let params = [{
-        manifest: obj.manifest,
-        canvas: obj.canvas
-      }];
-
-      
       this.mirador_path =
         mirador_prefix +
         "?params=" +
@@ -126,13 +134,13 @@ export default {
         "&annotationState=on&layout=" +
         this.layout;
     },
-    
+
     handleResize: function() {
       // resizeのたびにこいつが発火するので、ここでやりたいことをやる
       this.width = window.innerWidth;
       this.height = window.innerHeight;
     },
-    
+
     exec2main(url) {
       axios
         .get(url, {
@@ -143,7 +151,7 @@ export default {
 
           var convert = require("xml-js");
 
-          let test_arr2 = []
+          let test_arr2 = [];
           let test_arr = [];
 
           xml = new XMLSerializer().serializeToString(xml);
@@ -158,46 +166,46 @@ export default {
               .elements;
           for (let i = 0; i < listWit.length; i++) {
             let wit = listWit[i];
-            this.witness["#" + wit.attributes["xml:id"]] = wit.elements[0].text;
+            this.witness["#" + wit.attributes["xml:id"]] =
+              wit.attributes["xml:id"];
           }
 
           //facs
 
-          let facs =
-            data.elements[0].elements[1].elements[0]
-          let manifest = facs.attributes.facs
+          let facs = data.elements[0].elements[1].elements[0];
+          let manifest = facs.attributes.facs;
 
-          let surfaces = facs.elements
-          for(let i = 0; i < surfaces.length; i++){
-            let surface = surfaces[i].elements
-            let canvas = surface[0].attributes.n
-            for(let j = 1; j < surface.length; j++){
-              let zone = surface[j].attributes
-              let id = zone["xml:id"]
-              let x = Number(zone["ulx"])
-              let y = Number(zone["uly"])
-              let w = Number(zone["lrx"]) - x
-              let h = Number(zone["lry"]) - y
-              this.test_map["#"+id] = {
-                "manifest" : manifest,
-                "canvas" : canvas+"#xywh="+x+","+y+","+w+","+h
-              }
+          let surfaces = facs.elements;
+          for (let i = 0; i < surfaces.length; i++) {
+            let surface = surfaces[i].elements;
+            let canvas = surface[0].attributes.n;
+            for (let j = 1; j < surface.length; j++) {
+              let zone = surface[j].attributes;
+              let id = zone["xml:id"];
+              let x = Number(zone["ulx"]);
+              let y = Number(zone["uly"]);
+              let w = Number(zone["lrx"]) - x;
+              let h = Number(zone["lry"]) - y;
+              this.test_map["#" + id] = {
+                manifest: manifest,
+                canvas: canvas + "#xywh=" + x + "," + y + "," + w + "," + h
+              };
             }
           }
 
           let params = [
             {
-              "manifest" : manifest
+              manifest: manifest
             }
-          ]
+          ];
 
           this.mirador_path =
-          mirador_prefix +
-          "?params=" +
-          encodeURIComponent(JSON.stringify(params)) +
-          "&annotationState=on&layout=" +
-          this.layout;
-          
+            mirador_prefix +
+            "?params=" +
+            encodeURIComponent(JSON.stringify(params)) +
+            "&annotationState=on&layout=" +
+            this.layout;
+
           //text
 
           let p = data.elements[0].elements[2].elements[0].elements[0];
@@ -217,17 +225,18 @@ export default {
               test_arr.push({
                 text: text_lem,
                 type: "app",
-                app: apps
+                app: apps,
+                id: "app_" + i
               });
             } else if (type == "text") {
               test_arr.push({
                 text: element.text,
                 type: "text"
               });
-            } else if (name == "lb"){
-              test_arr2.push(test_arr)
-              test_arr = []
-            } else if (name == "pb"){
+            } else if (name == "lb") {
+              test_arr2.push(test_arr);
+              test_arr = [];
+            } else if (name == "pb") {
               test_arr.push({
                 id: element.attributes.facs,
                 type: "zone"
@@ -235,39 +244,67 @@ export default {
             }
           }
 
-      
           this.test_arr = test_arr2;
         });
     },
-    test: function(apps) {
-      let test2 = {};
+    close_panel: function(id) {
+      //let test3 = this.test3;
 
-      for (let i = 0; i < apps.length; i++) {
-        let app = apps[i];
-        let elements = app.elements;
-        let wits = [];
-        if (app.attributes) {
-          wits = app.attributes.wit.split(" ");
-        }
-        if (elements != null) {
-          for (let j = 0; j < elements.length; j++) {
-            let element = elements[j];
+      let test5 = {}
 
-            for (let k = 0; k < wits.length; k++) {
-              let wit = wits[k];
-              if (wit != "") {
-                test2[wit] = {
-                  text: element.text,
-                  type: app.name
-                };
+      for(let key in this.test5){
+        test5[key] = this.test5[key]
+      }
+
+      delete test5[id];
+
+      this.test5 = test5
+
+    },
+    test: function(apps, id) {
+      //let test3 = this.test3;
+
+      let test5 = {}
+
+      for(let key in this.test5){
+        test5[key] = this.test5[key]
+      }
+
+      if (test5[id]) {
+        delete test5[id];
+      } else {
+        let test2 = {};
+        for (let i = 0; i < apps.length; i++) {
+          let app = apps[i];
+          let elements = app.elements;
+          let wits = [];
+          if (app.attributes) {
+            wits = app.attributes.wit.split(" ");
+          }
+          if (elements != null) {
+            for (let j = 0; j < elements.length; j++) {
+              let element = elements[j];
+
+              for (let k = 0; k < wits.length; k++) {
+                let wit = wits[k];
+                if (wit != "") {
+                  test2[wit] = {
+                    text: element.text,
+                    type: app.name
+                  };
+                }
               }
             }
           }
         }
+
+        test5[id] = test2;
       }
 
-      this.test2 = test2;
+      this.test5 = test5
+      
     }
+
   },
 
   beforeDestroy: function() {
