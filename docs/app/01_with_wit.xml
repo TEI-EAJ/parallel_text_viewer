@@ -1,0 +1,942 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>01 きりつぼ</title>
+            <respStmt>
+               <resp when="2019-10-30">Transcription</resp>
+               <name>Misa Nakamura</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-10-30">Transcription</resp>
+               <name>Takashi Tamura</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-10-30">TEI Encoding</resp>
+               <name>Satoru Nakamura</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-10-30">Advisor</resp>
+               <resp when="2019-12-09">Parallel encoding</resp>
+               <name>Kiyonori Nagasaki</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <distributor>源氏物語・研究活用プロジェクト</distributor>
+            <date when="2019-10-30">2019年10月30日</date>
+            <availability>
+               <p>
+                  <ref target="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal
+                     (CC0 1.0) Public Domain Dedication</ref></p>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <author>池田亀鑑</author>
+               <title>校異源氏物語</title>
+               <publisher>中央公論社</publisher>
+            </bibl>
+            <listWit>
+               <witness xml:id="校異">校異源氏物語</witness>
+               <witness xml:id="靑池">靑表紙本系 池田本</witness>
+               <witness xml:id="靑横">靑表紙本系 横山本</witness>
+               <witness xml:id="靑肖">靑表紙本系 肖柏本</witness>
+               <witness xml:id="靑三">靑表紙本系 三條西家本</witness>
+               <witness xml:id="靑大">靑表紙本系 大島本</witness>
+               <witness xml:id="河">河内本系</witness>
+               <witness xml:id="河宮">河内本系　高松宮本</witness>
+               <witness xml:id="河尾">河内本系　尾州家本</witness>
+               <witness xml:id="河爲">河内本系　爲家本</witness>
+               <witness xml:id="河平">河内本系　平瀬本</witness>
+               <witness xml:id="河大">河内本系　大島本</witness>
+               <witness xml:id="別">別本</witness>
+               <witness xml:id="御">別本 御物本</witness>
+               <witness xml:id="別國">別本 國冬本</witness>
+               <witness xml:id="別陽">別本 陽明本</witness>
+               <witness xml:id="別麥">別本 麥生本</witness>
+               <witness xml:id="国絵">国文学研究資料館 絵入り源氏</witness>
+            </listWit>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <variantEncoding method="parallel-segmentation" location="internal"/>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile>
+      <surfaceGrp facs="https://www.dl.ndl.go.jp/api/iiif/3437686/manifest.json">
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/22"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000022/full/full/0/default.jpg"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0005"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/23"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000023/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0006"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0007"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/24"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000024/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0008"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0009"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/25"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000025/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0010"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0011"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/26"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000026/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0012"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0013"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/27"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000027/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0014"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0015"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/28"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000028/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0016"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0017"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/29"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000029/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0018"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0019"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/30"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000030/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0020"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0021"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/31"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000031/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0022"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0023"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/32"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000032/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0024"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0025"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/33"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000033/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0026"/>
+            <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0027"/>
+         </surface>
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/34"
+               url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000034/full/full/0/default.jpg"/>
+            <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0028"/>
+         </surface>
+      </surfaceGrp>
+   </facsimile>
+   <text>
+      <body>
+         <p><pb facs="#zone_0005" n="5"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-01.json"/>いつれの御時にか女御更衣あまたさふらひ <app>
+               <lem wit="#校異 #別麥 #別 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #靑大 ">給ける</lem>
+               <rdg wit="#河">たまふ</rdg>
+               <rdg wit="#別國">給</rdg>
+            </app>なかにいとやむことなきゝは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-02.json"/>にはあらぬかすくれて時めき給
+            <app><lem>ありけり</lem><rdg wit="#別陽">おはしけり</rdg></app>
+            <app>
+               <lem>はじめ</lem>
+               <rdg wit="#御">本</rdg>
+            </app>より我はと思あかり<app>
+               <lem>給へる</lem>
+               <rdg wit="#靑大">たま<del>ひつ</del><add>へ</add>る</rdg>
+            </app><app>
+               <lem wit="#校異 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #別國 #靑大">御</lem>
+               <rdg wit="#別麥"/>
+            </app>方<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-03.json"
+            />〱<app>
+               <lem wit="#校異 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #靑大"/>
+               <rdg wit="#国絵">。</rdg>
+               <rdg wit="#別陽 #別國 #別麥">は</rdg>
+            </app>めさましきものに<app>
+               <lem wit="#校異 #別麥 #別 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別國 #靑大">おとしめ</lem>
+               <rdg wit="#御 #別陽">おもひをとしめ</rdg>
+            </app>そねみ給<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #別國 #靑大">おなしほと</lem>
+               <rdg wit="#国絵">。おなしほど</rdg>
+               <rdg wit="#別陽">ける</rdg>
+            </app>それより下らうの更衣たち<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-04.json"
+            /><app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #靑大">はまして</lem>
+               <rdg wit="#別陽">なとは</rdg>
+               <rdg wit="#別國">なとまて</rdg>
+            </app><app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #別國 #靑大">やすからす</lem>
+               <rdg wit="#国絵">やすからず</rdg>
+               <rdg wit="#別陽"/>
+            </app>あさゆふの<app><lem>宮つかへ</lem><rdg wit="#国絵">みやづかへ</rdg></app>に<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別國 #靑大">つけても</lem>
+               <rdg wit="#別陽">つけつゝもやすからぬ事おほく思ひつむるまゝに</rdg>
+            </app>人の心を<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池">のみ</lem>
+               <rdg wit="#国絵 #靑肖 #靑三 #別陽 #別國 #靑大"/>
+               <rdg wit="#靑横">み</rdg>
+            </app><app><lem>うこかし</lem><rdg wit="#国絵">うごかし</rdg></app><app><lem>うら<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-05.json"
+            />み</lem><rdg wit="#別陽">なけき</rdg></app>をおふつもりにや<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別國 #靑大">ありけむ</lem>
+               <rdg wit="#別陽"/>
+            </app>いとあつしくなりゆき<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別國 #靑大"/>
+               <rdg wit="#別陽">て</rdg>
+            </app>もの心<app><lem>ほそけ</lem><rdg wit="#国絵">ぼそげ</rdg></app>にさとかち<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #靑大"/>
+               <rdg wit="#別國">に</rdg>
+            </app>な<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-06.json"
+            />るをいよ〱<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #別陽 #靑大">あかす</lem>
+               <rdg wit="#国絵">あかず</rdg>
+               <rdg wit="#別國"/>
+            </app> あはれなる物に
+            <app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #別陽 #靑大">おもほして</lem>
+               <rdg wit="#国絵 #靑肖 #靑三 #別國">おほゝして</rdg>
+            </app>人<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #靑大"/>
+               <rdg wit="#別國">〱</rdg>
+            </app>のそしりをも<app>
+               <lem wit="#校異 #別麥 #別國 #御 #靑池 #靑横 #靑三 #靑肖 #国絵 #靑大">え</lem>
+               <rdg wit="#河 #別 #別陽"/>
+            </app>はゝからせ給<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-07.json"
+            />はす世のためし<app>
+               <lem wit="#校異 #別麥 #別國 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #靑大">に</lem>
+               <rdg wit="#別陽">と</rdg>
+            </app>もなりぬへき御もてなし也<app>
+               <lem wit="#校異 #別麥 #別 #河 #靑池 #靑横 #靑三 #靑肖 #別國 #別陽 #靑大">かんたちめ</lem>
+               <rdg wit="#国絵">かんだちめ</rdg>
+               <rdg wit="#御">上達</rdg>
+            </app><app>
+               <lem wit="#校異 #別麥 #別 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #靑大">うへ人</lem>
+               <rdg wit="#御 #別國">天上人</rdg>
+            </app>なとも<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #別陽 #靑大">あいなく</lem>
+               <rdg wit="#国絵">あひなく</rdg>
+               <rdg wit="#別國"/>
+            </app><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-08.json"
+            />めをそはめ<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #靑大">つゝ</lem>
+               <rdg wit="#別國">て</rdg>
+            </app>いとま<app>
+               <lem wit="#校異 #別麥 #別國 #別 #河 #靑池 #靑横 #靑三 #靑肖 #別陽 #靑大">は</lem>
+               <rdg wit="#国絵">ば</rdg>
+               <rdg wit="#御">え</rdg>
+            </app>ゆき人の<app>
+               <lem wit="#校異 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #靑大">御</lem>
+               <rdg wit="#別國 #別麥"/>
+            </app><app><lem>おほえ</lem><rdg wit="#国絵">覚え</rdg></app>なりもろこしにもかゝることのおこ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-09.json"
+            />りにこそ<app>
+               <lem wit="#校異 #別麥 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #別陽 #靑大"/>
+               <rdg wit="#別國">は</rdg>
+            </app>世<app>
+               <lem wit="#校異 #別麥 #別 #河 #靑池 #靑横 #靑三 #靑肖 #国絵 #靑大">も</lem>
+               <rdg wit="#御 #別國">の</rdg>
+               <rdg wit="#別陽">は</rdg>
+            </app>みたれあし<app>
+               <lem wit="#国絵 #校異 #別麥 #別 #河 #靑池 #靑横 #靑三 #靑肖 #靑大">かりけれと</lem>
+               <rdg wit="#御">かりけれは</rdg>
+               <rdg wit="#別陽">きこともいてきけれともてなやむほとに</rdg>
+               <rdg wit="#別國">くはなりけれと</rdg>
+            </app>やう〱あめのした<app><lem>にもあちきなう人のも<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-10.json"
+            />てなやみくさ</lem>
+               <rdg wit="#靑池">にもあちきなう人のもてなや<add>み</add>くさ</rdg>
+               <rdg wit="#国絵">にもあぢきなう人のもてなやみぐさ</rdg>
+               <rdg wit="#別陽">のあつかひくさに</rdg>
+               <rdg wit="#別國">にもあひなう人のもてなやみくさ</rdg></app>になりて楊貴妃のためしもひきいてつへく<app><lem>なりゆく</lem><rdg wit="#靑池"><add>なり</add>ゆく</rdg></app>にいとはした<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-11.json"
+               />なきこと<app>
+                  <lem wit="#校異 #別 #御 #河 #靑池 #靑横 #靑三 #靑肖 #別陽 #靑大 #別國">おほかれと</lem>
+                  <rdg wit="#国絵">おほかれど</rdg>
+                  <rdg wit="#別麥">おほかりけれと人の御おほえ</rdg>
+               </app>
+            <app><lem>かたしけなき</lem>
+               <rdg wit="#靑大">かたしけなき<del>事おほかれ</del></rdg></app>
+            御心はへのたくひなきをたのみにてましらひ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-12.json"
+               />給<app><lem>ちゝの</lem><rdg wit="#靑三">ちゝ<del>の</del></rdg></app>
+            <app><lem>大納言はなくなりて</lem><rdg wit="#靑横">大納言はかなくなりて</rdg><rdg wit="#別陽">大納言なくなり給て</rdg><rdg wit="#別國">大納言もなくなりて</rdg></app>
+            はゝ北の方なん<app><lem>いにしへの</lem><rdg wit="#靑肖 #河">いにしへ</rdg></app>
+            <app><lem>人のよしあるにて</lem><rdg wit="#別陽">よしある人にて</rdg>
+               <rdg wit="#別麥">人のよしあるまて</rdg></app>
+            おや<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-13.json"
+               /><app><lem>うちくしさしあたりて</lem><rdg wit="#別國">なしとても</rdg></app>
+            世のおほえはなやか<app><lem>なる御方〱にもいたう</lem>
+               <rdg wit="#靑三 #靑肖">なる御方〱にも</rdg>
+               <rdg wit="#別國">におや〱うちくし給える人〱にも</rdg></app>おとらすな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0005-14.json"
+               />にことの<app><lem>きしきをも</lem>
+               <rdg wit="#別陽">をりふしにも</rdg>
+               <rdg wit="#別國">きしきにも</rdg></app>もてなし
+            <app><lem>たまひけれと</lem><rdg wit="#別國">たまふれと</rdg></app>
+            とりたてゝはか〱しき<app><lem>うしろみし</lem>
+               <rdg wit="#靑三 #靑肖">御うしろみし</rdg>
+            <rdg wit="#御">御うしろみゑ</rdg><rdg wit="#別陽">うしろみも</rdg>
+            <rdg wit="#別國">うしろみ</rdg></app><pb facs="#zone_0006" n="6"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-01.json"
+               />なけれは<app><lem>事ある時</lem>
+                  <rdg wit="#靑肖 #靑大">ことゝある時</rdg>
+                  <rdg wit="#河宮 #河尾 #河爲 #河大">ことゝある時</rdg>
+                  <rdg wit="#御 #別陽 #別麥">事とある時</rdg>
+               </app>は<app><lem>なを</lem><rdg wit="#別國"></rdg></app>より所なく心ほそけ也さきの世にも御ちきりやふかか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-02.json"
+               />りけむ<app><lem>世になく</lem>
+               <rdg wit="#河">よにたくひなく</rdg><rdg wit="#御 #別麥">世にたくいなく</rdg></app>
+            <app><lem>きよら</lem><rdg wit="#別國">けうら</rdg></app>
+            なるたまのをのこみこさへ<app><lem>うまれ</lem><rdg wit="#靑大">むまれ</rdg></app>給ひぬいつしかと心も<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-03.json"
+               />となからせ給ていそきまいらせて御覧するにめつらかなるちこの御かたちなり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-04.json"
+               />一のみこは右大臣の女御の御はらにてよせをもくうたかひなきまうけの君と世<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-05.json"
+               />にもてかしつきゝこゆれとこの御にほひにはならひ給へくもあらさりけれはお<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-06.json"
+               />ほかたのやむことなき御おもひにてこの君をはわたくし物におもほしかしつき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-07.json"
+               />給事かきりなしはしめよりをしなへてのうへ宮つかへし給へきゝはにはあらさ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-08.json"
+               />りきおほえいとやむことなく上すめかしけれとわりなくまつはさせ給あまりに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-09.json"
+               />さるへき御あそひのおり〱なにことにもゆへあることのふし〱にはまつま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-10.json"
+               />うのほらせ給ある時にはおほとのこもりすくしてやかてさふらはせ給ひなとあ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-11.json"
+               />なかちにおまへさらすもてなさせ給しほとにをのつからかろき方にもみえしを<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-12.json"
+               />このみこうまれ給てのちはいと心ことにおもほしをきてたれは坊にもようせす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-13.json"
+               />はこのみこのゐ給へきなめりと一のみこの女御はおほしうたかへり人よりさき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0006-14.json"
+               />にまいり給てやむことなき御おもひなへてならすみこたちなともおはしませは<pb facs="#zone_0007" n="7"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-01.json"
+               />この御方の御いさめをのみそ猶わつらはしう心くるしう思ひきこえさせ給ける<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-02.json"
+               />かしこき御かけをはたのみきこえなからおとしめきすをもとめ給人はおほくわ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-03.json"
+               />か身はかよはく物はかなきありさまにて中〱なる物思ひをそし給御つほねは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-04.json"
+               />きりつほ也あまたの御方〱をすきさせ給てひまなき御まへわたりに人の御心<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-05.json"
+               />をつくし給もけにことはりとみえたりまうのほりたまふにもあまりうちしきる<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-06.json"
+               />おり〱はうちはしわたとのゝこゝかしこのみちにあやしきわさをしつゝ御を<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-07.json"
+               />くりむかへの人のきぬのすそたえかたくまさなきこともあり又ある時にはえさ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-08.json"
+               />らぬめたうのとをさしこめこなたかなた心をあはせてはしたなめわつらはせ給<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-09.json"
+               />時もおほかり事にふれてかすしらすくるしきことのみまされはいといたう思ひ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-10.json"
+               />わひたるをいとゝあはれと御覧して後涼殿に本よりさふらひ給更衣のさうしを<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-11.json"
+               />ほかにうつさせ給てうへつほねにたまはすその怨ましてやらむ方なしこのみこ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-12.json"
+               />みつになり給年御はかまきのこと一の宮のたてまつりしにおとらすくらつかさ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-13.json"
+               />おさめ殿のものをつくしていみしうせさせ給それにつけても世のそしりのみお<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0007-14.json"
+               />ほかれとこのみこのおよすけもておはする御かたち心はへありかたくめつらし<pb facs="#zone_0008" n="8"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-01.json"
+               />きまてみえたまふをえそねみあへたまはす物のこゝろしり給人はかゝる人も世<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-02.json"
+               />にいておはするものなりけりとあさましきまてめをおとろかし給その年の夏み<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-03.json"
+               />やす所はかなき心地にわつらひてまかてなむとし給をいとまさらにゆるさせ給<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-04.json"
+               />はす年ころつねのあつしさになりたまへれは御めなれて猶しはし心みよとのみ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-05.json"
+               />のたまはするに日〻にをもり給てたゝ五六日のほとにいとよはうなれははゝ君<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-06.json"
+               />なく〱そうしてまかてさせたてまつりたまふかゝるおりにもあるましきはち<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-07.json"
+               />もこそと心つかひしてみこをはとゝめたてまつりてしのひてそいて給かきりあ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-08.json"
+               />れはさのみもえとゝめさせ給はす御覧したにをくらぬおほつかなさをいふ方な<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-09.json"
+               />くおもほさるいとにほひやかにうつくしけなる人のいたうおもやせていとあは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-10.json"
+               />れと物を思ひしみなから事にいてゝもきこえやらすあるかなきかにきえいりつ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-11.json"
+               />ゝものし給を御覧するにきし方ゆくすゑおほしめされすよろつのことをなく<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-12.json"
+               />〱ちきりのたまはすれと御いらへもえきこえ給はすまみなともいとたゆけに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-13.json"
+               />ていとゝなよ〱とわれかのけしきにてふしたれはいかさまにとおほしめしま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0008-14.json"
+               />とはるてくるまの宣旨なとのたまはせても又いらせ給てさらにえゆるさせ給は<pb facs="#zone_0009" n="9"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-01.json"
+               />すかきりあらむみちにもをくれさきたゝしとちきらせ給けるをさりともうちす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-02.json"
+               />てゝはえゆきやらしとのたまはするを女もいといみしとみたてまつりて<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-03.json"
+               />かきりとてわかるゝ道のかなしきにいかまほしきはいのちなりけりいとか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-04.json"
+               />く思たまへましかはといきもたえつゝきこえまほしけなる事はありけなれとい<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-05.json"
+               />とくるしけにたゆけなれはかくなからともかくもならむを御覧しはてむとおほ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-06.json"
+               />しめすにけふはしむへきいのりともさるへき人〱うけたまはれるこよひより<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-07.json"
+               />ときこえいそかせはわりなくおもほしなからまかてさせ給御むねつとふたかり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-08.json"
+               />てつゆまとろまれすあかしかねさせ給御つかひのゆきかふみほともなきに猶いふ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-09.json"
+               />せさをかきりなくのたまはせつるを夜中うちすくるほとになむたえはて給ぬる<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-10.json"
+               />とてなきさはけは御つかひもいとあえなくてかへりまいりぬきこしめす御心ま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-11.json"
+               />とひなにこともおほしめしわかれすこもりおはしますみこはかくてもいと御覧<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-12.json"
+               />せまほしけれとかゝるほとにさふらひ給れいなき事なれはまかて給なんとすな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-13.json"
+               />にことかあらむともおほしたらすさふらふ人〱のなきまとひうへも御なみた<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0009-14.json"
+               />のひまなくなかれおはしますをあやしとみたてまつり給へるをよろしきことに<pb facs="#zone_0010" n="10"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-01.json"
+               />たにかゝるわかれのかなしからぬはなきわさなるをましてあはれにいふかひな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-02.json"
+               />しかきりあれはれいのさほうにおさめたてまつるをはゝ北の方おなしけふりに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-03.json"
+               />のほりなんとなきこかれ給て御をくりの女房のくるまにしたひのり給ておたき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-04.json"
+               />といふ所にいといかめしうそのさほうしたるにおはしつきたる心地いかはかり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-05.json"
+               />かはありけんむなしき御からをみる〱猶おはする物とおもふかいとかひなけ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-06.json"
+               />れははひになりたまはんをみたてまつりていまはなき人とひたふるに思なりな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-07.json"
+               />んとさかしうのたまひつれとくるまよりもおちぬへうまろひ給へはさは思つか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-08.json"
+               />しと人〱もてわつらひきこゆ内より御つかひあり三位のくらひをくり給よし<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-09.json"
+               />勅使きてその宣命よむなんかなしきことなりける女御とたにいはせすなりぬる<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-10.json"
+               />かあかすくちおしうおほさるれはいまひときさみの位をたにとをくらせ給なり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-11.json"
+               />けりこれにつけてもにくみたまふ人〱おほかり物思ひしり給はさまかたちな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-12.json"
+               />とのめてたかりし事心はせのなたらかにめやすくにくみかたかりしことなとい<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-13.json"
+               />まそおほしいつるさまあしき御もてなしゆへこそすけなうそねみ給しか人から<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0010-14.json"
+               />のあはれになさけありし御心をうへの女房なともこひしのひあへりなくてそと<pb facs="#zone_0011" n="11"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-01.json"
+               />はかゝるおりにやとみえたりはかなくひころすきてのちのわさなとにもこまか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-02.json"
+               />にとふらはせ給ほとふるまゝにせむ方なうかなしうおほさるゝに御方〱の御<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-03.json"
+               />とのゐなともたえてし給はすたゝなみたにひちてあかしくらさせたまへはみた<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-04.json"
+               />てまつる人さへつゆけき秋也なきあとまて人のむねあくましかりける人の御お<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-05.json"
+               />ほえかなとそ弘徽殿なとには猶ゆるしなうのたまひける一の宮をみたてまつら<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-06.json"
+               />せ給にもわか宮の御こひしさのみおもほしいてつゝしたしき女房御めのとなと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-07.json"
+               />をつかはしつゝありさまをきこしめす野わきたちてにはかにはたさむきゆふく<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-08.json"
+               />れのほとつねよりもおほしいつることおほくてゆけひの命婦といふをつかはす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-09.json"
+               />ゆふつくよのおかしきほとにいたしたてさせ給てやかてなかめおはしますかう<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-10.json"
+               />やうのおりは御あそひなとせさせ給しに心ことなる物のねをかきならしはかな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-11.json"
+               />くきこえいつる事の葉も人よりはことなりしけはひかたちのおもかけにつとそ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-12.json"
+               />ひておほさるゝにもやみのうつゝには猶おとりけり命婦かしこにまうてつきて<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-13.json"
+               />かとひきいるゝよりけはひあはれなりやもめすみなれと人ひとりの御かしつき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0011-14.json"
+               />にとかくつくろひたてゝめやすきほとにてすくし給へるやみにくれてふしゝ<pb facs="#zone_0012" n="12"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-01.json"
+               />つみ給へるほとに草もたかくなり野わきにいとゝあれたる心地して月影はかり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-02.json"
+               />そやへむくらにもさはらすさしいりたるみなみおもてにおろしてはゝ君もとみ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-03.json"
+               />にえ物ものたまはすいまゝてとまり侍かいとうきをかゝる御つかひのよもきふ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-04.json"
+               />の露わけいり給につけてもいとはつかしうなむとてけにえたふましくない給ま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-05.json"
+               />いりてはいとゝ心くるしう心きもゝつくるやうになんと内侍のすけのそうし給<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-06.json"
+               />しを物おもふたまへしらぬ心地にもけにこそいとしのひかたう侍けれとてやゝ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-07.json"
+               />ためらひておほせことつたへきこゆしはしはゆめかとのみたとられしをやう<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-08.json"
+               />〱思ひしつまるにしもさむへき方なくたえかたきはいかにすへきわさにかと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-09.json"
+               />もとひあはすへき人たになきをしのひてはまいり給ひなんやわか宮のいとおほ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-10.json"
+               />つかなくつゆけきなかにすくし給も心くるしうおほさるゝをとくまいり給へな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-11.json"
+               />とはか〱しうものたまはせやらすむせかへらせ給つゝかつは人も心よはくみ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-12.json"
+               />たてまつるらむとおほしつゝまぬにしもあらぬ御けしきの心くるしさにうけた<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-13.json"
+               />まはりはてぬやうにてなむまかて侍ぬるとて御ふみたてまつるめもみえ侍ら<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0012-14.json"
+               />ぬにかくかしこきおほせ事をひかりにてなんとてみ給ほとへはすこしうちまき<pb facs="#zone_0013" n="13"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-01.json"
+               />るゝこともやとまちすくす月日にそへていとしのひかたきはわりなきわさにな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-02.json"
+               />むいはけなき人をいかにと思ひやりつゝもろともにはくくまぬおほつかなさを<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-03.json"
+               />いまは猶むかしのかたみになすらへてものしたまへなとこまやかにかゝせ給へ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-04.json"/>り<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-05.json"
+               />宮木のゝつゆふきむすふ風のをとにこはきかもとを思ひこそやれとあれと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-06.json"
+               />えみたまひはてすいのちなかさのいとつらう思給へしらるゝに松のおもはんこ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-07.json"
+               />とたにはつかしう思給へ侍れはもゝしきにゆきかひ侍らんことはましていとは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-08.json"
+               />ゝかりおほくなんかしこきおほせことをたひ〱うけ給はりなからみつからは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-09.json"
+               />えなん思たまへたつましきわか宮はいかにおもほししるにかまいりたまはん事<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-10.json"
+               />をのみなむおほしいそくめれはことはりにかなしうみたてまつり侍なとうち<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-11.json"
+               />〱に思たまふるさまをそうし給へゆゝしき身に侍れはかくておはしますもい<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-12.json"
+               />まいましうかたしけなくなむとのたまふ宮はおほとのこもりにけりみたてまつ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-13.json"
+               />りてくはしう御ありさまもそうし侍らまほしきをまちおはしますらんに夜ふけ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0013-14.json"
+               />侍ぬへしとていそくくれまとふ心のやみもたえかたきかたはしをたにはるく許<pb facs="#zone_0014" n="14"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-01.json"
+               />にきこえまほしう侍をわたくしにも心のとかにまかてたまへ年比うれしくおも<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-02.json"
+               />たゝしきついてにてたちより給し物をかゝる御せうそこにてみたてまつる返〻<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-03.json"
+               />つれなきいのちにも侍かなむまれし時より思ふ心ありし人にて故大納言いまは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-04.json"
+               />となるまてたゝこの人の宮つかへのほいかならすとけさせたてまつれ我なくな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-05.json"
+               />りぬとてくちおしう思くつをるなと返〻いさめをかれ侍しかははか〱しうう<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-06.json"
+               />しろみ思人もなきましらひはなか〱なるへき事と思給へなからたゝかのゆい<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-07.json"
+               />こんをたかへしと許にいたしたて侍しを身にあまるまての御心さしのよろつに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-08.json"
+               />かたしけなきに人けなきはちをかくしつゝましらひ給ふめりつるを人のそねみ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-09.json"
+               />ふかくつもりやすからぬ事おほくなりそひ侍つるによこさまなるやうにてつゐ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-10.json"
+               />にかくなり侍ぬれはかへりてはつらくなんかしこき御心さしを思給へられ侍こ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-11.json"
+               />れもわりなき心のやみになんといひもやらすむせかへり給ほとに夜もふけぬう<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-12.json"
+               />へもしかなんわか御心なからあなかちに人めおとろく許おほされしもなかゝる<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-13.json"
+               />ましきなりけりと今はつらかりける人のちきりになむ世にいさゝかも人の心を<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0014-14.json"
+               />まけたる事はあらしと思ふをたゝこの人のゆへにてあまたさるましき人のうら<pb facs="#zone_0015" n="15"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-01.json"
+               />みをおひしはて〱はかううちすてられて心おさめん方なきにいとゝ人わろう<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-02.json"
+               />かたくなになりはへるもさきの世ゆかしうなんとうち返しつゝ御しほたれかち<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-03.json"
+               />にのみおはしますとかたりてつきせすなく〱夜いたうふけぬれはこよひすく<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-04.json"
+               />さす御返そうせんといそきまいる月はいりかたのそらきようすみわたれるに風<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-05.json"
+               />いとすゝしくなりてくさむらのむしのこゑ〱もよほしかほなるもいとたちは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-06.json"/>なれにくき草のもと也<lb
+               source="#校異" corresp="https://w3id.org/kouigenjimonogatari/data/0015-07.json"
+               />すゝむしのこゑのかきりをつくしてもなかき夜あかすふるなみた哉えもの<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-08.json"/>りやらす<lb
+               source="#校異" corresp="https://w3id.org/kouigenjimonogatari/data/0015-09.json"
+               />いと〱しく虫のねしけきあさちふに露をきそふる雲のうへ人かこともきこ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-10.json"
+               />えつへくなんといはせ給ふおかしき御をくり物なとあるへきおりにもあらねは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-11.json"
+               />たゝかの御かたみにとてかゝるようもやとのこしたまへりける御さうそくひと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-12.json"
+               />くたり御くしあけのてうとめく物そへ給ふわかき人〱かなしきことはさらに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-13.json"
+               />もいはす内わたりをあさゆふにならひていとさう〱しくうへの御ありさまな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0015-14.json"
+               />と思ひいてきこゆれはとくまいりたまはむ事をそゝのかしきこゆれとかくいま<pb facs="#zone_0016" n="16"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-01.json"
+               />〱しき身のそひたてまつらんもいと人きゝうかるへし又みたてまつらてしは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-02.json"
+               />しもあらんはいとうしろめたう思ひきこえ給てすかすかともえまいらせたてま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-03.json"
+               />つり給はぬなりけり命婦はまたおほとのこもらせたまはさりけるとあはれにみ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-04.json"
+               />たてまつるおまへのつほせんさいのいとおもしろきさかりなるを御覧するやう<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-05.json"
+               />にてしのひやかに心にくきかきりの女房四五人さふらはせ給て御ものかたりせ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-06.json"
+               />させ給なりけりこのころあけくれ御覧する長恨哥の御ゑ亭子院のかゝせ給て伊<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-07.json"
+               />勢つらゆきによませ給へるやまとことの葉をももろこしのうたをもたゝそのす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-08.json"
+               />ちをそまくらことにせさせ給いとこまやかにありさまとはせたまふあはれなり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-09.json"
+               />つる事しのひやかにそうす御返御覧すれはいともかしこきはをき所も侍らすか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-10.json"
+               />ゝるおほせことにつけてもかきくらすみたり心地になん<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-11.json"
+               />あらき風ふせきしかけのかれしよりこはきかうへそしつ心なきなとやうに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-12.json"
+               />みたりかはしきを心おさめさりけるほとゝ御覧しゆるすへしいとかうしもみえ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-13.json"
+               />しとおほししつむれとさらにえしのひあえさせ給はす御覧しはしめし年月の事<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0016-14.json"
+               />さへかきあつめよろつにおほしつゝけられて時のまもおほつかなかりしをかく<pb facs="#zone_0017" n="17"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-01.json"
+               />ても月日はへにけりあさましうおほしめさる故大納言のゆいこんあやまたす宮<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-02.json"
+               />つかへのほいふかくものしたりしよろこひはかひあるさまにとこそ思わたりつ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-03.json"
+               />れいふかひなしやとうちのたまはせていとあはれにおほしやるかくてもをのつ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-04.json"
+               />からわか宮なとおひいて給はゝさるへきついてもありなんいのちなかくとこそ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-05.json"
+               />思ねむせめなとのたまはすかのをくり物御覧せさすなき人のすみかたつねいて<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-06.json"
+               />たりけむしるしのかんさしならましかはとおもほすもいとかひなし<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-07.json"
+               />たつねゆくまほろしも哉つてにてもたまのありかをそことしるへくゑにか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-08.json"
+               />ける楊貴妃のかたちはいみしきゑしといへともふてかきりありけれはいとにほ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-09.json"
+               />ひすくなし大液芙蓉未央柳もけにかよひたりしかたちをからめいたるよそひは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-10.json"
+               />うるわしうこそありけめなつかしうらうたけなりしをおほしいつるに花とりの<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-11.json"
+               />いろにもねにもよそふへき方そなきあさゆふのことくさにはねをならへ枝をか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-12.json"
+               />はさむとちきらせ給しにかなはさりけるいのちの程つきせすうらめしき風のを<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-13.json"
+               />とむしのねにつけてものゝみかなしうおほさるゝに弘徽殿にはひさしくうへの<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0017-14.json"
+               />御つほねにもまうのほり給はす月のおもしろきに夜ふくるまてあそひをそし給<pb facs="#zone_0018" n="18"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-01.json"
+               />なるいとすさましうものしときこしめすこのころの御けしきをみたてまつるう<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-02.json"
+               />へ人女房なとはかたはらいたしときゝけりいとをしたちかと〱しき所ものし<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-03.json"
+               />たまふ御方にて事にもあらすおほしけちてもてなし給なるへし月もいりぬ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-04.json"
+               />雲のうへもなみたにくるゝ秋の月いかてすむらんあさちふのやとおほしめ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-05.json"
+               />しやりつゝともし火をかゝけつくしておきおはします右近のつかさのとのゐ申<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-06.json"
+               />のこゑきこゆるはうしになりぬるなるへし人めをおほしてよるのおとゝにいら<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-07.json"
+               />せ給てもまとろませ給ことかたしあしたにおきさせ給とてもあくるもしらてと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-08.json"
+               />おほしいつるにもなをあさまつりことはをこたらせ給ひぬへかめりものなとも<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-09.json"
+               />きこしめさすあさかれひのけしき許ふれさせ給て大正しのおものなとはいとは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-10.json"
+               />るかにおほしめしたれははいせんにさふらふかきりは心くるしき御けしきをみ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-11.json"
+               />たてまつりなけくすへてちかうさふらふかきりは心おとこ女いとわりなきわさか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-12.json"
+               />なといひあはせつゝなけくさるへきちきりこそおはしましけめそこらの人のそ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-13.json"
+               />しりうらみをもはゝからせ給はすこの御事にふれたる事をはたうりをもうしな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0018-14.json"
+               />はせ給ひいまはたかく世中のことをもおもほしすてたるやうになりゆくはいと<pb facs="#zone_0019" n="19"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-01.json"
+               />たい〱しきわさなりと人のみかとのためしまてひきいてさゝめきなけきけり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-02.json"
+               />月日へてわか宮まいり給ひぬいとゝこのよの物ならすきよらにおよすけ給へれ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-03.json"
+               />はいとゆゝしうおほしたりあくる年の春坊さたまり給にもいとひきこさまほし<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-04.json"
+               />うおほせと御うしろみすへき人もなく又世のうけひくましき事なりけれはなか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-05.json"
+               />〱あやうくおほしはゝかりていろにもいたさせ給はすなりぬるをさはかりお<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-06.json"
+               />ほしたれとかきりこそありけれと世人もきこえ女御も御心おちゐたまひぬかの<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-07.json"
+               />御をは北の方なくさむ方なくおほししつみておはすらん所にたにたつねゆかん<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-08.json"
+               />とねかひ給ひししるしにやつゐにうせ給ひぬれは又これをかなしひおほすこと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-09.json"
+               />かきりなしみこむつになり給年なれはこのたひはおほししりてこひなき給年こ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-10.json"
+               />ろなれむつひきこえ給へるをみたてまつりをくかなしひをなむ返〻のたまひけ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-11.json"
+               />るいまは内にのみさふらひ給なゝつになり給へはふみはしめなとせさせ給て世<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-12.json"
+               />にしらすさとうかしこくおはすれはあまりおそろしきまて御覧すいまはたれも<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-13.json"
+               />〱えにくみ給はしはゝきみなくてたにらうたうし給へとて弘徽殿なとにもわ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0019-14.json"
+               />たらせ給御ともにはやかてみすのうちにいれたてまつり給いみしき物のふあた<pb facs="#zone_0020" n="20"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-01.json"
+               />かたきなりともみてはうちゑまれぬへきさまのし給へれはえさしはなち給はす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-02.json"
+               />女みこたちふた所この御はらにましませとなすらひ給へきたにそなかりける御<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-03.json"
+               />方〱もかくれ給はすいまよりなまめかしうはつかしけにおはすれはいとおか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-04.json"
+               />しううちとけぬあそひくさにたれも〱思きこえ給へりわさとの御かくもんは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-05.json"
+               />さる物にてことふえのねにもくもゐをひゝかしすへていひつゝけはこと〱し<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-06.json"
+               />うゝたてそなりぬへき人の御さまなりけるそのころこまうとのまいれるなかに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-07.json"
+               />かしこきさうにむありけるをきこしめして宮のうちにめさんことは宇多のみか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-08.json"
+               />との御いましめあれはいみしうしのひてこのみこをこうろくわんにつかはした<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-09.json"
+               />り御うしろみたちてつかうまつる右大弁の子のやうにおもはせてゐてたてまつ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-10.json"
+               />るに相人おとろきてあまたゝひかたふきあやしふくにのおやとなりて帝王のか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-11.json"
+               />みなきくらゐにのほるへきさうおはします人のそなたにてみれはみたれうれふ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-12.json"
+               />る事やあらむおほやけのかためとなりて天下をたすくる方にてみれは又そのさ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-13.json"
+               />うたかふへしといふ弁もいとさえかしこきはかせにていひかはしたる事ともな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0020-14.json"
+               />んいとけうありけるふみなとつくりかはしてけふあすかへりさりなんとするに<pb facs="#zone_0021" n="21"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-01.json"
+               />かくありかたき人にたいめむしたるよろこひかへりてはかなしかるへき心はへ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-02.json"
+               />をおもしろくつくりたるにみこもいとあはれなる句をつくりたまへるをかきり<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-03.json"
+               />なうめてたてまつりていみしきをくり物ともをさゝけたてまつるおほやけより<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-04.json"
+               />もおほくの物たまはすをのつから事ひろこりてもらさせ給はねと春宮のおほち<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-05.json"
+               />おとゝなといかなる事にかとおほしうたかひてなむありけるみかとかしこき御<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-06.json"
+               />心にやまとさうをおほせておほしよりにけるすちなれはいまゝてこの君をみこ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-07.json"
+               />にもなさせたまはさりけるを相人はまことにかしこかりけりとおほして無品親<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-08.json"
+               />王の外尺のよせなきにてはたゝよはさしわか御世もいとさためなきをたゝ人に<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-09.json"
+               />ておほやけの御うしろみをするなんゆくさきもたのもしけなめることゝおほし<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-10.json"
+               />さためていよ〱みち〱のさえをならはさせ給きはことにかしこくてたゝ人<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-11.json"
+               />にはいとあたらしけれとみことなり給なは世のうたかひおひ給ぬへくものし給<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-12.json"
+               />へはすくえうのかしこきみちの人にかんかへさせ給にもおなしさまに申せは源<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-13.json"
+               />氏になしたてまつるへくおほしをきてたり年月にそへてみやす所の御事をおほ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0021-14.json"
+               />しわするゝおりなしなくさむやとさるへき人〱まいらせ給へとなすならひに<pb facs="#zone_0022" n="22"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-01.json"
+               />おほさるゝたにいとかたき世かなとうとましうのみよろつにおほしなりぬるに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-02.json"
+               />先帝の四の宮の御かたちすくれ給へるきこえたかくおはしますはゝ后世になく<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-03.json"
+               />かしつききこえたまふをうへにさふらふ内侍のすけは先帝の御時の人にてかの<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-04.json"
+               />宮にもしたしうまいりなれたりけれはいわけなくおはしましゝ時よりみたてま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-05.json"
+               />つりいまもほのみたてまつりてうせ給にしみやす所の御かたちにゝたまへる人<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-06.json"
+               />を三代のみやつかへにつたはりぬるにえみたてまつりつけぬをきさいの宮のひ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-07.json"
+               />め宮こそいとようおほえておひいてさせ給へりけれありかたき御かたち人にな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-08.json"
+               />んとそうしけるにまことにやと御心とまりてねむころにきこえさせ給けりはゝ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-09.json"
+               />きさきあなおそろしや春宮の女御のいとさかなくてきりつほのかういのあらは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-10.json"
+               />にはかなくもてなされにしためしもゆゝしうとおほしつゝみてすか〱しうも<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-11.json"
+               />おほしたゝさりけるほとに后もうせ給ぬ心ほそきさまにておはしますにたゝわ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-12.json"
+               />か女みこたちのおなしつらに思きこえんといとねんころにきこえさせ給さふら<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-13.json"
+               />ふ人〱御うしろみたち御せうとの兵部卿のみこなとかく心ほそくておはしま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0022-14.json"
+               />さんよりはうちすみせさせ給て御心もなくさむへくなとおほしなりてまいらせ<pb facs="#zone_0023" n="23"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-01.json"
+               />たてまつり給へりふちつほときこゆけに御かたちありさまあやしきまてそおほ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-02.json"
+               />え給へるこれは人の御きはまさりて思なしめてたく人もえおとしめきこえ給は<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-03.json"
+               />ねはうけはりてあかぬことなしかれは人のゆるしきこえさりしに御心さしあや<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-04.json"
+               />にくなりしそかしおほしまきるとはなけれとをのつから御心うつろひてこよな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-05.json"
+               />うおほしなくさむやうなるもあはれなるわさなりけり源氏のきみは御あたりさ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-06.json"
+               />り給はぬをましてしけくわたらせ給御方はえはちあへたまはすいつれの御方も<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-07.json"
+               />我人におとらんとおほいたるやはあるとり〱にいとめてたけれとうちおとな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-08.json"
+               />ひ給へるにいとわかううつくしけにてせちにかくれ給へとをのつからもりみた<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-09.json"
+               />てまつるはゝみやす所もかけたにおほえたまはぬをいとように給へりと内侍の<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-10.json"
+               />すけのきこえけるをわかき御心ちにいとあはれと思きこえ給てつねにまいらま<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-11.json"
+               />ほしくなつさひみたてまつらはやとおほえ給うへもかきりなき御おもひとちに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-12.json"
+               />てなうとみ給そあやしくよそへきこえつへき心地なんするなめしとおほさてら<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-13.json"
+               />うたくし給へつらつきまみなとはいとようにたりしゆへかよひてみえ給もにけ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0023-14.json"
+               />なからすなんなときこえつけ給へれはおさな心地にもはかなき花もみちにつけ<pb facs="#zone_0024" n="24"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-01.json"
+               />ても心さしをみえたてまつるこよなう心よせきこえ給へれは弘徽殿女御又この<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-02.json"
+               />宮とも御なかそは〱しきゆへうちそへて本よりのにくさもたちいてゝものし<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-03.json"
+               />とおほしたり世にたくひなしとみたてまつり給ひなたかうおはする宮の御かた<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-04.json"
+               />ちにも猶にほはしさはたとへん方なくうつくしけなるを世の人ひかるきみとき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-05.json"
+               />こゆふちつほならひ給て御おほえもとり〱なれはかゝやく日の宮ときこゆこ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-06.json"
+               />のきみの御わらはすかたいとかへまうくおほせと十二にて御元服したまふゐた<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-07.json"
+               />ちおほしいとなみてかきりある事に事をそへさせ給ひとゝせの春宮の御元服南<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-08.json"
+               />殿にてありしきしきよそほしかりし御ひゝきにおとさせ給はすところ〱のき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-09.json"
+               />やうなとくらつかさこくさうゐんなとおほやけことにつかうまつれるおろそか<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-10.json"
+               />なることもそとゝりわきおほせ事ありてきよらをつくしてつかうまつれりおは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-11.json"
+               />します殿のひむかしのひさしひんかしむきにいしたてゝ火んさの御座ひきいれ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-12.json"
+               />の大臣の御さ御前にありさるの時にて源氏まいり給みつらゆひたまへるつらつ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-13.json"
+               />きかほのにほひさまかへたまはん事おしけ也大蔵卿くらひとつかうまつるいと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0024-14.json"
+               />きよらなる御くしをそくほと心くるしけなるをうへはみやす所のみましかはと<pb facs="#zone_0025" n="25"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-01.json"
+               />おほしいつるにたへかたきを心つよくねんしかへさせ給かうふりし給て御やす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-02.json"
+               />み所にまかてたまひて御そたてまつりかへておりてはいしたてまつり給さまに<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-03.json"
+               />みな人なみたおとし給みかとはたましてえしのひあへ給はすおほしまきるゝお<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-04.json"
+               />りもありつるむかしのことゝり返しかなしくおほさるいとかうきひわなるほと<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-05.json"
+               />はあけをとりやとうたかはしくおほされつるをあさましううつくしけさそひ給<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-06.json"
+               />へりひきいれの大臣のみこはらにたゝひとりかしつき給おほん女春宮よりも御<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-07.json"
+               />けしきあるをおほしわつらふ事ありけるこのきみにたてまつらむの御心なりけ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-08.json"
+               />り内にも御けしきたまはらせ給へりけれはさらはこのおりのうしろみなかめる<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-09.json"
+               />をそひふしにもともよほさせ給けれはさおほしたりさふらひにまかて給て人<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-10.json"
+               />〱おほみきなとまいるほとみこたちの御さのすゑに源氏つき給へりおとゝけ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-11.json"
+               />しきはみきこえ給事あれと物のつゝましきほとにてともかくもあへしらひきこ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-12.json"
+               />え給はすおまへより内侍せむしうけたまはりつたへておとゝまいりたまふへき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-13.json"
+               />めしあれはまいり給御ろくの物うへの命婦とりてたまふしろきおほうちきに御<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0025-14.json"
+               />そひとくたりれいの事也御さかつきのついてに<pb facs="#zone_0026" n="26"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-01.json"
+               /><app><lem>いときなき</lem><rdg wit="#御 #別陽 #別麥">いとけなき</rdg></app>はつもとゆひになかき世をちきる心はむすひ
+            <app><lem>こめつや</lem><rdg wit="#河 #御 #別國 #別麥">こめつやと</rdg></app>
+            <app><lem>御心はえ</lem><rdg wit="#別陽">こゝろはへ</rdg></app><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-02.json"/>ありて<app><lem>おとろかせ</lem>
+               <rdg wit="#靑肖 #靑三 #靑大 #河 #別">おとろかさせ</rdg></app>給<lb
+               source="#校異" corresp="https://w3id.org/kouigenjimonogatari/data/0026-03.json"
+               />むすひ<app><lem>つる</lem><rdg wit="#靑池"><add>つる</add></rdg></app>
+            心もふかきもとゆひにこきむらさきの色しあせすはとそう
+            <app><lem>して</lem><rdg wit="#別陽">し給て</rdg></app><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-04.json"
+               /><app><lem>なかはし</lem><rdg wit="#靑大">なか<del>はし</del></rdg></app>
+            よりおりてふたうし給ひたりのつかさの御むまくら人所のたかすへて<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-05.json"
+               />たまはり給みはしのもとにみこたちかむたちめつらねてろくともしな〱に<app><lem>た<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-06.json"
+               />まはり給</lem>
+                  <rdg wit="#靑横">給<del>はし</del><add>り</add>たまふ</rdg>
+                  <rdg wit="#靑大"><del>ま</del>たまはり給ふ</rdg>
+               </app>そのひのおまへのおりひつものこ物なと右大弁なんうけたまはりてつ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-07.json"
+               />かうまつらせけるとむしきろくのからひつともなと所せきまて春宮の御元服の<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-08.json"
+               />おりにもかすまされりなか〱かきりもなくいかめしうなんその夜おとゝの御<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-09.json"
+               />さとに源氏のきみまかてさせたまふさほう世にめつらしきまてもてかしつきき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-10.json"
+               />こえ給へりいときひはにておはしたるをゆゝしううつくしと思きこえ給へり女<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-11.json"
+               />きみはすこしすくし給へるほとにいとわかうおはすれはにけなくはつかしとお<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-12.json"
+               />ほいたりこのおとゝの御おほえいとやむことなきにはゝ宮内のひとつきさいは<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-13.json"
+               />らになんおはしけれはいつかたにつけてもいとはなやかなるにこの君さへかく<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0026-14.json"
+               />おはしそひぬれは春宮の御おほちにてつゐに世中をしり給へき右のおとゝの御<pb facs="#zone_0027" n="27"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-01.json"
+               />いきをひは物にもあらすをされ給へり御こともあまたはら〱にものし給宮の<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-02.json"
+               />御はらは藏人少將にていとわかうおかしきを右のおとゝの御なかはいとよから<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-03.json"
+               />ねとえみすくし給はてかしつき給四の君にあはせ給へりおとらすもてかしつき<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-04.json"
+               />たるはあらまほしき御あはひともになん源氏の君はうへのつねにめしまつはせ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-05.json"
+               />は心やすくさとすみもえし給はす心のうちにはたゝふちつほの御ありさまをた<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-06.json"
+               />くひなしと思きこえてさやうならむ人をこそみめにる人なくもおはしけるかな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-07.json"
+               />おほいとのゝきみいとおかしけにかしつかれたる人とはみゆれと心にもつかす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-08.json"
+               />おほえ給ておさなきほとのこゝろひとつにかゝりていとくるしきまてそおはし<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-09.json"
+               />けるおとなになり給てのちはありしやうにみすの内にもいれたまはす御あそひ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-10.json"
+               />のおり〱ことふえのねにきこえかよひほのかなる御こゑをなくさめにて内す<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-11.json"
+               />みのみこのましうおほえ給五六日さふらひ給ておほいとのに二三日なとたえ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-12.json"
+               />〱にまかて給へとたゝいまはおさなき御ほとにつみなくおほしなしていとな<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-13.json"
+               />みかしつききこえ給御方〱の人〱世中にをしなへたらぬをえりとゝのへす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0027-14.json"
+               />くりてさふらはせ給御心につくへき御あそひをしおほな〱おほしいたつく内<pb facs="#zone_0028" n="28"/><lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0028-01.json"
+               />にはもとのしけいさを御さうしにてはゝみやす所の御方の人〱まかてちらす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0028-02.json"
+               />さふらはせ給さとの殿はすりしきたくみつかさに宣旨くたりてになうあらため<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0028-03.json"
+               />つくらせたまふもとのこたち山のたゝすまひおもしろき所なりけるを池のこゝ<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0028-04.json"
+               />ろひろくしなしてめてたくつくりのゝしるかゝる所におもふやうならむ人をす<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0028-05.json"
+               />へてすまはやとのみなけかしうおほしわたるひかるきみといふ名はこまうとの<lb source="#校異"
+               corresp="https://w3id.org/kouigenjimonogatari/data/0028-06.json"
+            />めてきこえてつけたてまつりけるとそいひつたへたるとなむ</p>
+      </body>
+   </text>
+</TEI>
