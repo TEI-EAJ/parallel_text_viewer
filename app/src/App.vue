@@ -44,8 +44,23 @@
                         <template v-if="element.type == 'app'">
                           <span
                             style="background-color : yellow;"
-                            @click="test(element.app, element.id)"
-                          >{{element.text}}</span>
+                            @click="test(element.app, element.id, element.index)"
+                          >
+                            <!--
+                          <v-badge
+                          color="red"
+      bottom
+      left>
+      <template v-slot:badge>
+        <span>{{element.index}}</span>
+      </template>
+      <span>{{element.text}}</span>
+    </v-badge>
+                            -->
+
+                            <v-chip x-small>{{element.index}}</v-chip>
+                            {{element.text}}
+                          </span>
                         </template>
                       </span>
                     </p>
@@ -61,9 +76,14 @@
 
                       <v-card v-for="(test4, index2) in test5" :key="index2" class="mx-5">
                         <v-card-text class="mx-2 text--primary">
-                          <span @click="close_panel(index2)"><i class="fas fa-times-circle"></i></span>
-                          <br/>
-                          <p v-for="(element, index) in test4" :key="index">
+                          <span @click="close_panel(index2)">
+                            <i class="fas fa-times-circle"></i>
+                          </span>
+
+                          <v-chip class="mt-5" x-small>{{test4.index}}</v-chip>
+
+                          <br />
+                          <p v-for="(element, index) in test4.wits" :key="index">
                             <template v-if="element.type=='lem'">{{element.text}} （{{index}}）</template>
                             <template v-else>
                               <b>{{element.text}} （{{index}}）</b>
@@ -71,7 +91,6 @@
                           </p>
                         </v-card-text>
                       </v-card>
-
                     </v-card-text>
                   </v-list-item>
                 </v-card>
@@ -81,10 +100,19 @@
         </splitpanes>
       </div>
     </v-content>
+
+    <div id="start">start</div>
+    <div id="end">end</div>
   </v-app>
 </template>
 
 <script>
+
+new LeaderLine(
+  document.getElementById("start"),
+  document.getElementById("end")
+);
+
 // In your VueJS component.
 import { Splitpanes, Pane } from "splitpanes";
 import axios from "axios";
@@ -106,7 +134,7 @@ export default {
 
       test_arr: [],
       test4: {},
-      test5 : {},
+      test5: {},
       witness: {},
       test_map: {}
     };
@@ -114,6 +142,8 @@ export default {
   mounted: function() {
     window.addEventListener("resize", this.handleResize);
     this.exec2main("01_with_wit.xml");
+
+    
   },
   methods: {
     clickIcon(zone_id) {
@@ -207,6 +237,8 @@ export default {
 
           //text
 
+          let index = 1;
+
           let p = data.elements[0].elements[2].elements[0].elements[0];
           let elements = p.elements;
           for (let i = 0; i < elements.length; i++) {
@@ -225,8 +257,10 @@ export default {
                 text: text_lem,
                 type: "app",
                 app: apps,
-                id: "app_" + i
+                id: "app_" + i,
+                index: index
               });
+              index += 1;
             } else if (type == "text") {
               test_arr.push({
                 text: element.text,
@@ -249,24 +283,23 @@ export default {
     close_panel: function(id) {
       //let test3 = this.test3;
 
-      let test5 = {}
+      let test5 = {};
 
-      for(let key in this.test5){
-        test5[key] = this.test5[key]
+      for (let key in this.test5) {
+        test5[key] = this.test5[key];
       }
 
       delete test5[id];
 
-      this.test5 = test5
-
+      this.test5 = test5;
     },
-    test: function(apps, id) {
+    test: function(apps, id, index) {
       //let test3 = this.test3;
 
-      let test5 = {}
+      let test5 = {};
 
-      for(let key in this.test5){
-        test5[key] = this.test5[key]
+      for (let key in this.test5) {
+        test5[key] = this.test5[key];
       }
 
       if (test5[id]) {
@@ -278,31 +311,30 @@ export default {
           let elements = app.elements;
           let wit = "";
           if (app.attributes) {
-            wit = app.attributes.wit
+            wit = app.attributes.wit;
           }
           if (elements != null) {
             for (let j = 0; j < elements.length; j++) {
               let element = elements[j];
 
-            
               if (wit != "") {
                 test2[wit] = {
                   text: element.text,
                   type: app.name
                 };
               }
-              
             }
           }
         }
 
-        test5[id] = test2;
+        test5[id] = {
+          index: index,
+          wits: test2
+        };
       }
 
-      this.test5 = test5
-      
+      this.test5 = test5;
     }
-
   },
 
   beforeDestroy: function() {
