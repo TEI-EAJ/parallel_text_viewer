@@ -46,19 +46,8 @@
                             style="background-color : yellow;"
                             @click="test(element.app, element.id, element.index)"
                           >
-                            <!--
-                          <v-badge
-                          color="red"
-      bottom
-      left>
-      <template v-slot:badge>
-        <span>{{element.index}}</span>
-      </template>
-      <span>{{element.text}}</span>
-    </v-badge>
-                            -->
+                            <span style="color: red;"> {{element.index}} </span>
 
-                            <v-chip x-small>{{element.index}}</v-chip>
                             {{element.text}}
                           </span>
                         </template>
@@ -80,7 +69,7 @@
                             <i class="fas fa-times-circle"></i>
                           </span>
 
-                          <v-chip class="mt-5" x-small>{{test4.index}}</v-chip>
+                          <span class="mt-2" style="color: red;"> {{test4.index}} </span>
 
                           <br />
                           <p v-for="(element, index) in test4.wits" :key="index">
@@ -101,17 +90,13 @@
       </div>
     </v-content>
 
-    <div id="start">start</div>
-    <div id="end">end</div>
+    
   </v-app>
 </template>
 
 <script>
 
-new LeaderLine(
-  document.getElementById("start"),
-  document.getElementById("end")
-);
+
 
 // In your VueJS component.
 import { Splitpanes, Pane } from "splitpanes";
@@ -141,9 +126,7 @@ export default {
   },
   mounted: function() {
     window.addEventListener("resize", this.handleResize);
-    this.exec2main("01_with_wit.xml");
-
-    
+    this.exec2main("01_with_wit.xml");    
   },
   methods: {
     clickIcon(zone_id) {
