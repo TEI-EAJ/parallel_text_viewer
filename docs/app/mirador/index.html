@@ -20,6 +20,8 @@
   <script src="mirador/mirador.min.js"></script>
   <script type="text/javascript">
 
+    var windowObjects = []
+
     $(function () {
 
       var vars = {};
@@ -50,8 +52,6 @@
           }
         }
       }
-
-      var windowObjects = new Array();
 
       var data = new Array()
 
@@ -97,6 +97,7 @@
                     "height": Number(area[3])
                   }
                 }
+                obj["xywh"] = area
               } else {
                 canvas_id = canvas
               }
@@ -241,11 +242,37 @@
         "windowObjects": windowObjects,
         "windowSettings": windowSettings,
         "annotationEndpoint": { "name": "Local Storage", "module": "LocalStorageEndpoint" },
-        "sidePanelOptions": sidePanelOptions
+        "sidePanelOptions": sidePanelOptions,
+        "mainMenuSettings": {
+          "userButtons": [
+            {
+              "label": "Fit Bounds",
+              "iconClass": "fa fa-square",
+              "attributes": { "onclick": "move()" }
+            }
+          ]
+        }
       }
 
-      Mirador(config);
+      miradorInstance = Mirador(config);
     });
+
+    function move() {
+
+      for (i = 0; i < windowObjects.length; i++) {
+        obj = windowObjects[i]
+
+        zone_canvasID = obj["canvasID"]
+        xywh = obj["xywh"]
+        zone_x = Number(xywh[0])
+        zone_y = Number(xywh[1])
+        zone_w = Number(xywh[2])
+        zone_z = Number(xywh[3])
+
+        miradorInstance.eventEmitter.publish('SET_CURRENT_CANVAS_ID.window_' + i, zone_canvasID);
+        miradorInstance.eventEmitter.publish('fitBounds.window_' + i, { 'x': zone_x, 'y': zone_y, 'width': zone_w, 'height': zone_z });
+      }
+    }
 
   </script>
 </body>
