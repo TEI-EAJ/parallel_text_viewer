@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <v-toolbar :dark="true" flat>
-        <v-toolbar-title>日本風な校本を作るための可視化ツール</v-toolbar-title>
+        <v-toolbar-title>校本風異文可視化ツール</v-toolbar-title>
 
         <v-spacer></v-spacer>
       </v-toolbar>
