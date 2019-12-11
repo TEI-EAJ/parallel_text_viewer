@@ -46,8 +46,7 @@
                             style="background-color : yellow;"
                             @click="test(element.app, element.id, element.index)"
                           >
-                            <span style="color: red;"> {{element.index}} </span>
-
+                            <span style="color: red;">{{element.index}}</span>
                             {{element.text}}
                           </span>
                         </template>
@@ -69,7 +68,7 @@
                             <i class="fas fa-times-circle"></i>
                           </span>
 
-                          <span class="mt-2" style="color: red;"> {{test4.index}} </span>
+                          <span class="mt-2" style="color: red;">{{test4.index}}</span>
 
                           <br />
                           <p v-for="(element, index) in test4.wits" :key="index">
@@ -89,20 +88,16 @@
         </splitpanes>
       </div>
     </v-content>
-
-    
   </v-app>
 </template>
 
 <script>
-
-
-
 // In your VueJS component.
 import { Splitpanes, Pane } from "splitpanes";
 import axios from "axios";
 
 let mirador_prefix = "mirador/";
+var convert = require("xml-js");
 
 export default {
   components: { Splitpanes, Pane },
@@ -126,9 +121,27 @@ export default {
   },
   mounted: function() {
     window.addEventListener("resize", this.handleResize);
-    this.exec2main("01_with_wit.xml");    
+
+    /*
+    if (this.$route.query.u == null && location.hostname != "localhost") {
+      location.href = "https://github.com/TEI-EAJ/koui/";
+    }
+    */
+
+    let u =
+      this.$route.query.u == null ? "01_with_wit.xml" : this.$route.query.u;
+
+    this.exec2main(u);
   },
   methods: {
+    conv2json(xml) {
+      xml = new XMLSerializer().serializeToString(xml);
+      var result = convert.xml2json(xml, { compact: false, spaces: 4 });
+
+      let data = JSON.parse(result);
+      data = data.elements[0];
+      return data;
+    },
     clickIcon(zone_id) {
       let obj = this.test_map[zone_id];
 
@@ -161,62 +174,65 @@ export default {
         .then(response => {
           let xml = response.data;
 
-          var convert = require("xml-js");
-
-          let test_arr2 = [];
-          let test_arr = [];
-
-          xml = new XMLSerializer().serializeToString(xml);
-          var result = convert.xml2json(xml, { compact: false, spaces: 4 });
-
-          let data = JSON.parse(result);
-
           //witness
+          let listWit = xml.querySelector("listWit");
+          listWit = this.conv2json(listWit).elements;
 
-          let listWit =
-            data.elements[0].elements[0].elements[0].elements[2].elements[1]
-              .elements;
           for (let i = 0; i < listWit.length; i++) {
             let wit = listWit[i];
             this.witness["#" + wit.attributes["xml:id"]] =
               wit.attributes["xml:id"];
           }
 
+          let test_arr2 = [];
+          let test_arr = [];
+
           //facs
 
-          let facs = data.elements[0].elements[1].elements[0];
-          let manifest = facs.attributes.facs;
+          let facs = xml.querySelector("surfaceGrp");
+          if (facs != null) {
+            facs = this.conv2json(facs);
+            let manifest = facs.attributes.facs;
 
-          let surfaces = facs.elements;
-          for (let i = 0; i < surfaces.length; i++) {
-            let surface = surfaces[i].elements;
-            let canvas = surface[0].attributes.n;
-            for (let j = 1; j < surface.length; j++) {
-              let zone = surface[j].attributes;
-              let id = zone["xml:id"];
-              let x = Number(zone["ulx"]);
-              let y = Number(zone["uly"]);
-              let w = Number(zone["lrx"]) - x;
-              let h = Number(zone["lry"]) - y;
-              this.test_map["#" + id] = {
-                manifest: manifest,
-                canvas: canvas + "#xywh=" + x + "," + y + "," + w + "," + h
-              };
+            let surfaces = facs.elements;
+            for (let i = 0; i < surfaces.length; i++) {
+              let surface = surfaces[i].elements;
+              let canvas = surface[0].attributes.n;
+              for (let j = 1; j < surface.length; j++) {
+                let zone = surface[j].attributes;
+                let id = zone["xml:id"];
+                let x = Number(zone["ulx"]);
+                let y = Number(zone["uly"]);
+                let w = Number(zone["lrx"]) - x;
+                let h = Number(zone["lry"]) - y;
+                this.test_map["#" + id] = {
+                  manifest: manifest,
+                  canvas: canvas + "#xywh=" + x + "," + y + "," + w + "," + h
+                };
+              }
             }
+
+            let params = [
+              {
+                manifest: manifest
+              }
+            ];
+
+            this.mirador_path =
+              mirador_prefix +
+              "?params=" +
+              encodeURIComponent(JSON.stringify(params)) +
+              "&annotationState=on&layout=" +
+              this.layout;
           }
 
-          let params = [
-            {
-              manifest: manifest
-            }
-          ];
+          //text
 
-          this.mirador_path =
-            mirador_prefix +
-            "?params=" +
-            encodeURIComponent(JSON.stringify(params)) +
-            "&annotationState=on&layout=" +
-            this.layout;
+          xml = new XMLSerializer().serializeToString(xml);
+          var result = convert.xml2json(xml, { compact: false, spaces: 4 });
+
+          let data = JSON.parse(result);
+          //console.log(data)
 
           //text
 
