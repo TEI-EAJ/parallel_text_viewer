@@ -13,6 +13,7 @@
         <h2 class="mb-5">校本風異文可視化ツール</h2>
         <p>異文情報を含むTEI/XMLファイルを選択してください。</p>
         <input type="file" id="files" @change="handleFileSelect" multiple/>
+
         <output id="list" class="mt-5"></output>
 
         <br/><br/><br/>
@@ -22,12 +23,20 @@
         <v-btn color="primary" to="/?u=01_with_wit.xml" class="mx-2">可視化例を見る</v-btn>
         <v-btn href="01_with_wit.xml" target="_blank" class="mx-2">サンプルデータを見る</v-btn>
 
-        <br/>
+        <br/><br/>
 
         <p class="mt-5">例２：ダミーデータ</p>
         
         <v-btn color="primary" to="/?u=https://nakamura196.github.io/tei/v-machine/data/nakamura.xml" class="mx-2">可視化例を見る</v-btn>
         <v-btn href="https://nakamura196.github.io/tei/v-machine/data/nakamura.xml" target="_blank" class="mx-2">サンプルデータを見る</v-btn>
+
+        <br/><br/><br/>
+        
+        <hr/>
+        
+        <br/>
+
+        <p class="text-center my-5"><a href="https://github.com/TEI-EAJ">TEI-C東アジア/日本語分科会</a></p>
 
       </v-container>
 
