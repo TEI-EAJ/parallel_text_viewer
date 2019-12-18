@@ -59,7 +59,13 @@
                 <v-card class="scroll vertical" :flat="true" id="sub">
                   <v-list-item>
                     <v-card-text class="mx-2 text--primary">
-                      <h2 class="text--primary">異文</h2>
+                      <h2 class="text--primary ml-4">異文</h2>
+                      <p>
+                        <b>Witness List</b><br/>
+                        <span class="mr-2" v-for="(obj, index) in witness" :key="index">
+                          {{index}}
+                        </span>
+                      </p>
                       <br />
 
                       <v-card v-for="(test4, index2) in test5" :key="index2" class="mx-5">
@@ -165,7 +171,18 @@ export default {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
     },
+    rec(arr, data){
+      for(let i = 0; i < arr.length; i++){
+        let obj = arr[i]
+        data.push(obj)
 
+        if(obj.elements && obj.name != "app"){
+          let elements  =obj.elements
+          data = this.rec(elements, data)
+        }
+      }
+      return data
+    },
     exec2main(url) {
       axios
         .get(url, {
@@ -183,9 +200,6 @@ export default {
             this.witness["#" + wit.attributes["xml:id"]] =
               wit.attributes["xml:id"];
           }
-
-          let test_arr2 = [];
-          let test_arr = [];
 
           //facs
 
@@ -228,6 +242,57 @@ export default {
 
           //text
 
+          let body = xml.querySelector("body");
+          body = this.conv2json(body).elements;
+
+          let arr = this.rec(body, [])
+
+          let data10 = []
+
+          let pa = []
+
+          let index = 1;
+
+          for(let i = 0; i < arr.length; i++){
+            let obj = arr[i]
+            let name = obj.name
+            let type = obj.type
+            if(name == "lb" || name == "p" || name == "l"){
+              data10.push(pa)
+              pa = []
+            } else if(type == "text"){
+              pa.push(obj)
+            } else if(name == "pb"){
+              pa.push({
+                id: obj.attributes.facs,
+                type: "zone"
+              });
+            } else if (name == "app") {
+              let apps = obj.elements;
+              let lem = apps[0];
+              let text_lem = "";
+              if (lem.elements) {
+                text_lem = lem.elements[0].text;
+              }
+              pa.push({
+                text: text_lem,
+                type: "app",
+                app: apps,
+                id: "app_" + i,
+                index: index
+              });
+              index += 1;
+            }
+          }
+
+          data10.push(pa)
+
+          /*
+          //text
+
+          //let test_arr2 = [];
+          //let test_arr = [];
+
           xml = new XMLSerializer().serializeToString(xml);
           var result = convert.xml2json(xml, { compact: false, spaces: 4 });
 
@@ -236,7 +301,8 @@ export default {
 
           //text
 
-          let index = 1;
+          //let index = 1;
+          index = 1
 
           let p = data.elements[0].elements[2].elements[0].elements[0];
           let elements = p.elements;
@@ -276,7 +342,9 @@ export default {
             }
           }
 
-          this.test_arr = test_arr2;
+          */
+
+          this.test_arr = data10
         });
     },
     close_panel: function(id) {
