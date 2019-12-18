@@ -3,11 +3,35 @@
     <v-content>
       <v-toolbar :dark="true" flat>
         <v-toolbar-title>校本風異文可視化ツール</v-toolbar-title>
-
         <v-spacer></v-spacer>
+        <v-btn icon href="./">
+          <v-icon>mdi-home</v-icon>
+        </v-btn>
       </v-toolbar>
 
-      <div :style="'height: '+height+'px;'">
+      <v-container class="my-5" v-show="!start">
+        <h2 class="mb-5">校本風異文可視化ツール</h2>
+        <p>異文情報を含むTEI/XMLファイルを選択してください。</p>
+        <input type="file" id="files" @change="handleFileSelect" multiple/>
+        <output id="list" class="mt-5"></output>
+
+        <br/><br/><br/>
+
+        <p class="mt-5">例１：校異源氏物語</p>
+        
+        <v-btn color="primary" to="/?u=01_with_wit.xml" class="mx-2">可視化例を見る</v-btn>
+        <v-btn href="01_with_wit.xml" target="_blank" class="mx-2">サンプルデータを見る</v-btn>
+
+        <br/>
+
+        <p class="mt-5">例２：ダミーデータ</p>
+        
+        <v-btn color="primary" to="/?u=https://nakamura196.github.io/tei/v-machine/data/nakamura.xml" class="mx-2">可視化例を見る</v-btn>
+        <v-btn href="https://nakamura196.github.io/tei/v-machine/data/nakamura.xml" target="_blank" class="mx-2">サンプルデータを見る</v-btn>
+
+      </v-container>
+
+      <div :style="'height: '+height+'px;'" v-show="start">
         <splitpanes class="default-theme">
           <pane min-size="20">
             <iframe
@@ -122,24 +146,29 @@ export default {
       test4: {},
       test5: {},
       witness: {},
-      test_map: {}
+      test_map: {},
+
+      start: false,
+      xmlDoc: null
     };
   },
-  mounted: function() {
-    window.addEventListener("resize", this.handleResize);
-
-    /*
-    if (this.$route.query.u == null && location.hostname != "localhost") {
-      location.href = "https://github.com/TEI-EAJ/koui/";
+  watch: {
+    $route(){
+      this.init();
     }
-    */
-
-    let u =
-      this.$route.query.u == null ? "01_with_wit.xml" : this.$route.query.u;
-
-    this.exec2main(u);
+  },
+  mounted: function() {
+    this.init()    
   },
   methods: {
+    init(){
+      window.addEventListener("resize", this.handleResize);
+      let u =
+        this.$route.query.u == null ? null : this.$route.query.u; //"01_with_wit.xml"
+      if(u){
+        this.exec2main(u);
+      }
+    },
     conv2json(xml) {
       xml = new XMLSerializer().serializeToString(xml);
       var result = convert.xml2json(xml, { compact: false, spaces: 4 });
@@ -183,6 +212,23 @@ export default {
       }
       return data
     },
+    handleFileSelect(evt) {
+      var files = evt.target.files; // FileList object
+
+      for (var i = 0; i < files.length; i++) {
+        let f = files[i]
+        var reader = new FileReader()
+        reader.readAsText(f)
+
+        var vm = this;
+        reader.onload = function ()
+        {
+          var dpObj = new DOMParser();
+          let xmlDoc = dpObj.parseFromString(reader.result, "text/xml");
+          vm.handleXml(xmlDoc)
+        }
+      }
+    },
     exec2main(url) {
       axios
         .get(url, {
@@ -190,163 +236,175 @@ export default {
         })
         .then(response => {
           let xml = response.data;
+          this.handleXml(xml)
 
-          //witness
-          let listWit = xml.querySelector("listWit");
-          listWit = this.conv2json(listWit).elements;
-
-          for (let i = 0; i < listWit.length; i++) {
-            let wit = listWit[i];
-            this.witness["#" + wit.attributes["xml:id"]] =
-              wit.attributes["xml:id"];
-          }
-
-          //facs
-
-          let facs = xml.querySelector("surfaceGrp");
-          if (facs != null) {
-            facs = this.conv2json(facs);
-            let manifest = facs.attributes.facs;
-
-            let surfaces = facs.elements;
-            for (let i = 0; i < surfaces.length; i++) {
-              let surface = surfaces[i].elements;
-              let canvas = surface[0].attributes.n;
-              for (let j = 1; j < surface.length; j++) {
-                let zone = surface[j].attributes;
-                let id = zone["xml:id"];
-                let x = Number(zone["ulx"]);
-                let y = Number(zone["uly"]);
-                let w = Number(zone["lrx"]) - x;
-                let h = Number(zone["lry"]) - y;
-                this.test_map["#" + id] = {
-                  manifest: manifest,
-                  canvas: canvas + "#xywh=" + x + "," + y + "," + w + "," + h
-                };
-              }
-            }
-
-            let params = [
-              {
-                manifest: manifest
-              }
-            ];
-
-            this.mirador_path =
-              mirador_prefix +
-              "?params=" +
-              encodeURIComponent(JSON.stringify(params)) +
-              "&annotationState=on&layout=" +
-              this.layout;
-          }
-
-          //text
-
-          let body = xml.querySelector("body");
-          body = this.conv2json(body).elements;
-
-          let arr = this.rec(body, [])
-
-          let data10 = []
-
-          let pa = []
-
-          let index = 1;
-
-          for(let i = 0; i < arr.length; i++){
-            let obj = arr[i]
-            let name = obj.name
-            let type = obj.type
-            if(name == "lb" || name == "p" || name == "l"){
-              data10.push(pa)
-              pa = []
-            } else if(type == "text"){
-              pa.push(obj)
-            } else if(name == "pb"){
-              pa.push({
-                id: obj.attributes.facs,
-                type: "zone"
-              });
-            } else if (name == "app") {
-              let apps = obj.elements;
-              let lem = apps[0];
-              let text_lem = "";
-              if (lem.elements) {
-                text_lem = lem.elements[0].text;
-              }
-              pa.push({
-                text: text_lem,
-                type: "app",
-                app: apps,
-                id: "app_" + i,
-                index: index
-              });
-              index += 1;
-            }
-          }
-
-          data10.push(pa)
-
-          /*
-          //text
-
-          //let test_arr2 = [];
-          //let test_arr = [];
-
-          xml = new XMLSerializer().serializeToString(xml);
-          var result = convert.xml2json(xml, { compact: false, spaces: 4 });
-
-          let data = JSON.parse(result);
-          //console.log(data)
-
-          //text
-
-          //let index = 1;
-          index = 1
-
-          let p = data.elements[0].elements[2].elements[0].elements[0];
-          let elements = p.elements;
-          for (let i = 0; i < elements.length; i++) {
-            let element = elements[i];
-            let name = element.name;
-            let type = element.type;
-
-            if (name == "app") {
-              let apps = element.elements;
-              let lem = apps[0];
-              let text_lem = "";
-              if (lem.elements) {
-                text_lem = lem.elements[0].text;
-              }
-              test_arr.push({
-                text: text_lem,
-                type: "app",
-                app: apps,
-                id: "app_" + i,
-                index: index
-              });
-              index += 1;
-            } else if (type == "text") {
-              test_arr.push({
-                text: element.text,
-                type: "text"
-              });
-            } else if (name == "lb") {
-              test_arr2.push(test_arr);
-              test_arr = [];
-            } else if (name == "pb") {
-              test_arr.push({
-                id: element.attributes.facs,
-                type: "zone"
-              });
-            }
-          }
-
-          */
-
-          this.test_arr = data10
+          
         });
     },
+    handleXml(xml){
+      //witness
+      let listWit = xml.querySelector("listWit");
+      listWit = this.conv2json(listWit).elements;
+
+      if(listWit.length > 0){
+        this.start = true
+      } else {
+        this.start = false
+        return
+      }
+
+      for (let i = 0; i < listWit.length; i++) {
+        let wit = listWit[i];
+        this.witness["#" + wit.attributes["xml:id"]] =
+          wit.attributes["xml:id"];
+      }
+
+      //facs
+
+      let facs = xml.querySelector("surfaceGrp");
+      if (facs != null) {
+        facs = this.conv2json(facs);
+        let manifest = facs.attributes.facs;
+
+        let surfaces = facs.elements;
+        for (let i = 0; i < surfaces.length; i++) {
+          let surface = surfaces[i].elements;
+          let canvas = surface[0].attributes.n;
+          for (let j = 1; j < surface.length; j++) {
+            let zone = surface[j].attributes;
+            let id = zone["xml:id"];
+            let x = Number(zone["ulx"]);
+            let y = Number(zone["uly"]);
+            let w = Number(zone["lrx"]) - x;
+            let h = Number(zone["lry"]) - y;
+            this.test_map["#" + id] = {
+              manifest: manifest,
+              canvas: canvas + "#xywh=" + x + "," + y + "," + w + "," + h
+            };
+          }
+        }
+
+        let params = [
+          {
+            manifest: manifest
+          }
+        ];
+
+        this.mirador_path =
+          mirador_prefix +
+          "?params=" +
+          encodeURIComponent(JSON.stringify(params)) +
+          "&annotationState=on&layout=" +
+          this.layout;
+      }
+
+      //text
+
+      let body = xml.querySelector("body");
+      body = this.conv2json(body).elements;
+
+      let arr = this.rec(body, [])
+
+      let data10 = []
+
+      let pa = []
+
+      let index = 1;
+
+      for(let i = 0; i < arr.length; i++){
+        let obj = arr[i]
+        let name = obj.name
+        let type = obj.type
+        if(name == "lb" || name == "p" || name == "l"){
+          data10.push(pa)
+          pa = []
+        } else if(type == "text"){
+          pa.push(obj)
+        } else if(name == "pb"){
+          pa.push({
+            id: obj.attributes.facs,
+            type: "zone"
+          });
+        } else if (name == "app") {
+          let apps = obj.elements;
+          let lem = apps[0];
+          let text_lem = "";
+          if (lem.elements) {
+            text_lem = lem.elements[0].text;
+          }
+          pa.push({
+            text: text_lem,
+            type: "app",
+            app: apps,
+            id: "app_" + i,
+            index: index
+          });
+          index += 1;
+        }
+      }
+
+      data10.push(pa)
+
+      /*
+      //text
+
+      //let test_arr2 = [];
+      //let test_arr = [];
+
+      xml = new XMLSerializer().serializeToString(xml);
+      var result = convert.xml2json(xml, { compact: false, spaces: 4 });
+
+      let data = JSON.parse(result);
+      //console.log(data)
+
+      //text
+
+      //let index = 1;
+      index = 1
+
+      let p = data.elements[0].elements[2].elements[0].elements[0];
+      let elements = p.elements;
+      for (let i = 0; i < elements.length; i++) {
+        let element = elements[i];
+        let name = element.name;
+        let type = element.type;
+
+        if (name == "app") {
+          let apps = element.elements;
+          let lem = apps[0];
+          let text_lem = "";
+          if (lem.elements) {
+            text_lem = lem.elements[0].text;
+          }
+          test_arr.push({
+            text: text_lem,
+            type: "app",
+            app: apps,
+            id: "app_" + i,
+            index: index
+          });
+          index += 1;
+        } else if (type == "text") {
+          test_arr.push({
+            text: element.text,
+            type: "text"
+          });
+        } else if (name == "lb") {
+          test_arr2.push(test_arr);
+          test_arr = [];
+        } else if (name == "pb") {
+          test_arr.push({
+            id: element.attributes.facs,
+            type: "zone"
+          });
+        }
+      }
+
+      */
+
+      this.test_arr = data10
+    },
+    
     close_panel: function(id) {
       //let test3 = this.test3;
 
