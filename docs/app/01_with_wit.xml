@@ -36,24 +36,27 @@
                <title>校異源氏物語</title>
                <publisher>中央公論社</publisher>
             </bibl>
+            <!-- 靑表紙本系 -->
+            <!-- 河内本系　-->
+            <!-- 別本 -->
             <listWit>
                <witness xml:id="校異">校異源氏物語</witness>
-               <witness xml:id="靑池">靑表紙本系 池田本</witness>
-               <witness xml:id="靑横">靑表紙本系 横山本</witness>
-               <witness xml:id="靑肖">靑表紙本系 肖柏本</witness>
-               <witness xml:id="靑三">靑表紙本系 三條西家本</witness>
-               <witness xml:id="靑大">靑表紙本系 大島本</witness>
+               <witness xml:id="靑池">池田本</witness>
+               <witness xml:id="靑横">横山本</witness>
+               <witness xml:id="靑肖">肖柏本</witness>
+               <witness xml:id="靑三">三條西家本</witness>
+               <witness xml:id="靑大">大島本</witness>
                <witness xml:id="河">河内本系</witness>
-               <witness xml:id="河宮">河内本系　高松宮本</witness>
-               <witness xml:id="河尾">河内本系　尾州家本</witness>
-               <witness xml:id="河爲">河内本系　爲家本</witness>
-               <witness xml:id="河平">河内本系　平瀬本</witness>
-               <witness xml:id="河大">河内本系　大島本</witness>
+               <witness xml:id="河宮">高松宮本</witness>
+               <witness xml:id="河尾">尾州家本</witness>
+               <witness xml:id="河爲">爲家本</witness>
+               <witness xml:id="河平">平瀬本</witness>
+               <witness xml:id="河大">大島本</witness>
                <witness xml:id="別">別本</witness>
-               <witness xml:id="御">別本 御物本</witness>
-               <witness xml:id="別國">別本 國冬本</witness>
-               <witness xml:id="別陽">別本 陽明本</witness>
-               <witness xml:id="別麥">別本 麥生本</witness>
+               <witness xml:id="御">御物本</witness>
+               <witness xml:id="別國">國冬本</witness>
+               <witness xml:id="別陽">陽明本</witness>
+               <witness xml:id="別麥">麥生本</witness>
                <witness xml:id="国絵">国文学研究資料館 絵入り源氏</witness>
             </listWit>
          </sourceDesc>

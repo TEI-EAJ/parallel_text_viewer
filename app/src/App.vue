@@ -119,20 +119,21 @@
                         <template v-if="element.type == 'app'">
                           <span
                             style="background-color : #FFFF99;"
-                            @click="test(element.app, element.id, element.index)"
+                            :id="'main_'+element.id"
                           >
+                          <!-- @click="test(element.app, element.id, element.index)" -->
                             <v-tooltip right>
                               <template v-slot:activator="{ on }">
                                 <template v-if="target == null">
                                   <span
                                     v-on="on"
-                                    @mouseenter="selected_id = element.id; scroll(element.id);"
+                                    @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
                                   >{{element.text.trim()}}</span>
                                 </template>
                                 <template v-else>
                                   <span
                                     v-on="on"
-                                    @mouseenter="selected_id = element.id; scroll(element.id);"
+                                    @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
                                   >
                                     <template v-for="(app, index2) in element.app">
                                       <span
@@ -169,10 +170,11 @@
                         </v-sheet>
                       </p>
 
-                      <a @click="test5 = {}">Clear Panel</a>
-                      <br />
+                      <!-- <a @click="test5 = {}">Clear Panel</a>
+                      <br /> -->
 
                       <v-card
+                      @click="scroll('main_'+index2, 'main'); selected_id = index2;"
                         v-for="(test4, index2) in test5"
                         :key="index2"
                         class="mx-5"
@@ -180,19 +182,24 @@
                         :style="index2 == selected_id ? 'background-color : #FFFF99;' : ''"
                       >
                         <v-card-text class="mx-2 text--primary">
+                          <!-- 
                           <span @click="close_panel(index2)">
                             <i class="fas fa-times-circle"></i>
                           </span>
+                          
 
                           <span class="mt-2">{{test4.index}}</span>
+                          -->
+
+                          <span>{{test4.index}}</span>
 
                           <br />
                           <p v-for="(element, index) in test4.wits" :key="index">
                             <template v-if="element.type=='lem'">
-                              <span :style="index.indexOf(target) != -1 ? 'color : red' : ''">{{element.text}} （{{index}}</span>
+                              <span :style="index.split(' ').indexOf(target) != -1 ? 'color : #1867c0' : ''">{{element.text}} （{{index}}</span>
                             </template>
                             <template v-else>
-                              <b :style="index.indexOf(target) != -1 ? 'color : red' : ''">{{element.text}} （{{index}}）</b>
+                              <b :style="index.split(' ').indexOf(target) != -1 ? 'color : #1867c0' : ''">{{element.text}} （{{index}}）</b>
                             </template>
                           </p>
                         </v-card-text>
@@ -365,8 +372,7 @@ export default {
 
       this.test5 = test5;
     },
-    scroll(target_id) {
-      let query = "sub";
+    scroll(target_id, query) {
       if (this.direction == "vertical") {
         this.$SmoothScroll(
           document.querySelector("#" + target_id).getBoundingClientRect().left +
@@ -668,6 +674,7 @@ export default {
       }
 
       this.test6 = test5;
+      this.test5 = test5;
 
       //------------
 
