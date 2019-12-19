@@ -52,11 +52,17 @@
 
         <p class="mt-5">
           例３：Emily Dickinson ‘Faith is a fine invention’ from
-          <a href="http://v-machine.org/samples/">Versioning Machine</a>
+          <a
+            href="http://v-machine.org/samples/"
+          >Versioning Machine</a>
         </p>
 
         <v-btn color="primary" to="/?u=faith.xml" class="mx-2 my-1">可視化例を見る</v-btn>
-        <v-btn href="http://v-machine.org/samples/faith.xml" target="_blank" class="mx-2 my-1">サンプルデータを見る</v-btn>
+        <v-btn
+          href="http://v-machine.org/samples/faith.xml"
+          target="_blank"
+          class="mx-2 my-1"
+        >サンプルデータを見る</v-btn>
 
         <br />
         <br />
@@ -112,21 +118,27 @@
                         </template>
                         <template v-if="element.type == 'app'">
                           <span
-                            style="background-color : yellow;"
+                            style="background-color : #FFFF99;"
                             @click="test(element.app, element.id, element.index)"
                           >
                             <v-tooltip right>
                               <template v-slot:activator="{ on }">
                                 <template v-if="target == null">
-                                  <span v-on="on">{{element.text.trim()}}</span>
+                                  <span
+                                    v-on="on"
+                                    @mouseenter="selected_id = element.id; scroll(element.id);"
+                                  >{{element.text.trim()}}</span>
                                 </template>
                                 <template v-else>
-                                  <span v-on="on">
+                                  <span
+                                    v-on="on"
+                                    @mouseenter="selected_id = element.id; scroll(element.id);"
+                                  >
                                     <template v-for="(app, index2) in element.app">
                                       <span
                                         v-if="app.attributes.wit.indexOf(target) != -1"
                                         :key="index2"
-                                      >{{app.text != "" ? app.text : "&nbsp;*&nbsp;"}}</span>
+                                      >{{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}}</span>
                                     </template>
                                   </span>
                                 </template>
@@ -160,7 +172,13 @@
                       <a @click="test5 = {}">Clear Panel</a>
                       <br />
 
-                      <v-card v-for="(test4, index2) in test5" :key="index2" class="mx-5">
+                      <v-card
+                        v-for="(test4, index2) in test5"
+                        :key="index2"
+                        class="mx-5"
+                        :id="index2"
+                        :style="index2 == selected_id ? 'background-color : #FFFF99;' : ''"
+                      >
                         <v-card-text class="mx-2 text--primary">
                           <span @click="close_panel(index2)">
                             <i class="fas fa-times-circle"></i>
@@ -273,7 +291,8 @@ export default {
       test6: {},
 
       dialog_table: false,
-      dialog_chart: false
+      dialog_chart: false,
+      selected_id: ""
     };
   },
   watch: {
@@ -345,6 +364,34 @@ export default {
       }
 
       this.test5 = test5;
+    },
+    scroll(target_id) {
+      let query = "sub";
+      if (this.direction == "vertical") {
+        this.$SmoothScroll(
+          document.querySelector("#" + target_id).getBoundingClientRect().left +
+            document.querySelector("#" + query).scrollLeft -
+            document.querySelector("#" + query).getBoundingClientRect().left -
+            document.querySelector("#" + query).getBoundingClientRect().width /
+              2 +
+            document.querySelector("#" + target_id).getBoundingClientRect()
+              .width,
+          0.1,
+          null,
+          document.querySelector("#" + query),
+          "x"
+        );
+      } else {
+        this.$SmoothScroll(
+          document.querySelector("#" + target_id).getBoundingClientRect().top +
+            document.querySelector("#" + query).scrollTop -
+            document.querySelector("#" + query).getBoundingClientRect().top,
+          0.1,
+          null,
+          document.querySelector("#" + query),
+          "y"
+        );
+      }
     },
     init() {
       window.addEventListener("resize", this.handleResize);
@@ -555,7 +602,9 @@ export default {
           for (let i = 0; i < apps.length; i++) {
             let text = "";
             if (apps[i].elements) {
-              text += apps[i].elements[0].text;
+              if (apps[i].elements[0].text != null) {
+                text += apps[i].elements[0].text;
+              }
             }
             apps[i].text = text;
           }
