@@ -13,7 +13,6 @@
         <v-btn icon href="./">
           <v-icon>mdi-home</v-icon>
         </v-btn>
-        
       </v-toolbar>
 
       <v-container class="my-5" v-show="!start">
@@ -29,8 +28,8 @@
 
         <p class="mt-5">例１：校異源氏物語</p>
 
-        <v-btn color="primary" to="/?u=01_with_wit.xml" class="mx-2">可視化例を見る</v-btn>
-        <v-btn href="01_with_wit.xml" target="_blank" class="mx-2">サンプルデータを見る</v-btn>
+        <v-btn color="primary" to="/?u=01_with_wit.xml" class="mx-2 my-1">可視化例を見る</v-btn>
+        <v-btn href="01_with_wit.xml" target="_blank" class="mx-2 my-1">サンプルデータを見る</v-btn>
 
         <br />
         <br />
@@ -40,29 +39,24 @@
         <v-btn
           color="primary"
           to="/?u=https://nakamura196.github.io/tei/v-machine/data/nakamura.xml"
-          class="mx-2"
+          class="mx-2 my-1"
         >可視化例を見る</v-btn>
         <v-btn
           href="https://nakamura196.github.io/tei/v-machine/data/nakamura.xml"
           target="_blank"
-          class="mx-2"
+          class="mx-2 my-1"
         >サンプルデータを見る</v-btn>
 
         <br />
         <br />
 
-        <p class="mt-5">例３：Emily Dickinson ‘Faith is a fine invention’ from <a href="http://v-machine.org/samples/">Versioning Machine</a></p>
+        <p class="mt-5">
+          例３：Emily Dickinson ‘Faith is a fine invention’ from
+          <a href="http://v-machine.org/samples/">Versioning Machine</a>
+        </p>
 
-        <v-btn
-          color="primary"
-          to="/?u=faith.xml"
-          class="mx-2"
-        >可視化例を見る</v-btn>
-        <v-btn
-          href="http://v-machine.org/samples/faith.xml"
-          target="_blank"
-          class="mx-2"
-        >サンプルデータを見る</v-btn>
+        <v-btn color="primary" to="/?u=faith.xml" class="mx-2 my-1">可視化例を見る</v-btn>
+        <v-btn href="http://v-machine.org/samples/faith.xml" target="_blank" class="mx-2 my-1">サンプルデータを見る</v-btn>
 
         <br />
         <br />
@@ -113,26 +107,32 @@
                             />
                           </p>
                         </template>
-                        <template v-if="element.type == 'text'">{{element.text}}</template>
+                        <template v-if="element.type == 'text'">
+                          <span>{{element.text.trim()}}</span>
+                        </template>
                         <template v-if="element.type == 'app'">
                           <span
                             style="background-color : yellow;"
                             @click="test(element.app, element.id, element.index)"
                           >
-                            <span style="color: red;">s{&nbsp;<!-- {{element.index}} -->&nbsp;</span>
-
-                            <template v-if="target == null">{{element.text}}</template>
-                            <template v-else>
-                              <template v-for="(app, index2) in element.app">
-                                <span
-                                  v-if="app.attributes != null && app.attributes.wit.indexOf(target) != -1"
-                                  :key="index2"
-                                >
-                                  <span v-for="(e, index3) in app.elements" :key="index3">{{e.text}}</span>
-                                </span>
+                            <v-tooltip right>
+                              <template v-slot:activator="{ on }">
+                                <template v-if="target == null">
+                                  <span v-on="on">{{element.text.trim()}}</span>
+                                </template>
+                                <template v-else>
+                                  <span v-on="on">
+                                    <template v-for="(app, index2) in element.app">
+                                      <span
+                                        v-if="app.attributes.wit.indexOf(target) != -1"
+                                        :key="index2"
+                                      >{{app.text != "" ? app.text : "&nbsp;*&nbsp;"}}</span>
+                                    </template>
+                                  </span>
+                                </template>
                               </template>
-                            </template>
-                            }e
+                              <span>{{element.index}}</span>
+                            </v-tooltip>
                           </span>
                         </template>
                       </span>
@@ -189,55 +189,49 @@
       <v-dialog v-model="dialog_chart" width="90%">
         <v-card>
           <v-card-text>
-
-            <br/>
-
+            <br />
 
             <h3 class="mt-5">底本との編集距離</h3>
 
-          <chart :height="300" class="mb-4" :data="test6" :witness="witness"></chart>
+            <chart :height="300" class="mb-4" :data="test6" :witness="witness"></chart>
 
-          <br/>
+            <br />
 
-          <h3 class="mt-5">異文番号毎の異なり数</h3>
+            <h3 class="mt-5">異文番号毎の異なり数</h3>
 
-          <Chart4Diff :height="300" class="mb-4" :data="test6"></Chart4Diff>
-
-        </v-card-text>
-          </v-card>
+            <Chart4Diff :height="300" class="mb-4" :data="test6"></Chart4Diff>
+          </v-card-text>
+        </v-card>
       </v-dialog>
 
       <v-dialog v-model="dialog_table" width="600px">
         <v-container>
-
           <div v-for="(obj, index) in test6" :key="index" class="my-5">
             <v-card>
               <v-card-text>
-            <v-simple-table>
-              <template v-slot:default>
-                <thead>
-                  <tr>
-                    <th class="text-left">Witness</th>
-                    <th class="text-left">異文番号</th>
-                    <th class="text-left">相違点</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(value, index2) in obj.wits" :key="index2">
-                    <td width="40%">{{ index2 }}</td>
-                    <td width="20%">{{ obj.index }}</td>
-                    <td width="40%">{{ value.text }}</td>
-                  </tr>
-                </tbody>
-              </template>
-            </v-simple-table>
-            
+                <v-simple-table>
+                  <template v-slot:default>
+                    <thead>
+                      <tr>
+                        <th class="text-left">Witness</th>
+                        <th class="text-left">異文番号</th>
+                        <th class="text-left">相違点</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(value, index2) in obj.wits" :key="index2">
+                        <td width="40%">{{ index2 }}</td>
+                        <td width="20%">{{ obj.index }}</td>
+                        <td width="40%">{{ value.text }}</td>
+                      </tr>
+                    </tbody>
+                  </template>
+                </v-simple-table>
               </v-card-text>
-              </v-card>
+            </v-card>
           </div>
         </v-container>
       </v-dialog>
-
     </v-content>
   </v-app>
 </template>
@@ -276,10 +270,10 @@ export default {
 
       target: null,
 
-      test6 : {},
+      test6: {},
 
-      dialog_table : false,
-      dialog_chart : false
+      dialog_table: false,
+      dialog_chart: false
     };
   },
   watch: {
@@ -515,41 +509,41 @@ export default {
           let apps = obj.elements;
 
           //明示されていないwitを補足
-          if(apps[0].name == "lem"){
-            let wits = []
-            for(let m = 0; m < apps.length; m++){
-              if(apps[m].attributes){
-                let wits_tmp = apps[m].attributes.wit.split(" ")
-                for(let l = 0; l < wits_tmp.length; l++){
-                  let wit_tmp = wits_tmp[l]
-                  if(wits.indexOf(wit_tmp) == -1){
-                    wits.push(wit_tmp)
+          if (apps[0].name == "lem") {
+            let wits = [];
+            for (let m = 0; m < apps.length; m++) {
+              if (apps[m].attributes) {
+                let wits_tmp = apps[m].attributes.wit.split(" ");
+                for (let l = 0; l < wits_tmp.length; l++) {
+                  let wit_tmp = wits_tmp[l];
+                  if (wits.indexOf(wit_tmp) == -1) {
+                    wits.push(wit_tmp);
                   }
                 }
               }
             }
 
             //err対策
-            if(!apps[0].attributes){
-              apps[0].attributes = {}
+            if (!apps[0].attributes) {
+              apps[0].attributes = {};
             }
 
-            let wit_org = []
-            if(apps[0].attributes.wit){
+            let wit_org = [];
+            if (apps[0].attributes.wit) {
               //元々明示されていたlemのwitness
-              wit_org = apps[0].attributes.wit.split(" ")
+              wit_org = apps[0].attributes.wit.split(" ");
             }
 
             //リストに上がっているwitnessについて、
-            for(let wit in this.witness){
+            for (let wit in this.witness) {
               //明示されていない場合に、
-              if(wits.indexOf(wit) == -1){
+              if (wits.indexOf(wit) == -1) {
                 //元のwitnessに追加
-                wit_org.push(wit)
+                wit_org.push(wit);
               }
             }
 
-            apps[0].attributes.wit = wit_org.join(" ")
+            apps[0].attributes.wit = wit_org.join(" ");
           }
 
           let lem = apps[0];
@@ -558,14 +552,12 @@ export default {
             text_lem = lem.elements[0].text;
           }
 
-          
-
-          for(let i = 0; i < apps.length; i++){
-            let text = ""
-            if(apps[i].elements){
-              text += apps[i].elements[0].text
+          for (let i = 0; i < apps.length; i++) {
+            let text = "";
+            if (apps[i].elements) {
+              text += apps[i].elements[0].text;
             }
-            apps[i].text = text
+            apps[i].text = text;
           }
 
           pa.push({
@@ -583,10 +575,10 @@ export default {
 
       //-- テーブル用 --
 
-      index = 1
+      index = 1;
 
-      let all = data10
-      let test5 = {}
+      let all = data10;
+      let test5 = {};
       for (let i = 0; i < all.length; i++) {
         let objs = all[i];
         for (let j = 0; j < objs.length; j++) {
@@ -626,7 +618,7 @@ export default {
         }
       }
 
-      this.test6 = test5      
+      this.test6 = test5;
 
       //------------
 
