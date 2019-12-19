@@ -16,7 +16,7 @@ export default {
       let values = [];
 
       for (let index in this.data) {
-          let obj = this.data[index]
+        let obj = this.data[index];
         let wits = obj.wits;
         let value = Object.keys(wits).length;
 
@@ -39,7 +39,7 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-            xAxes: [
+          xAxes: [
             {
               scaleLabel: {
                 display: true,

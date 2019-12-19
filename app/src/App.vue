@@ -119,7 +119,8 @@
                             style="background-color : yellow;"
                             @click="test(element.app, element.id, element.index)"
                           >
-                            <span style="color: red;">&nbsp;{{element.index}}&nbsp;</span>
+                            <span style="color: red;">s{&nbsp;<!-- {{element.index}} -->&nbsp;</span>
+
                             <template v-if="target == null">{{element.text}}</template>
                             <template v-else>
                               <template v-for="(app, index2) in element.app">
@@ -131,6 +132,7 @@
                                 </span>
                               </template>
                             </template>
+                            }e
                           </span>
                         </template>
                       </span>
@@ -191,7 +193,7 @@
             <br/>
 
 
-            <h3 class="mt-5">底本と異なる文字数</h3>
+            <h3 class="mt-5">底本との編集距離</h3>
 
           <chart :height="300" class="mb-4" :data="test6" :witness="witness"></chart>
 
@@ -555,6 +557,17 @@ export default {
           if (lem.elements) {
             text_lem = lem.elements[0].text;
           }
+
+          
+
+          for(let i = 0; i < apps.length; i++){
+            let text = ""
+            if(apps[i].elements){
+              text += apps[i].elements[0].text
+            }
+            apps[i].text = text
+          }
+
           pa.push({
             text: text_lem,
             type: "app",
@@ -568,7 +581,7 @@ export default {
 
       data10.push(pa);
 
-      //------------
+      //-- テーブル用 --
 
       index = 1
 
@@ -588,23 +601,16 @@ export default {
             for (let k = 0; k < apps.length; k++) {
               let app = apps[k];
 
-              let elements = app.elements;
               let wit = "";
               if (app.attributes) {
                 wit = app.attributes.wit;
               }
 
-              if (elements != null) {
-                for (let j = 0; j < elements.length; j++) {
-                  let element = elements[j];
-
-                  if (wit != "") {
-                    test2[wit] = {
-                      text: element.text,
-                      type: app.name
-                    };
-                  }
-                }
+              if (wit != "") {
+                test2[wit] = {
+                  text: app.text,
+                  type: app.name
+                };
               }
             }
 
