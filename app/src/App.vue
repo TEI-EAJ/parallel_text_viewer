@@ -43,6 +43,22 @@
 
         <br />
         <br />
+
+        <p class="mt-5">例３：Emily Dickinson ‘Faith is a fine invention’ from <a href="http://v-machine.org/samples/">Versioning Machine</a></p>
+
+        <v-btn
+          color="primary"
+          to="/?u=faith.xml"
+          class="mx-2"
+        >可視化例を見る</v-btn>
+        <v-btn
+          href="http://v-machine.org/samples/faith.xml"
+          target="_blank"
+          class="mx-2"
+        >サンプルデータを見る</v-btn>
+
+        <br />
+        <br />
         <br />
 
         <hr />
