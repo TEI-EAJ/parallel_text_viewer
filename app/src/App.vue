@@ -58,7 +58,7 @@
               <pane class="py-2 mx-2">
                 <v-card class="scroll vertical" :flat="true" id="main">
                   <v-card-text class="mx-2 text--primary">
-                    <h2 class="text--primary">本文</h2>
+                    <h2 class="text--primary">本文 <span v-if="target">{{target}}</span></h2>
 
                     <br />
 
@@ -79,8 +79,21 @@
                             style="background-color : yellow;"
                             @click="test(element.app, element.id, element.index)"
                           >
-                            <span style="color: red;">{{element.index}}</span>
-                            {{element.text}}
+                            <span style="color: red;">{{element.index}}&nbsp;</span>
+                            <template v-if="target == null">
+                              {{element.text}}
+                            </template>
+                            <template v-else>
+                              <template v-for="(app, index2) in element.app">
+
+                                <span v-if="app.attributes != null && app.attributes.wit.indexOf(target) != -1" :key="index2">
+                                  <span v-for="(e, index3) in app.elements" :key="index3">
+                                    {{e.text}}
+                                  </span>
+                                </span>
+                              </template>
+                            </template>
+                            
                           </span>
                         </template>
                       </span>
@@ -94,12 +107,14 @@
                     <v-card-text class="mx-2 text--primary">
                       <h2 class="text--primary ml-4">異文</h2>
                       <p>
-                        <b>Witness List</b><br/>
-                        <span class="mr-2" v-for="(obj, index) in witness" :key="index">
+                        <b @click="target=null">Witness List</b><br/>
+                        <span @click="target=index" class="mr-2" v-for="(obj, index) in witness" :key="index">
                           {{index}}
                         </span>
                       </p>
-                      <br />
+
+                      <a @click="test5 = {}">Clear Panel</a>
+                      <br/>
 
                       <v-card v-for="(test4, index2) in test5" :key="index2" class="mx-5">
                         <v-card-text class="mx-2 text--primary">
@@ -158,18 +173,84 @@ export default {
       test_map: {},
 
       start: false,
-      xmlDoc: null
+      xmlDoc: null,
+
+      target: null
     };
   },
   watch: {
-    $route(){
+    $route: function(){
       this.init();
+    },
+    target: function(){
+      this.list();
     }
   },
   mounted: function() {
     this.init()    
   },
   methods: {
+    list(){
+
+      let test5 = {}
+
+      let index = 1
+
+      let all = this.test_arr
+      for(let i = 0; i < all.length; i++){
+        let objs = all[i]
+        for(let j = 0; j < objs.length; j++){
+          let obj = objs[j]
+          if(obj.type == "app"){
+
+            let apps = obj.app
+
+            let test2 = {};
+
+            let contain_flg = false
+
+            for(let k = 0; k < apps.length; k++){
+              let app = apps[k]
+
+              let elements = app.elements;
+              let wit = "";
+              if (app.attributes) {
+                wit = app.attributes.wit;
+              }
+
+              if(wit.split(" ").indexOf(this.target) != -1){
+                contain_flg = true
+              }
+
+              if (elements != null) {
+                for (let j = 0; j < elements.length; j++) {
+                  let element = elements[j];
+
+                  if (wit != "") {
+                    test2[wit] = {
+                      text: element.text,
+                      type: app.name
+                    };
+                  }
+                }
+              }
+            }
+
+            if(contain_flg){
+              test5[obj.id] = {
+                index: index,
+                wits: test2
+              };
+            }
+
+            index += 1
+            
+          }
+        }
+      }
+
+      this.test5 = test5
+    },
     init(){
       window.addEventListener("resize", this.handleResize);
       let u =
@@ -354,68 +435,10 @@ export default {
 
       data10.push(pa)
 
-      /*
-      //text
-
-      //let test_arr2 = [];
-      //let test_arr = [];
-
-      xml = new XMLSerializer().serializeToString(xml);
-      var result = convert.xml2json(xml, { compact: false, spaces: 4 });
-
-      let data = JSON.parse(result);
-      //console.log(data)
-
-      //text
-
-      //let index = 1;
-      index = 1
-
-      let p = data.elements[0].elements[2].elements[0].elements[0];
-      let elements = p.elements;
-      for (let i = 0; i < elements.length; i++) {
-        let element = elements[i];
-        let name = element.name;
-        let type = element.type;
-
-        if (name == "app") {
-          let apps = element.elements;
-          let lem = apps[0];
-          let text_lem = "";
-          if (lem.elements) {
-            text_lem = lem.elements[0].text;
-          }
-          test_arr.push({
-            text: text_lem,
-            type: "app",
-            app: apps,
-            id: "app_" + i,
-            index: index
-          });
-          index += 1;
-        } else if (type == "text") {
-          test_arr.push({
-            text: element.text,
-            type: "text"
-          });
-        } else if (name == "lb") {
-          test_arr2.push(test_arr);
-          test_arr = [];
-        } else if (name == "pb") {
-          test_arr.push({
-            id: element.attributes.facs,
-            type: "zone"
-          });
-        }
-      }
-
-      */
-
       this.test_arr = data10
     },
     
     close_panel: function(id) {
-      //let test3 = this.test3;
 
       let test5 = {};
 
@@ -428,7 +451,6 @@ export default {
       this.test5 = test5;
     },
     test: function(apps, id, index) {
-      //let test3 = this.test3;
 
       let test5 = {};
 
@@ -442,11 +464,13 @@ export default {
         let test2 = {};
         for (let i = 0; i < apps.length; i++) {
           let app = apps[i];
+
           let elements = app.elements;
           let wit = "";
           if (app.attributes) {
             wit = app.attributes.wit;
           }
+
           if (elements != null) {
             for (let j = 0; j < elements.length; j++) {
               let element = elements[j];
@@ -457,6 +481,13 @@ export default {
                   type: app.name
                 };
               }
+            }
+          } else {
+            if (wit != "") {
+              test2[wit] = {
+                text: "",
+                type: app.name
+              };
             }
           }
         }
