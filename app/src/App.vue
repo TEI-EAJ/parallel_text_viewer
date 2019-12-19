@@ -191,7 +191,7 @@
             <br/>
 
 
-            <h3 class="mt-5">底本と異なる箇所の数</h3>
+            <h3 class="mt-5">底本と異なる文字数</h3>
 
           <chart :height="300" class="mb-4" :data="test6" :witness="witness"></chart>
 

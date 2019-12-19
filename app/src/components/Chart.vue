@@ -23,14 +23,25 @@ export default {
       for (let index in this.data) {
         let obj = this.data[index].wits;
         let r_flg = false;
+        let text_org = ""
         for (let key in obj) {
           let wits = key.split(" ");
 
           if (r_flg) {
+
+            let text_target = obj[key].text
+            if(text_target == null){
+              text_target = ""
+            }
+
+            let a = Math.abs(text_target.length - text_org.length)
+
             for (let i = 0; i < wits.length; i++) {
               let wit = wits[i];
-              map[wit] += 1;
+              map[wit] += a;
             }
+          } else {
+            text_org = obj[key].text
           }
           r_flg = true;
         }
@@ -47,7 +58,7 @@ export default {
         labels: labels,
         datasets: [
           {
-            label: "異文箇所",
+            label: "異なる文字数",
             data: values,
             borderWidth: 1
           }

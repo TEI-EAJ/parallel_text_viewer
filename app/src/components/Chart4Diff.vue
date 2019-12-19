@@ -28,7 +28,7 @@ export default {
         labels: labels,
         datasets: [
           {
-            label: "異なり",
+            label: "異なり数",
             data: values,
             borderWidth: 1
           }
