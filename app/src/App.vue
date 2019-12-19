@@ -277,7 +277,7 @@ export default {
       test6 : {},
 
       dialog_table : false,
-      dialog_chart : true
+      dialog_chart : false
     };
   },
   watch: {
