@@ -12,37 +12,51 @@
       <v-container class="my-5" v-show="!start">
         <h2 class="mb-5">校本風異文可視化ツール</h2>
         <p>異文情報を含むTEI/XMLファイルを選択してください。</p>
-        <input type="file" id="files" @change="handleFileSelect" multiple/>
+        <input type="file" id="files" @change="handleFileSelect" multiple />
 
         <output id="list" class="mt-5"></output>
 
-        <br/><br/><br/>
+        <br />
+        <br />
+        <br />
 
         <p class="mt-5">例１：校異源氏物語</p>
-        
+
         <v-btn color="primary" to="/?u=01_with_wit.xml" class="mx-2">可視化例を見る</v-btn>
         <v-btn href="01_with_wit.xml" target="_blank" class="mx-2">サンプルデータを見る</v-btn>
 
-        <br/><br/>
+        <br />
+        <br />
 
-        <p class="mt-5">例２：ダミーデータ</p>
-        
-        <v-btn color="primary" to="/?u=https://nakamura196.github.io/tei/v-machine/data/nakamura.xml" class="mx-2">可視化例を見る</v-btn>
-        <v-btn href="https://nakamura196.github.io/tei/v-machine/data/nakamura.xml" target="_blank" class="mx-2">サンプルデータを見る</v-btn>
+        <p class="mt-5">例２：（ダミーデータ）中村式五十音</p>
 
-        <br/><br/><br/>
-        
-        <hr/>
-        
-        <br/>
+        <v-btn
+          color="primary"
+          to="/?u=https://nakamura196.github.io/tei/v-machine/data/nakamura.xml"
+          class="mx-2"
+        >可視化例を見る</v-btn>
+        <v-btn
+          href="https://nakamura196.github.io/tei/v-machine/data/nakamura.xml"
+          target="_blank"
+          class="mx-2"
+        >サンプルデータを見る</v-btn>
 
-        <p class="text-center my-5"><a href="https://github.com/TEI-EAJ">TEI-C東アジア/日本語分科会</a></p>
+        <br />
+        <br />
+        <br />
 
+        <hr />
+
+        <br />
+
+        <p class="text-center my-5">
+          <a href="https://github.com/TEI-EAJ">TEI-C東アジア/日本語分科会</a>
+        </p>
       </v-container>
 
       <div :style="'height: '+height+'px;'" v-show="start">
         <splitpanes class="default-theme">
-          <pane min-size="20">
+          <pane min-size="20" v-if="mirador_path != ''">
             <iframe
               class="py-2 px-2"
               :src="mirador_path"
@@ -58,7 +72,10 @@
               <pane class="py-2 mx-2">
                 <v-card class="scroll vertical" :flat="true" id="main">
                   <v-card-text class="mx-2 text--primary">
-                    <h2 class="text--primary">本文 <span v-if="target">{{target}}</span></h2>
+                    <h2 class="text--primary">
+                      本文
+                      <span v-if="target">{{target}}</span>
+                    </h2>
 
                     <br />
 
@@ -80,20 +97,17 @@
                             @click="test(element.app, element.id, element.index)"
                           >
                             <span style="color: red;">{{element.index}}&nbsp;</span>
-                            <template v-if="target == null">
-                              {{element.text}}
-                            </template>
+                            <template v-if="target == null">{{element.text}}</template>
                             <template v-else>
                               <template v-for="(app, index2) in element.app">
-
-                                <span v-if="app.attributes != null && app.attributes.wit.indexOf(target) != -1" :key="index2">
-                                  <span v-for="(e, index3) in app.elements" :key="index3">
-                                    {{e.text}}
-                                  </span>
+                                <span
+                                  v-if="app.attributes != null && app.attributes.wit.indexOf(target) != -1"
+                                  :key="index2"
+                                >
+                                  <span v-for="(e, index3) in app.elements" :key="index3">{{e.text}}</span>
                                 </span>
                               </template>
                             </template>
-                            
                           </span>
                         </template>
                       </span>
@@ -107,14 +121,19 @@
                     <v-card-text class="mx-2 text--primary">
                       <h2 class="text--primary ml-4">異文</h2>
                       <p>
-                        <b @click="target=null">Witness List</b><br/>
-                        <span @click="target=index" class="mr-2" v-for="(obj, index) in witness" :key="index">
-                          {{index}}
-                        </span>
+                        <b @click="target=null">Witness List</b>
+                        <v-sheet color="grey lighten-3 px-2 py-2 mx-2">
+                          <span
+                            @click="target=index"
+                            class="mr-2 mb-2"
+                            v-for="(obj, index) in witness"
+                            :key="index"
+                          >{{index}}</span>
+                        </v-sheet>
                       </p>
 
                       <a @click="test5 = {}">Clear Panel</a>
-                      <br/>
+                      <br />
 
                       <v-card v-for="(test4, index2) in test5" :key="index2" class="mx-5">
                         <v-card-text class="mx-2 text--primary">
@@ -179,38 +198,36 @@ export default {
     };
   },
   watch: {
-    $route: function(){
+    $route: function() {
       this.init();
     },
-    target: function(){
+    target: function() {
       this.list();
     }
   },
   mounted: function() {
-    this.init()    
+    this.init();
   },
   methods: {
-    list(){
+    list() {
+      let test5 = {};
 
-      let test5 = {}
+      let index = 1;
 
-      let index = 1
-
-      let all = this.test_arr
-      for(let i = 0; i < all.length; i++){
-        let objs = all[i]
-        for(let j = 0; j < objs.length; j++){
-          let obj = objs[j]
-          if(obj.type == "app"){
-
-            let apps = obj.app
+      let all = this.test_arr;
+      for (let i = 0; i < all.length; i++) {
+        let objs = all[i];
+        for (let j = 0; j < objs.length; j++) {
+          let obj = objs[j];
+          if (obj.type == "app") {
+            let apps = obj.app;
 
             let test2 = {};
 
-            let contain_flg = false
+            let contain_flg = false;
 
-            for(let k = 0; k < apps.length; k++){
-              let app = apps[k]
+            for (let k = 0; k < apps.length; k++) {
+              let app = apps[k];
 
               let elements = app.elements;
               let wit = "";
@@ -218,8 +235,8 @@ export default {
                 wit = app.attributes.wit;
               }
 
-              if(wit.split(" ").indexOf(this.target) != -1){
-                contain_flg = true
+              if (wit.split(" ").indexOf(this.target) != -1) {
+                contain_flg = true;
               }
 
               if (elements != null) {
@@ -236,26 +253,24 @@ export default {
               }
             }
 
-            if(contain_flg){
+            if (contain_flg) {
               test5[obj.id] = {
                 index: index,
                 wits: test2
               };
             }
 
-            index += 1
-            
+            index += 1;
           }
         }
       }
 
-      this.test5 = test5
+      this.test5 = test5;
     },
-    init(){
+    init() {
       window.addEventListener("resize", this.handleResize);
-      let u =
-        this.$route.query.u == null ? null : this.$route.query.u; //"01_with_wit.xml"
-      if(u){
+      let u = this.$route.query.u == null ? null : this.$route.query.u; //"01_with_wit.xml"
+      if (u) {
         this.exec2main(u);
       }
     },
@@ -290,33 +305,32 @@ export default {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
     },
-    rec(arr, data){
-      for(let i = 0; i < arr.length; i++){
-        let obj = arr[i]
-        data.push(obj)
+    rec(arr, data) {
+      for (let i = 0; i < arr.length; i++) {
+        let obj = arr[i];
+        data.push(obj);
 
-        if(obj.elements && obj.name != "app"){
-          let elements  =obj.elements
-          data = this.rec(elements, data)
+        if (obj.elements && obj.name != "app") {
+          let elements = obj.elements;
+          data = this.rec(elements, data);
         }
       }
-      return data
+      return data;
     },
     handleFileSelect(evt) {
       var files = evt.target.files; // FileList object
 
       for (var i = 0; i < files.length; i++) {
-        let f = files[i]
-        var reader = new FileReader()
-        reader.readAsText(f)
+        let f = files[i];
+        var reader = new FileReader();
+        reader.readAsText(f);
 
         var vm = this;
-        reader.onload = function ()
-        {
+        reader.onload = function() {
           var dpObj = new DOMParser();
           let xmlDoc = dpObj.parseFromString(reader.result, "text/xml");
-          vm.handleXml(xmlDoc)
-        }
+          vm.handleXml(xmlDoc);
+        };
       }
     },
     exec2main(url) {
@@ -326,27 +340,24 @@ export default {
         })
         .then(response => {
           let xml = response.data;
-          this.handleXml(xml)
-
-          
+          this.handleXml(xml);
         });
     },
-    handleXml(xml){
+    handleXml(xml) {
       //witness
       let listWit = xml.querySelector("listWit");
       listWit = this.conv2json(listWit).elements;
 
-      if(listWit.length > 0){
-        this.start = true
+      if (listWit.length > 0) {
+        this.start = true;
       } else {
-        this.start = false
-        return
+        this.start = false;
+        return;
       }
 
       for (let i = 0; i < listWit.length; i++) {
         let wit = listWit[i];
-        this.witness["#" + wit.attributes["xml:id"]] =
-          wit.attributes["xml:id"];
+        this.witness["#" + wit.attributes["xml:id"]] = wit.attributes["xml:id"];
       }
 
       //facs
@@ -393,24 +404,24 @@ export default {
       let body = xml.querySelector("body");
       body = this.conv2json(body).elements;
 
-      let arr = this.rec(body, [])
+      let arr = this.rec(body, []);
 
-      let data10 = []
+      let data10 = [];
 
-      let pa = []
+      let pa = [];
 
       let index = 1;
 
-      for(let i = 0; i < arr.length; i++){
-        let obj = arr[i]
-        let name = obj.name
-        let type = obj.type
-        if(name == "lb" || name == "p" || name == "l"){
-          data10.push(pa)
-          pa = []
-        } else if(type == "text"){
-          pa.push(obj)
-        } else if(name == "pb"){
+      for (let i = 0; i < arr.length; i++) {
+        let obj = arr[i];
+        let name = obj.name;
+        let type = obj.type;
+        if (name == "lb" || name == "p" || name == "l") {
+          data10.push(pa);
+          pa = [];
+        } else if (type == "text") {
+          pa.push(obj);
+        } else if (name == "pb") {
           pa.push({
             id: obj.attributes.facs,
             type: "zone"
@@ -433,13 +444,12 @@ export default {
         }
       }
 
-      data10.push(pa)
+      data10.push(pa);
 
-      this.test_arr = data10
+      this.test_arr = data10;
     },
-    
-    close_panel: function(id) {
 
+    close_panel: function(id) {
       let test5 = {};
 
       for (let key in this.test5) {
@@ -451,7 +461,6 @@ export default {
       this.test5 = test5;
     },
     test: function(apps, id, index) {
-
       let test5 = {};
 
       for (let key in this.test5) {
