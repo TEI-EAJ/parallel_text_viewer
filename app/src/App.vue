@@ -4,9 +4,13 @@
       <v-toolbar :dark="true" flat>
         <v-toolbar-title>校本風異文可視化ツール</v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn icon @click.stop="dialog_table = true" v-show="start">
+          <v-icon>mdi-table</v-icon>
+        </v-btn>
         <v-btn icon href="./">
           <v-icon>mdi-home</v-icon>
         </v-btn>
+        
       </v-toolbar>
 
       <v-container class="my-5" v-show="!start">
@@ -176,6 +180,37 @@
           </pane>
         </splitpanes>
       </div>
+
+      <v-dialog v-model="dialog_table" width="600px">
+        <v-container>
+          <div v-for="(obj, index) in test6" :key="index" class="my-5">
+            <v-card>
+              <v-card-text>
+            <v-simple-table>
+              <template v-slot:default>
+                <thead>
+                  <tr>
+                    <th class="text-left">Winess</th>
+                    <th class="text-left">index</th>
+                    <th class="text-left">相違点</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(value, index2) in obj.wits" :key="index2">
+                    <td width="40%">{{ index2 }}</td>
+                    <td width="20%">{{ obj.index }}</td>
+                    <td width="40%">{{ value.text }}</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+            
+              </v-card-text>
+              </v-card>
+          </div>
+        </v-container>
+      </v-dialog>
+
     </v-content>
   </v-app>
 </template>
@@ -210,7 +245,11 @@ export default {
       start: false,
       xmlDoc: null,
 
-      target: null
+      target: null,
+
+      test6 : {},
+
+      dialog_table : false
     };
   },
   watch: {
@@ -500,6 +539,56 @@ export default {
       }
 
       data10.push(pa);
+
+      let all = data10
+      let test5 = {}
+      for (let i = 0; i < all.length; i++) {
+        let objs = all[i];
+        for (let j = 0; j < objs.length; j++) {
+          let obj = objs[j];
+          if (obj.type == "app") {
+            let apps = obj.app;
+
+            let test2 = {};
+
+            let contain_flg = true;
+
+            for (let k = 0; k < apps.length; k++) {
+              let app = apps[k];
+
+              let elements = app.elements;
+              let wit = "";
+              if (app.attributes) {
+                wit = app.attributes.wit;
+              }
+
+              if (elements != null) {
+                for (let j = 0; j < elements.length; j++) {
+                  let element = elements[j];
+
+                  if (wit != "") {
+                    test2[wit] = {
+                      text: element.text,
+                      type: app.name
+                    };
+                  }
+                }
+              }
+            }
+
+            if (contain_flg) {
+              test5[obj.id] = {
+                index: index,
+                wits: test2
+              };
+            }
+
+            index += 1;
+          }
+        }
+      }
+
+      this.test6 = test5;
 
       this.test_arr = data10;
     },
