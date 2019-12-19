@@ -160,12 +160,12 @@
                       <p>
                         <b @click="target=null">Witness List</b>
                         <v-sheet color="grey lighten-3 px-2 py-2 mx-2">
-                          <span
+                          <p
                             @click="target=index"
                             class="mr-2 mb-2"
                             v-for="(obj, index) in witness"
                             :key="index"
-                          >{{index}}</span>
+                          ><b>{{index}}:</b> {{obj}}</p>
                         </v-sheet>
                       </p>
 
@@ -184,13 +184,15 @@
                             <i class="fas fa-times-circle"></i>
                           </span>
 
-                          <span class="mt-2" style="color: red;">{{test4.index}}</span>
+                          <span class="mt-2">{{test4.index}}</span>
 
                           <br />
                           <p v-for="(element, index) in test4.wits" :key="index">
-                            <template v-if="element.type=='lem'">{{element.text}} （{{index}}）</template>
+                            <template v-if="element.type=='lem'">
+                              <span :style="index.indexOf(target) != -1 ? 'color : red' : ''">{{element.text}} （{{index}}</span>
+                            </template>
                             <template v-else>
-                              <b>{{element.text}} （{{index}}）</b>
+                              <b :style="index.indexOf(target) != -1 ? 'color : red' : ''">{{element.text}} （{{index}}）</b>
                             </template>
                           </p>
                         </v-card-text>
@@ -204,7 +206,7 @@
         </splitpanes>
       </div>
 
-      <v-dialog v-model="dialog_chart" width="90%">
+      <v-dialog v-model="dialog_chart" width="80%">
         <v-card>
           <v-card-text>
             <br />
@@ -222,7 +224,7 @@
         </v-card>
       </v-dialog>
 
-      <v-dialog v-model="dialog_table" width="600px">
+      <v-dialog v-model="dialog_table" width="80%">
         <v-container>
           <div v-for="(obj, index) in test6" :key="index" class="my-5">
             <v-card>
@@ -238,8 +240,14 @@
                     </thead>
                     <tbody>
                       <tr v-for="(value, index2) in obj.wits" :key="index2">
-                        <td width="40%">{{ index2 }}</td>
-                        <td width="20%">{{ obj.index }}</td>
+                        <td width="50%">
+                          <ul>
+                          <li v-for="(e, index3) in index2.split(' ')" :key="index3">
+                            {{ witness[e] }}<br/>
+                          </li>
+                          </ul>
+                        </td>
+                        <td width="10%">{{ obj.index }}</td>
                         <td width="40%">{{ value.text }}</td>
                       </tr>
                     </tbody>
@@ -327,7 +335,6 @@ export default {
             for (let k = 0; k < apps.length; k++) {
               let app = apps[k];
 
-              let elements = app.elements;
               let wit = "";
               if (app.attributes) {
                 wit = app.attributes.wit;
@@ -336,19 +343,12 @@ export default {
               if (wit.split(" ").indexOf(this.target) != -1) {
                 contain_flg = true;
               }
+              
 
-              if (elements != null) {
-                for (let j = 0; j < elements.length; j++) {
-                  let element = elements[j];
-
-                  if (wit != "") {
-                    test2[wit] = {
-                      text: element.text,
-                      type: app.name
-                    };
-                  }
-                }
-              }
+              test2[wit] = {
+                text: app.text != "" ? app.text : " * ",
+                type: app.name
+              };
             }
 
             if (contain_flg) {
@@ -483,7 +483,7 @@ export default {
 
       for (let i = 0; i < listWit.length; i++) {
         let wit = listWit[i];
-        this.witness["#" + wit.attributes["xml:id"]] = wit.attributes["xml:id"];
+        this.witness["#" + wit.attributes["xml:id"]] = wit.elements[0].text //wit.attributes["xml:id"];
       }
 
       //facs
