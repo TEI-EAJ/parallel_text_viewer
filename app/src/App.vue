@@ -444,6 +444,45 @@ export default {
           });
         } else if (name == "app") {
           let apps = obj.elements;
+
+          //明示されていないwitを補足
+          if(apps[0].name == "lem"){
+            let wits = []
+            for(let m = 0; m < apps.length; m++){
+              if(apps[m].attributes){
+                let wits_tmp = apps[m].attributes.wit.split(" ")
+                for(let l = 0; l < wits_tmp.length; l++){
+                  let wit_tmp = wits_tmp[l]
+                  if(wits.indexOf(wit_tmp) == -1){
+                    wits.push(wit_tmp)
+                  }
+                }
+              }
+            }
+
+            //err対策
+            if(!apps[0].attributes){
+              apps[0].attributes = {}
+            }
+
+            let wit_org = []
+            if(apps[0].attributes.wit){
+              //元々明示されていたlemのwitness
+              wit_org = apps[0].attributes.wit.split(" ")
+            }
+
+            //リストに上がっているwitnessについて、
+            for(let wit in this.witness){
+              //明示されていない場合に、
+              if(wits.indexOf(wit) == -1){
+                //元のwitnessに追加
+                wit_org.push(wit)
+              }
+            }
+
+            apps[0].attributes.wit = wit_org.join(" ")
+          }
+
           let lem = apps[0];
           let text_lem = "";
           if (lem.elements) {
