@@ -4,6 +4,9 @@
       <v-toolbar :dark="true" flat>
         <v-toolbar-title>校本風異文可視化ツール</v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn icon @click.stop="dialog_chart = true" v-show="start">
+          <i class="fas fa-chart-bar"></i>
+        </v-btn>
         <v-btn icon @click.stop="dialog_table = true" v-show="start">
           <v-icon>mdi-table</v-icon>
         </v-btn>
@@ -181,8 +184,30 @@
         </splitpanes>
       </div>
 
+      <v-dialog v-model="dialog_chart" width="90%">
+        <v-card>
+          <v-card-text>
+
+            <br/>
+
+
+            <h3 class="mt-5">底本と異なる箇所の数</h3>
+
+          <chart :height="300" class="mb-4" :data="test6" :witness="witness"></chart>
+
+          <br/>
+
+          <h3 class="mt-5">異文番号毎の異なり数</h3>
+
+          <Chart4Diff :height="300" class="mb-4" :data="test6"></Chart4Diff>
+
+        </v-card-text>
+          </v-card>
+      </v-dialog>
+
       <v-dialog v-model="dialog_table" width="600px">
         <v-container>
+
           <div v-for="(obj, index) in test6" :key="index" class="my-5">
             <v-card>
               <v-card-text>
@@ -190,8 +215,8 @@
               <template v-slot:default>
                 <thead>
                   <tr>
-                    <th class="text-left">Winess</th>
-                    <th class="text-left">index</th>
+                    <th class="text-left">Witness</th>
+                    <th class="text-left">異文番号</th>
                     <th class="text-left">相違点</th>
                   </tr>
                 </thead>
@@ -219,12 +244,14 @@
 // In your VueJS component.
 import { Splitpanes, Pane } from "splitpanes";
 import axios from "axios";
+import Chart from "./components/Chart.vue";
+import Chart4Diff from "./components/Chart4Diff.vue";
 
 let mirador_prefix = "mirador/";
 var convert = require("xml-js");
 
 export default {
-  components: { Splitpanes, Pane },
+  components: { Splitpanes, Pane, Chart, Chart4Diff },
   data: function() {
     return {
       width: window.innerWidth,
@@ -249,7 +276,8 @@ export default {
 
       test6 : {},
 
-      dialog_table : false
+      dialog_table : false,
+      dialog_chart : true
     };
   },
   watch: {
@@ -540,6 +568,10 @@ export default {
 
       data10.push(pa);
 
+      //------------
+
+      index = 1
+
       let all = data10
       let test5 = {}
       for (let i = 0; i < all.length; i++) {
@@ -588,7 +620,9 @@ export default {
         }
       }
 
-      this.test6 = test5;
+      this.test6 = test5      
+
+      //------------
 
       this.test_arr = data10;
     },
