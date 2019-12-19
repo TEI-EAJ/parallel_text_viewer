@@ -56,7 +56,7 @@
 
       <div :style="'height: '+height+'px;'" v-show="start">
         <splitpanes class="default-theme">
-          <pane min-size="20" v-if="mirador_path != ''">
+          <pane>
             <iframe
               class="py-2 px-2"
               :src="mirador_path"
@@ -96,7 +96,7 @@
                             style="background-color : yellow;"
                             @click="test(element.app, element.id, element.index)"
                           >
-                            <span style="color: red;">{{element.index}}&nbsp;</span>
+                            <span style="color: red;">&nbsp;{{element.index}}&nbsp;</span>
                             <template v-if="target == null">{{element.text}}</template>
                             <template v-else>
                               <template v-for="(app, index2) in element.app">
