@@ -4,6 +4,9 @@
       <v-toolbar :dark="true" flat>
         <v-toolbar-title>校本風異文可視化ツール</v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn icon @click.stop="dialog_info = true" v-show="start">
+          <v-icon>mdi-information</v-icon>
+        </v-btn>
         <v-btn icon @click.stop="dialog_chart = true" v-show="start">
           <i class="fas fa-chart-bar"></i>
         </v-btn>
@@ -117,11 +120,8 @@
                           <span>{{element.text.trim()}}</span>
                         </template>
                         <template v-if="element.type == 'app'">
-                          <span
-                            style="background-color : #FFFF99;"
-                            :id="'main_'+element.id"
-                          >
-                          <!-- @click="test(element.app, element.id, element.index)" -->
+                          <span style="background-color : #FFFF99;" :id="'main_'+element.id">
+                            <!-- @click="test(element.app, element.id, element.index)" -->
                             <v-tooltip right>
                               <template v-slot:activator="{ on }">
                                 <template v-if="target == null">
@@ -137,8 +137,9 @@
                                   >
                                     <template v-for="(app, index2) in element.app">
                                       <span
-                                        v-if="app.attributes.wit.indexOf(target) != -1"
+                                        v-if="app.attributes.wit.split(' ').indexOf(target) != -1"
                                         :key="index2"
+                                        :style="app.name == 'rdg' ? 'color : #ff5252' : ''"
                                       >{{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}}</span>
                                     </template>
                                   </span>
@@ -158,23 +159,12 @@
                   <v-list-item>
                     <v-card-text class="mx-2 text--primary">
                       <h2 class="text--primary ml-4">異文</h2>
-                      <p>
-                        <b @click="target=null">Witness List</b>
-                        <v-sheet color="grey lighten-3 px-2 py-2 mx-2">
-                          <p
-                            @click="target=index"
-                            class="mr-2 mb-2"
-                            v-for="(obj, index) in witness"
-                            :key="index"
-                          ><b>{{index}}:</b> {{obj}}</p>
-                        </v-sheet>
-                      </p>
 
                       <!-- <a @click="test5 = {}">Clear Panel</a>
-                      <br /> -->
+                      <br />-->
 
                       <v-card
-                      @click="scroll('main_'+index2, 'main'); selected_id = index2;"
+                        @click="scroll('main_'+index2, 'main'); selected_id = index2;"
                         v-for="(test4, index2) in test5"
                         :key="index2"
                         class="mx-5"
@@ -196,12 +186,16 @@
                           <br />
                           <p v-for="(element, index) in test4.wits" :key="index">
                             <template v-if="element.type=='lem'">
-                              <span :style="index.split(' ').indexOf(target) != -1 ? 'color : #1867c0' : ''">{{element.text}} （{{index}}</span>
+                              <span
+                                :style="index.split(' ').indexOf(target) != -1 ? 'color : #ff5252' : ''"
+                              >{{element.text}} （{{index}}</span>
                             </template>
                             <template v-else>
-                              <b :style="index.split(' ').indexOf(target) != -1 ? 'color : #1867c0' : ''">{{element.text}} （{{index}}）</b>
+                              <b
+                                :style="index.split(' ').indexOf(target) != -1 ? 'color : #ff5252' : ''"
+                              >{{element.text}} （{{index}}）</b>
                             </template>
-                          </p>
+                          </p><!-- #1867c0 -->
                         </v-card-text>
                       </v-card>
                     </v-card-text>
@@ -212,6 +206,28 @@
           </pane>
         </splitpanes>
       </div>
+
+      <v-dialog v-model="dialog_info" width="80%">
+        <v-card>
+          <v-card-text>
+            <br />
+
+            <h3 class="mt-5" @click="target=null">Witness List</h3>
+
+            <ul class="mt-5">
+              <li
+                @click="target=index"
+                class="mr-2 mb-2"
+                v-for="(obj, index) in witness"
+                :key="index"
+              >
+                <b>{{index}}:</b>
+                {{obj}}
+              </li>
+            </ul>
+          </v-card-text>
+        </v-card>
+      </v-dialog>
 
       <v-dialog v-model="dialog_chart" width="80%">
         <v-card>
@@ -249,9 +265,10 @@
                       <tr v-for="(value, index2) in obj.wits" :key="index2">
                         <td width="50%">
                           <ul>
-                          <li v-for="(e, index3) in index2.split(' ')" :key="index3">
-                            {{ witness[e] }}<br/>
-                          </li>
+                            <li v-for="(e, index3) in index2.split(' ')" :key="index3">
+                              {{ witness[e] }}
+                              <br />
+                            </li>
                           </ul>
                         </td>
                         <td width="10%">{{ obj.index }}</td>
@@ -307,6 +324,7 @@ export default {
 
       dialog_table: false,
       dialog_chart: false,
+      dialog_info: false,
       selected_id: ""
     };
   },
@@ -314,9 +332,11 @@ export default {
     $route: function() {
       this.init();
     },
+    /*
     target: function() {
-      this.list();
+      //this.list();
     }
+    */
   },
   mounted: function() {
     this.init();
@@ -350,7 +370,6 @@ export default {
               if (wit.split(" ").indexOf(this.target) != -1) {
                 contain_flg = true;
               }
-              
 
               test2[wit] = {
                 text: app.text != "" ? app.text : " * ",
@@ -489,7 +508,7 @@ export default {
 
       for (let i = 0; i < listWit.length; i++) {
         let wit = listWit[i];
-        this.witness["#" + wit.attributes["xml:id"]] = wit.elements[0].text //wit.attributes["xml:id"];
+        this.witness["#" + wit.attributes["xml:id"]] = wit.elements[0].text; //wit.attributes["xml:id"];
       }
 
       //facs
