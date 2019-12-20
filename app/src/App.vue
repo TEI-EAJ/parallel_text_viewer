@@ -117,36 +117,44 @@
                           </p>
                         </template>
                         <template v-if="element.type == 'text'">
-                          <span>{{element.text.trim()}}</span>
+                          <span>{{element.text != null ? element.text.trim() : ""}}</span>
                         </template>
                         <template v-if="element.type == 'app'">
-                          <span style="background-color : #FFFF99;" :id="'main_'+element.id">
+                          <span
+                            :style="selected_id == element.id ? 'border-style: solid; border-color : #ff5252; background-color : #FFFF99;' : 'background-color : #FFFF99;'"
+                            :id="'main_'+element.id"
+                          >
                             <!-- @click="test(element.app, element.id, element.index)" -->
+                            <!-- 
                             <v-tooltip right>
-                              <template v-slot:activator="{ on }">
-                                <template v-if="target == null">
+                            <template v-slot:activator="{ on }">
+                              
+                              v-on="on"
+                              v-on="on"
+
+                            -->
+                            <template v-if="target == null">
+                              <span
+                                @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
+                              >{{element.text != null ? element.text.trim() : ""}}</span>
+                            </template>
+                            <template v-else>
+                              <span
+                                @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
+                              >
+                                <template v-for="(app, index2) in element.app">
                                   <span
-                                    v-on="on"
-                                    @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
-                                  >{{element.text.trim()}}</span>
+                                    v-if="app.attributes.wit.split(' ').indexOf(target) != -1"
+                                    :key="index2"
+                                    :style="app.name == 'rdg' ? 'color : #ff5252' : ''"
+                                  >{{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}}</span>
                                 </template>
-                                <template v-else>
-                                  <span
-                                    v-on="on"
-                                    @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
-                                  >
-                                    <template v-for="(app, index2) in element.app">
-                                      <span
-                                        v-if="app.attributes.wit.split(' ').indexOf(target) != -1"
-                                        :key="index2"
-                                        :style="app.name == 'rdg' ? 'color : #ff5252' : ''"
-                                      >{{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}}</span>
-                                    </template>
-                                  </span>
-                                </template>
+                              </span>
+                            </template>
+                            <!-- 
                               </template>
                               <span>{{element.index}}</span>
-                            </v-tooltip>
+                            </v-tooltip>-->
                           </span>
                         </template>
                       </span>
@@ -158,13 +166,12 @@
                 <v-card class="scroll vertical" :flat="true" id="sub">
                   <v-list-item>
                     <v-card-text class="mx-2 text--primary">
-                      <h2 class="text--primary ml-4">異文</h2>
+                      <h2 class="text--primary ml-4" @click="target=null">異文</h2>
 
                       <!-- <a @click="test5 = {}">Clear Panel</a>
                       <br />-->
 
                       <v-card
-                        @click="scroll('main_'+index2, 'main'); selected_id = index2;"
                         v-for="(test4, index2) in test5"
                         :key="index2"
                         class="mx-5"
@@ -181,21 +188,40 @@
                           <span class="mt-2">{{test4.index}}</span>
                           -->
 
-                          <span>{{test4.index}}</span>
+                          <a @click="scroll('main_'+index2, 'main'); selected_id = index2;">
+                            <b>{{test4.index}}</b>
+                          </a>
 
                           <br />
                           <p v-for="(element, index) in test4.wits" :key="index">
                             <template v-if="element.type=='lem'">
-                              <span
-                                :style="index.split(' ').indexOf(target) != -1 ? 'color : #ff5252' : ''"
-                              >{{element.text}} （{{index}}</span>
+                              <span>
+                                {{element.text == "" ? " * " : element.text}} （
+                                <span
+                                  class="mb-1"
+                                  v-for="(e, index2) in index.split(' ')"
+                                  :key="index2"
+                                  :style="e == target ? 'color : #ff5252' : ''"
+                                  @click="target=e"
+                                >{{e}}</span>
+                                )
+                              </span>
                             </template>
                             <template v-else>
-                              <b
-                                :style="index.split(' ').indexOf(target) != -1 ? 'color : #ff5252' : ''"
-                              >{{element.text}} （{{index}}）</b>
+                              <b>
+                                {{element.text == "" ? " * " : element.text}} （
+                                <span
+                                  class="mb-1"
+                                  v-for="(e, index2) in index.split(' ')"
+                                  :key="index2"
+                                  :style="e == target ? 'color : #ff5252' : ''"
+                                  @click="target=e"
+                                >{{e}}</span>
+                                ）
+                              </b>
                             </template>
-                          </p><!-- #1867c0 -->
+                          </p>
+                          <!-- #1867c0 -->
                         </v-card-text>
                       </v-card>
                     </v-card-text>
@@ -212,15 +238,10 @@
           <v-card-text>
             <br />
 
-            <h3 class="mt-5" @click="target=null">Witness List</h3>
+            <h3 class="mt-5">Witness List</h3>
 
             <ul class="mt-5">
-              <li
-                @click="target=index"
-                class="mr-2 mb-2"
-                v-for="(obj, index) in witness"
-                :key="index"
-              >
+              <li class="mr-2 mb-2" v-for="(obj, index) in witness" :key="index">
                 <b>{{index}}:</b>
                 {{obj}}
               </li>
@@ -331,7 +352,7 @@ export default {
   watch: {
     $route: function() {
       this.init();
-    },
+    }
     /*
     target: function() {
       //this.list();
