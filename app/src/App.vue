@@ -136,7 +136,10 @@
                             <template v-if="target == null">
                               <span
                                 @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
-                              >{{element.text != null ? element.text.trim() : ""}}</span>
+                              >
+                              {{element.text != null ? element.text.trim() : ""}}
+                              <!-- {{element.app[0].elements}} -->
+                              </span>
                             </template>
                             <template v-else>
                               <span
@@ -147,7 +150,23 @@
                                     v-if="app.attributes.wit.split(' ').indexOf(target) != -1"
                                     :key="index2"
                                     :style="app.name == 'rdg' ? 'color : #ff5252' : ''"
-                                  >{{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}}</span>
+                                  ><!-- {{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}} -->
+                                  <span v-for="(obj, index3) in app.elements" :key="index3">
+                                    <template v-if="obj.type == 'text'">
+                                      <span>{{obj.text.trim()}}</span>
+                                    </template>
+                                    <template v-else>
+                                      <template v-if="obj.elements != null && obj.elements.length > 0">
+                                        <template v-if="obj.name == 'del'">
+                                          <del>{{obj.elements[0].text.trim()}}</del>
+                                        </template>
+                                        <template v-else>
+                                          <span>{{obj.elements[0].text.trim()}}</span>
+                                        </template>
+                                      </template>
+                                    </template>
+                                    </span>
+                                  </span>
                                 </template>
                               </span>
                             </template>
@@ -648,8 +667,9 @@ export default {
           for (let i = 0; i < apps.length; i++) {
             let text = "";
             if (apps[i].elements) {
-              if (apps[i].elements[0].text != null) {
-                text += apps[i].elements[0].text;
+              let elements = apps[i].elements
+              if (elements[0].text != null) {
+                text += elements[0].text;
               }
             }
             apps[i].text = text;
