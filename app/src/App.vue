@@ -153,15 +153,15 @@
                                   ><!-- {{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}} -->
                                   <span v-for="(obj, index3) in app.elements" :key="index3">
                                     <template v-if="obj.type == 'text'">
-                                      <span>{{obj.text.trim()}}</span>
+                                      <span>{{obj.text != null ? obj.text.trim() : ""}}</span>
                                     </template>
                                     <template v-else>
                                       <template v-if="obj.elements != null && obj.elements.length > 0">
                                         <template v-if="obj.name == 'del'">
-                                          <del>{{obj.elements[0].text.trim()}}</del>
+                                          <del>{{obj.elements[0].text != null ? obj.elements[0].text.trim() : ""}}</del>
                                         </template>
                                         <template v-else>
-                                          <span>{{obj.elements[0].text.trim()}}</span>
+                                          <span>{{obj.elements[0].text != null ? obj.elements[0].text.trim() : ""}}</span>
                                         </template>
                                       </template>
                                     </template>
