@@ -116,6 +116,9 @@
                             />
                           </p>
                         </template>
+                        <template v-if="element.type == 'p'">
+                          <br/>
+                        </template>
                         <template v-if="element.type == 'text'">
                           <span>{{element.text != null ? element.text.trim() : ""}}</span>
                         </template>
@@ -607,12 +610,19 @@ export default {
         let obj = arr[i];
         let name = obj.name;
         let type = obj.type;
-        if (name == "lb" || name == "p" || name == "l") {
+        if (name == "lb" || name == "l") {
+          data10.push(pa);
+          pa = [];
+        } else if (name == "p") {
+          data10.push(pa);
+          pa = [{
+            type : "p"
+          }];
           data10.push(pa);
           pa = [];
         } else if (type == "text") {
           pa.push(obj);
-        } else if (name == "pb") {
+        } else if (name == "pb" && obj.attributes && obj.attributes.facs) {
           pa.push({
             id: obj.attributes.facs,
             type: "zone"
