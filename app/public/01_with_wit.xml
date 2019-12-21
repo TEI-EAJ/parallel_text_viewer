@@ -77,6 +77,7 @@
                url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000023/full/full/0/default.jpg"/>
             <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0006"/>
             <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0007"/>
+            <zone lrx="4937" lry="1187" ulx="4863" uly="950" xml:id="zone_koui_0001"/>
          </surface>
          <surface>
             <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/24"
@@ -142,6 +143,20 @@
             <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/34"
                url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000034/full/full/0/default.jpg"/>
             <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0028"/>
+         </surface>
+      </surfaceGrp>
+      <surfaceGrp facs="https://www.dl.ndl.go.jp/api/iiif/1240757/manifest.json">
+         <surface>
+            <graphic n="https://www.dl.ndl.go.jp/api/iiif/1240757/canvas/4"
+               url="https://www.dl.ndl.go.jp/api/iiif/1240757/R0000004/full/full/0/default.jpg"/>
+            <zone lrx="1847" lry="2620" ulx="1708" uly="1538" xml:id="zone_ndl_0001"/>
+         </surface>
+      </surfaceGrp>
+      <surfaceGrp facs="https://nakamura196.github.io/jpsearch/data/genji/manifest/01.json">
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/3"
+               url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00003.tif/2371,2100,117,532/full/0/default.jpg"/>
+            <zone lrx="2488" lry="2632" ulx="2371" uly="2100" xml:id="zone_nijl_0001"/>
          </surface>
       </surfaceGrp>
    </facsimile>
@@ -301,7 +316,7 @@
             <rdg wit="#御">御うしろみゑ</rdg><rdg wit="#別陽">うしろみも</rdg>
             <rdg wit="#別國">うしろみ</rdg></app><pb facs="#zone_0006" n="6"/><lb source="#校異"
                corresp="https://w3id.org/kouigenjimonogatari/data/0006-01.json"
-               />なけれは<app><lem>事ある時</lem>
+            />なけれは<app facs="#zone_koui_0001 #zone_ndl_0001 #zone_nijl_0001"><lem>事ある時</lem>
                   <rdg wit="#靑肖 #靑大">ことゝある時</rdg>
                   <rdg wit="#河宮 #河尾 #河爲 #河大">ことゝある時</rdg>
                   <rdg wit="#御 #別陽 #別麥">事とある時</rdg>

@@ -105,8 +105,8 @@
 
                     <br />
 
-                    <p v-for="(test_arr2, index) in test_arr" :key="index">
-                      <span v-for="(element, index2) in test_arr2" :key="index2">
+                    <p v-for="(p_arr2, index) in p_arr" :key="index">
+                      <span v-for="(element, index2) in p_arr2" :key="index2">
                         <template v-if="element.type == 'zone'">
                           <p @click="clickIcon(element.id)">
                             <img
@@ -117,7 +117,7 @@
                           </p>
                         </template>
                         <template v-if="element.type == 'p'">
-                          <br/>
+                          <br />
                         </template>
                         <template v-if="element.type == 'text'">
                           <span>{{element.text != null ? element.text.trim() : ""}}</span>
@@ -138,38 +138,20 @@
                             -->
                             <template v-if="target == null">
                               <span
-                                @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
-                              >
-                              {{element.text != null ? element.text.trim() : ""}}
-                              <!-- {{element.app[0].elements}} -->
-                              </span>
+                                @click="selected_id = element.id; scroll(element.id, 'sub'); show_iiif(element.iiif_param);"
+                              >{{element.text != null ? element.text.trim() : ""}}</span>
                             </template>
                             <template v-else>
                               <span
-                                @mouseenter="selected_id = element.id; scroll(element.id, 'sub');"
+                                @click="selected_id = element.id; scroll(element.id, 'sub'); show_iiif(element.iiif_param);"
                               >
                                 <template v-for="(app, index2) in element.app">
                                   <span
-                                    v-if="app.attributes.wit.split(' ').indexOf(target) != -1"
+                                    v-if="app.attributes && app.attributes.wit && app.attributes.wit.split(' ').indexOf(target) != -1"
                                     :key="index2"
                                     :style="app.name == 'rdg' ? 'color : #ff5252' : ''"
-                                  ><!-- {{app.text != "" && app.text != null ? app.text : "&nbsp;*&nbsp;"}} -->
-                                  <span v-for="(obj, index3) in app.elements" :key="index3">
-                                    <template v-if="obj.type == 'text'">
-                                      <span>{{obj.text != null ? obj.text.trim() : ""}}</span>
-                                    </template>
-                                    <template v-else>
-                                      <template v-if="obj.elements != null && obj.elements.length > 0">
-                                        <template v-if="obj.name == 'del'">
-                                          <del>{{obj.elements[0].text != null ? obj.elements[0].text.trim() : ""}}</del>
-                                        </template>
-                                        <template v-else>
-                                          <span>{{obj.elements[0].text != null ? obj.elements[0].text.trim() : ""}}</span>
-                                        </template>
-                                      </template>
-                                    </template>
-                                    </span>
-                                  </span>
+                                    v-html="app.text"
+                                  ></span>
                                 </template>
                               </span>
                             </template>
@@ -190,35 +172,34 @@
                     <v-card-text class="mx-2 text--primary">
                       <h2 class="text--primary ml-4" @click="target=null">異文</h2>
 
-                      <!-- <a @click="test5 = {}">Clear Panel</a>
-                      <br />-->
-
                       <v-card
-                        v-for="(test4, index2) in test5"
+                        v-for="(app, index2) in test5"
                         :key="index2"
                         class="mx-5"
                         :id="index2"
                         :style="index2 == selected_id ? 'background-color : #FFFF99;' : ''"
                       >
                         <v-card-text class="mx-2 text--primary">
-                          <!-- 
-                          <span @click="close_panel(index2)">
-                            <i class="fas fa-times-circle"></i>
-                          </span>
-                          
-
-                          <span class="mt-2">{{test4.index}}</span>
-                          -->
-
                           <a @click="scroll('main_'+index2, 'main'); selected_id = index2;">
-                            <b>{{test4.index}}</b>
+                            <b>{{app.index}}</b>
                           </a>
 
                           <br />
-                          <p v-for="(element, index) in test4.wits" :key="index">
-                            <template v-if="element.type=='lem'">
-                              <span>
-                                {{element.text == "" ? " * " : element.text}} （
+
+                          <ul class="mt-2">
+                            <li v-for="(element, index) in app.wits" :key="index">
+                              <template v-if="element.type=='rdg'">
+                                <b v-html="element.text = '' ?  ' * ' : element.text"></b>
+                              </template>
+                              <template v-else>
+                                <span
+                                  :style="element.type == 'other' ? 'color : grey' : ''"
+                                  v-html="element.text = '' ?  ' * ' : element.text"
+                                ></span>
+                              </template>
+
+                              <template v-if="index != 'undefined'">
+                                <span class="mt-5">(</span>
                                 <span
                                   class="mb-1"
                                   v-for="(e, index2) in index.split(' ')"
@@ -226,24 +207,10 @@
                                   :style="e == target ? 'color : #ff5252' : ''"
                                   @click="target=e"
                                 >{{e}}</span>
-                                )
-                              </span>
-                            </template>
-                            <template v-else>
-                              <b>
-                                {{element.text == "" ? " * " : element.text}} （
-                                <span
-                                  class="mb-1"
-                                  v-for="(e, index2) in index.split(' ')"
-                                  :key="index2"
-                                  :style="e == target ? 'color : #ff5252' : ''"
-                                  @click="target=e"
-                                >{{e}}</span>
-                                ）
-                              </b>
-                            </template>
-                          </p>
-                          <!-- #1867c0 -->
+                                <span>)</span>
+                              </template>
+                            </li>
+                          </ul>
                         </v-card-text>
                       </v-card>
                     </v-card-text>
@@ -302,11 +269,12 @@
                         <th class="text-left">Witness</th>
                         <th class="text-left">異文番号</th>
                         <th class="text-left">相違点</th>
+                        <th class="text-left">タイプ</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr v-for="(value, index2) in obj.wits" :key="index2">
-                        <td width="50%">
+                        <td width="40%">
                           <ul>
                             <li v-for="(e, index3) in index2.split(' ')" :key="index3">
                               {{ witness[e] }}
@@ -315,7 +283,8 @@
                           </ul>
                         </td>
                         <td width="10%">{{ obj.index }}</td>
-                        <td width="40%">{{ value.text }}</td>
+                        <td width="40%" v-html="value.text"></td>
+                        <td width="10%">{{value.type}}</td>
                       </tr>
                     </tbody>
                   </template>
@@ -352,8 +321,7 @@ export default {
       direction: "vertical",
       layout: "1x1",
 
-      test_arr: [],
-      test4: {},
+      p_arr: [],
       test5: {},
       witness: {},
       test_map: {},
@@ -385,12 +353,21 @@ export default {
     this.init();
   },
   methods: {
+    show_iiif(iiif_param) {
+      if (iiif_param.length > 0) {
+        this.mirador_path =
+          mirador_prefix +
+          "?params=" +
+          encodeURIComponent(JSON.stringify(iiif_param)) +
+          "&annotationState=on";
+      }
+    },
     list() {
       let test5 = {};
 
       let index = 1;
 
-      let all = this.test_arr;
+      let all = this.p_arr;
       for (let i = 0; i < all.length; i++) {
         let objs = all[i];
         for (let j = 0; j < objs.length; j++) {
@@ -556,9 +533,10 @@ export default {
 
       //facs
 
-      let facs = xml.querySelector("surfaceGrp");
-      if (facs != null) {
-        facs = this.conv2json(facs);
+      let facses = xml.querySelectorAll("surfaceGrp");
+
+      for (let i = 0; i < facses.length; i++) {
+        let facs = this.conv2json(facses[i]);
         let manifest = facs.attributes.facs;
 
         let surfaces = facs.elements;
@@ -579,18 +557,20 @@ export default {
           }
         }
 
-        let params = [
-          {
-            manifest: manifest
-          }
-        ];
+        if (i == 0) {
+          let params = [
+            {
+              manifest: manifest
+            }
+          ];
 
-        this.mirador_path =
-          mirador_prefix +
-          "?params=" +
-          encodeURIComponent(JSON.stringify(params)) +
-          "&annotationState=on&layout=" +
-          this.layout;
+          this.mirador_path =
+            mirador_prefix +
+            "?params=" +
+            encodeURIComponent(JSON.stringify(params)) +
+            "&annotationState=on&layout=" +
+            this.layout;
+        }
       }
 
       //text
@@ -598,37 +578,52 @@ export default {
       let body = xml.querySelector("body");
       body = this.conv2json(body).elements;
 
-      let arr = this.rec(body, []);
+      let body_arr = this.rec(body, []);
 
-      let data10 = [];
+      let p_arr = [];
 
-      let pa = [];
+      let row_arr = [];
 
       let index = 1;
 
-      for (let i = 0; i < arr.length; i++) {
-        let obj = arr[i];
+      for (let i = 0; i < body_arr.length; i++) {
+        let obj = body_arr[i];
         let name = obj.name;
         let type = obj.type;
         if (name == "lb" || name == "l") {
-          data10.push(pa);
-          pa = [];
+          p_arr.push(row_arr);
+          row_arr = [];
         } else if (name == "p") {
-          data10.push(pa);
-          pa = [{
-            type : "p"
-          }];
-          data10.push(pa);
-          pa = [];
+          p_arr.push(row_arr);
+          row_arr = [
+            {
+              type: "p"
+            }
+          ];
+          p_arr.push(row_arr);
+          row_arr = [];
         } else if (type == "text") {
-          pa.push(obj);
+          row_arr.push(obj);
         } else if (name == "pb" && obj.attributes && obj.attributes.facs) {
-          pa.push({
+          row_arr.push({
             id: obj.attributes.facs,
             type: "zone"
           });
         } else if (name == "app") {
           let apps = obj.elements;
+
+          //該当箇所のIIIF対応用データ
+          let iiif_param = [];
+          if (obj.attributes && obj.attributes.facs) {
+            let facs = obj.attributes.facs.split(" ");
+            for (let i = 0; i < facs.length; i++) {
+              let id = facs[i];
+              let obj = this.test_map[id];
+              iiif_param.push(obj);
+            }
+          }
+
+          //console.log("----------")
 
           //明示されていないwitを補足
           if (apps[0].name == "lem") {
@@ -650,59 +645,80 @@ export default {
               apps[0].attributes = {};
             }
 
-            let wit_org = [];
-            if (apps[0].attributes.wit) {
-              //元々明示されていたlemのwitness
-              wit_org = apps[0].attributes.wit.split(" ");
-            }
+            let wit_other = [];
 
             //リストに上がっているwitnessについて、
             for (let wit in this.witness) {
               //明示されていない場合に、
               if (wits.indexOf(wit) == -1) {
                 //元のwitnessに追加
-                wit_org.push(wit);
+                wit_other.push(wit);
               }
             }
 
-            apps[0].attributes.wit = wit_org.join(" ");
+            let app_other = {
+              attributes: {
+                wit: wit_other.join(" ")
+              },
+              elements: apps[0].elements,
+              name: "other"
+            };
+
+            apps[apps.length] = app_other;
           }
 
-          let lem = apps[0];
+          //テキスト作成
           let text_lem = "";
-          if (lem.elements) {
-            text_lem = lem.elements[0].text;
-          }
-
           for (let i = 0; i < apps.length; i++) {
             let text = "";
-            if (apps[i].elements) {
-              let elements = apps[i].elements
-              if (elements[0].text != null) {
-                text += elements[0].text;
+            let app = apps[i];
+            if (app.elements) {
+              let elements = app.elements;
+
+              for (let j = 0; j < elements.length; j++) {
+                let lem_rdg = elements[j];
+                if (lem_rdg != null) {
+                  if (lem_rdg.type == "text") {
+                    text += lem_rdg.text;
+                  } else if (lem_rdg.name == "del") {
+                    text += "<del>" + lem_rdg.elements[0].text + "</del>";
+                  } else if (lem_rdg.elements && lem_rdg.elements[0].text) {
+                    text += lem_rdg.elements[0].text;
+                  }
+                }
               }
             }
-            apps[i].text = text;
+
+            if (text == "") {
+              text += " * ";
+            }
+
+            app.text = text;
+
+            if (app.name == "lem") {
+              text_lem = text;
+            }
           }
 
-          pa.push({
+          row_arr.push({
             text: text_lem,
             type: "app",
             app: apps,
             id: "app_" + i,
-            index: index
+            index: index,
+            iiif_param: iiif_param
           });
           index += 1;
         }
       }
 
-      data10.push(pa);
+      p_arr.push(row_arr);
 
       //-- テーブル用 --
 
       index = 1;
 
-      let all = data10;
+      let all = p_arr;
       let test5 = {};
       for (let i = 0; i < all.length; i++) {
         let objs = all[i];
@@ -748,7 +764,7 @@ export default {
 
       //------------
 
-      this.test_arr = data10;
+      this.p_arr = p_arr;
     },
 
     close_panel: function(id) {
