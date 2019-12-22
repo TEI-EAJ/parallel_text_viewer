@@ -136,9 +136,9 @@
                               v-on="on"
 
                             -->
+                            <span :style="element.iiif_param.length > 0 ? 'background-color : #BBDEFB;' : ''">
                             <template v-if="target == null">
-                              <span
-                                @click="selected_id = element.id; scroll(element.id, 'sub'); show_iiif(element.iiif_param);"
+                              <span @click="selected_id = element.id; scroll(element.id, 'sub'); show_iiif(element.iiif_param);"
                               >{{element.text != null ? element.text.trim() : ""}}</span>
                             </template>
                             <template v-else>
@@ -155,6 +155,7 @@
                                 </template>
                               </span>
                             </template>
+                            </span>
                             <!-- 
                               </template>
                               <span>{{element.index}}</span>
@@ -202,10 +203,10 @@
                                 <span class="mt-5">(</span>
                                 <span
                                   class="mb-1"
-                                  v-for="(e, index2) in index.split(' ')"
-                                  :key="index2"
+                                  v-for="(e, index3) in index.split(' ')"
+                                  :key="index3"
                                   :style="e == target ? 'color : #ff5252' : ''"
-                                  @click="target=e"
+                                  @click="target=e; scroll('main_'+index2, 'main'); selected_id = index2;"
                                 >{{e}}</span>
                                 <span>)</span>
                               </template>
@@ -360,6 +361,8 @@ export default {
           "?params=" +
           encodeURIComponent(JSON.stringify(iiif_param)) +
           "&annotationState=on";
+      } else {
+        this.mirador_path = null
       }
     },
     list() {
@@ -392,7 +395,7 @@ export default {
               }
 
               test2[wit] = {
-                text: app.text != "" ? app.text : " * ",
+                text: app.text != "" ? app.text : "",//" * ",
                 type: app.name
               };
             }
@@ -690,7 +693,7 @@ export default {
             }
 
             if (text == "") {
-              text += " * ";
+              text += ""//" * ";
             }
 
             app.text = text;
