@@ -193,8 +193,10 @@
                                 <b v-html="element.text = '' ?  ' * ' : element.text"></b>
                               </template>
                               <template v-else>
+                                <!-- Temporal -->
+                                <b v-if="element.type == 'other'" style="color : green; border : solid 2px green;">???</b>
                                 <span
-                                  :style="element.type == 'other' ? 'color : grey' : ''"
+                                  :style="element.type == 'other' ? 'color : gray' : ''"
                                   v-html="element.text = '' ?  ' * ' : element.text"
                                 ></span>
                               </template>
@@ -685,6 +687,8 @@ export default {
                     text += lem_rdg.text;
                   } else if (lem_rdg.name == "del") {
                     text += "<del>" + lem_rdg.elements[0].text + "</del>";
+                  } else if (lem_rdg.name == "add" && lem_rdg.elements) {
+                    text += "<span style='border: dotted 1px black;'>" + lem_rdg.elements[0].text + "</span>";
                   } else if (lem_rdg.elements && lem_rdg.elements[0].text) {
                     text += lem_rdg.elements[0].text;
                   }
