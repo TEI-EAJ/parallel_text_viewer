@@ -31,8 +31,8 @@
 
         <p class="mt-5">例１：校異源氏物語</p>
 
-        <v-btn color="primary" to="/?u=01_with_wit.xml" class="mx-2 my-1">可視化例を見る</v-btn>
-        <v-btn href="01_with_wit.xml" target="_blank" class="mx-2 my-1">サンプルデータを見る</v-btn>
+        <v-btn color="primary" to="/?u=https://tei-eaj.github.io/koui/data/01_with_wit.xml" class="mx-2 my-1">可視化例を見る</v-btn>
+        <v-btn href="https://tei-eaj.github.io/koui/data/01_with_wit.xml" target="_blank" class="mx-2 my-1">サンプルデータを見る</v-btn>
 
         <br />
         <br />
@@ -60,7 +60,7 @@
           >Versioning Machine</a>
         </p>
 
-        <v-btn color="primary" to="/?u=faith.xml" class="mx-2 my-1">可視化例を見る</v-btn>
+        <v-btn color="primary" to="/?u=https://tei-eaj.github.io/koui/data/faith.xml" class="mx-2 my-1">可視化例を見る</v-btn>
         <v-btn
           href="http://v-machine.org/samples/faith.xml"
           target="_blank"
@@ -362,7 +362,7 @@ export default {
           encodeURIComponent(JSON.stringify(iiif_param)) +
           "&annotationState=on";
       } else {
-        this.mirador_path = null
+        //this.mirador_path = null
       }
     },
     list() {
