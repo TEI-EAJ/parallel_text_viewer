@@ -706,10 +706,10 @@ export default {
                   if (lem_rdg.type == "text") {
                     text += lem_rdg.text;
                   } else if (lem_rdg.name == "del") {
-                    text += "<del style='color : green;'>" + lem_rdg.elements[0].text + "</del>";
+                    text += "<del style='color : #990000;'>" + lem_rdg.elements[0].text + "</del>";
                   } else if (lem_rdg.name == "add" && lem_rdg.elements) {
                     //text += "<span style='border: dotted 1px black;'>" + lem_rdg.elements[0].text + "</span>";
-                    text += "<span style='color : red;'>" + lem_rdg.elements[0].text + "</span>";
+                    text += "<span style='color : green;'>" + lem_rdg.elements[0].text + "</span>";
                   } else if (lem_rdg.elements && lem_rdg.elements[0].text) {
                     text += lem_rdg.elements[0].text;
                   }
