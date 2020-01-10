@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <v-toolbar :dark="true" flat>
-        <v-toolbar-title>校本風異文可視化ツール</v-toolbar-title>
+        <v-toolbar-title>{{title}}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon @click.stop="dialog_info = true" v-show="start">
           <v-icon>mdi-information</v-icon>
@@ -41,11 +41,11 @@
 
         <v-btn
           color="primary"
-          to="/?u=https://nakamura196.github.io/tei/v-machine/data/nakamura.xml"
+          to="/?u=https://tei-eaj.github.io/koui/data/nakamura.xml"
           class="mx-2 my-1"
         >可視化例を見る</v-btn>
         <v-btn
-          href="https://nakamura196.github.io/tei/v-machine/data/nakamura.xml"
+          href="https://tei-eaj.github.io/koui/data/nakamura.xml"
           target="_blank"
           class="mx-2 my-1"
         >サンプルデータを見る</v-btn>
@@ -123,8 +123,14 @@
                           <span>{{element.text != null ? element.text.trim() : ""}}</span>
                         </template>
                         <template v-if="element.type == 'app'">
+                          <!-- 
                           <span
                             :style="selected_id == element.id ? 'border-style: solid; border-color : #ff5252; background-color : #FFFF99;' : 'background-color : #FFFF99;'"
+                            :id="'main_'+element.id"
+                          >
+                          -->
+                          <span
+                            :style="selected_id == element.id ? 'border: solid 1px #ff5252; background-color : #fed8b1;' : 'background-color : #FFFF99;'"
                             :id="'main_'+element.id"
                           >
                             <!-- @click="test(element.app, element.id, element.index)" -->
@@ -149,9 +155,11 @@
                                   <span
                                     v-if="app.attributes && app.attributes.wit && app.attributes.wit.split(' ').indexOf(target) != -1"
                                     :key="index2"
-                                    :style="app.name == 'rdg' ? 'color : #ff5252' : ''"
+                                    
                                     v-html="app.text"
-                                  ></span>
+                                  >
+                                  <!-- :style="app.name == 'rdg' ? 'color : #ff5252' : ''" -->
+                                  </span>
                                 </template>
                               </span>
                             </template>
@@ -190,7 +198,7 @@
                           <ul class="mt-2">
                             <li v-for="(element, index) in app.wits" :key="index">
                               <template v-if="element.type=='rdg'">
-                                <b v-html="element.text = '' ?  ' * ' : element.text"></b>
+                                <span v-html="element.text = '' ?  ' * ' : element.text"></span>
                               </template>
                               <template v-else>
                                 <!-- Temporal -->
@@ -207,7 +215,7 @@
                                   class="mb-1"
                                   v-for="(e, index3) in index.split(' ')"
                                   :key="index3"
-                                  :style="e == target ? 'color : #ff5252' : ''"
+                                  :style="e == target ? 'background-color : #fed8b1;' : ''"
                                   @click="target=e; scroll('main_'+index2, 'main'); selected_id = index2;"
                                 >{{e}}</span>
                                 <span>)</span>
@@ -228,6 +236,10 @@
       <v-dialog v-model="dialog_info" width="80%">
         <v-card>
           <v-card-text>
+            <br />
+
+            <h2 class="mt-5">{{title}}</h2>
+
             <br />
 
             <h3 class="mt-5">Witness List</h3>
@@ -339,7 +351,9 @@ export default {
       dialog_table: false,
       dialog_chart: false,
       dialog_info: false,
-      selected_id: ""
+      selected_id: "",
+
+      title: "校本風異文可視化ツール"
     };
   },
   watch: {
@@ -521,6 +535,12 @@ export default {
     },
     handleXml(xml) {
       //witness
+
+      let title = xml.querySelector("title");
+      if(title){
+        this.title = title.textContent
+      }
+
       let listWit = xml.querySelector("listWit");
       listWit = this.conv2json(listWit).elements;
 
@@ -686,9 +706,10 @@ export default {
                   if (lem_rdg.type == "text") {
                     text += lem_rdg.text;
                   } else if (lem_rdg.name == "del") {
-                    text += "<del>" + lem_rdg.elements[0].text + "</del>";
+                    text += "<del style='color : green;'>" + lem_rdg.elements[0].text + "</del>";
                   } else if (lem_rdg.name == "add" && lem_rdg.elements) {
-                    text += "<span style='border: dotted 1px black;'>" + lem_rdg.elements[0].text + "</span>";
+                    //text += "<span style='border: dotted 1px black;'>" + lem_rdg.elements[0].text + "</span>";
+                    text += "<span style='color : red;'>" + lem_rdg.elements[0].text + "</span>";
                   } else if (lem_rdg.elements && lem_rdg.elements[0].text) {
                     text += lem_rdg.elements[0].text;
                   }
@@ -859,5 +880,8 @@ body,
 #app {
   height: 100%;
   margin: 0;
+}
+.v-btn {
+  text-transform:none !important;
 }
 </style>
