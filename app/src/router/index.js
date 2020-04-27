@@ -1,12 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import index from '../views/Index.vue'
+import test from '../views/Test.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'index'
+    name: 'index',
+    component: index
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: test
   }
 ]
 
