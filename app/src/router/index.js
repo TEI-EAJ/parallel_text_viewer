@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import index from '../views/Index.vue'
 import test from '../views/Test.vue'
+import v2 from '../views/v2.vue'
 
 Vue.use(VueRouter)
 
@@ -11,6 +12,11 @@ const routes = [
     path: '/',
     name: 'index',
     component: index
+  },
+  {
+    path: '/v2',
+    name: 'v2',
+    component: v2
   },
   {
     path: '/test',
