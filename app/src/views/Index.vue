@@ -294,12 +294,18 @@ export default {
         let manifest_map = this.image_map[manifest_label].data;
 
         if (manifest_map[line_id]) {
+          let member_id = manifest_map[line_id]
+          let tmp = member_id.split("#xywh=")
+          let canvas = tmp[0]
+          let xywh = tmp[1].split(",")
+          let y = Number(xywh[1]) - 150
+          let h = Number(xywh[3]) + 150
+          member_id = canvas+"#xywh="+xywh[0]+","+y + ","+xywh[2] + "," + h
           params.push({
             manifest: this.image_map[manifest_label].manifest,
-            canvas: manifest_map[line_id]
+            canvas: member_id
           });
         }
-
         
         this.mirador_path =
           mirador_prefix +
@@ -384,6 +390,9 @@ export default {
       }
     },
     mouseover: function(data) {
+      if(Object.keys(this.w_l_id_map) == 0){
+        return
+      }
       if (
         data.target.attributes.length > 0 &&
         data.target.attributes[0].name == "id"
