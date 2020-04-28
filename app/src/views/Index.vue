@@ -186,6 +186,8 @@ export default {
       location.href = "https://github.com/TEI-EAJ/parallel_text_viewer/";
     }
 
+    ///
+
     let u = this.$route.query.u;
 
     axios.get(u).then(response => {
