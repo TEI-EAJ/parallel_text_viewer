@@ -148,7 +148,7 @@ import Hello from "../components/Hello.vue";
 
 let mirador_prefix = "mirador/";
 
-//var convert = require("xml-js");
+var convert = require("xml-js");
 
 ("use strict");
 const crypto = require("crypto");
@@ -157,14 +157,11 @@ function md5hex(str /*: string */) {
   return md5.update(str, "binary").digest("hex");
 }
 
-var convert = require("xml-js");
-
 export default {
   components: { Splitpanes, Pane, Hello },
   data: function() {
     return {
       e: null,
-      xml: null,
       data: null,
       data2: null,
 
