@@ -507,12 +507,6 @@ export default {
             var dpObj = new DOMParser();
             xml_node = dpObj.parseFromString(xml_node, "text/xml");
           }
-          //this.xml = xml_node;
-          //console.log(this.xml)
-
-          //let xml_node = this.xml;
-
-          //xmlの読み込みのために必須
           let xml_str = new XMLSerializer().serializeToString(xml_node);
           var result = convert.xml2json(xml_str, { compact: false, spaces: 4 });
           this.data2 = JSON.parse(result);
