@@ -6,9 +6,11 @@
 
         <v-spacer></v-spacer>
 
+        <!-- 
         <v-toolbar-items>
           <v-btn text :to="{name : 'test', query : {'u': $route.query.u}}">新しいUIを試す</v-btn>
         </v-toolbar-items>
+        -->
         <v-btn icon @click.stop="dialog_settings = true">
           <v-icon>mdi-settings</v-icon>
         </v-btn>
