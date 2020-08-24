@@ -187,6 +187,17 @@ export default {
         let image_map = {};
 
         let selections = curation_data["selections"];
+
+        const size = selections.length
+
+        if (size === 1) {
+          this.layout = '1x1'
+        } else {
+          const row = 2
+          const col = Math.ceil(size / 2)
+          this.layout = row + 'x' + col
+        }
+
         for (let i = 0; i < selections.length; i++) {
           let selection = selections[i];
 

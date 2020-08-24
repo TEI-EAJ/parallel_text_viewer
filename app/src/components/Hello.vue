@@ -114,7 +114,7 @@
         @click="anchorClick(getAnchorId(obj))" dark
         v-on:mouseover="mouseover(getAnchorId(obj))" :style="getAnchorId(obj) === lineId ? 'background-color : rgba(255,165,0, 0.5);' : ''"
         >
-          <v-icon color="blue darken-2">mdi-anchor</v-icon>
+          <v-icon small color="blue darken-2">mdi-anchor</v-icon>
         </span>
       </template>
 
