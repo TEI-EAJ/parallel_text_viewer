@@ -162,12 +162,14 @@ export default {
     axios.get(u).then(response => {
       let result = response.data;
 
-      this.return_url = result.return_url;
-      this.return_label = result.return_label;
-      this.url_main = result.url_main;
+      this.return_url = result.returnUrl || result.return_url;
+      this.return_label = result.returnLabel || result.return_label;
 
-      this.label_main = result.label_main;
-      this.label_sub = result.label_sub;
+      this.url_main = result.urlMain || result.url_main;
+      this.url_sub = result.urlSub || result.url_sub;
+
+      this.label_main = result.labelMain || result.label_main;
+      this.label_sub = result.labelSub || result.label_sub;
 
       this.direction = result.direction;
 
@@ -176,7 +178,7 @@ export default {
       }
 
       //画像との対応表の作成
-      let image_map_url = result.image_map;
+      let image_map_url = result.imageMap || result.image_map;
 
       axios.get(image_map_url).then(response => {
         //Miradorの初期表示パラメータ
@@ -244,8 +246,8 @@ export default {
           this.layout;
 
 
-        this.exec2main(result.url_main);
-        this.exec2sub(result.url_sub);
+        this.exec2main(this.url_main);
+        this.exec2sub(this.url_sub);
       });
     });
   },
