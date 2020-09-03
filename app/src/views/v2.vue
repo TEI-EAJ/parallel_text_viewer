@@ -28,7 +28,7 @@
 
       <div :style="'height: '+height+'px;'">
         <splitpanes class="default-theme">
-          <pane min-size="20">
+          <pane :size="paneSize"> <!-- min-size="20"  -->
             <iframe
               class="py-2 px-2"
               :src="mirador_path"
@@ -39,15 +39,15 @@
               allow="fullscreen"
             ></iframe>
           </pane>
-          <pane>
+          <pane :size="100 - paneSize">
             <splitpanes class="default-theme" horizontal="horizontal">
               <pane class="py-2 mx-2">
-                <v-card class="scroll vertical" :flat="true" id="main">
+                <v-card class="scroll vertical" :flat="true" id="main"> <!--   -->
                   <Hello v-if="data_main" :elements="data_main.elements"></Hello>
                 </v-card>
               </pane>
               <pane class="py-2 mx-2">
-                <v-card class="scroll vertical" :flat="true" id="sub">
+                <v-card class="scroll vertical" :flat="true" id="sub"> <!--   -->
                   <Hello v-if="data_sub" :elements="data_sub.elements"></Hello>
                 </v-card>
               </pane>
@@ -131,7 +131,9 @@ export default {
       selected_manifests: [],
       mirador_path: "",
       direction: "vertical",
-      layout: "2x2"
+      layout: "2x2",
+
+      paneSize: 50
     };
   },
   computed: {
@@ -159,6 +161,7 @@ export default {
 
     let u = this.$route.query.u;
 
+    const self = this
     axios.get(u).then(response => {
       let result = response.data;
 
@@ -246,8 +249,15 @@ export default {
           this.layout;
 
 
-        this.exec2main(this.url_main);
-        this.exec2sub(this.url_sub);
+        self.exec2main(this.url_main);
+        self.exec2sub(this.url_sub);
+
+        
+        setTimeout(() => {
+          this.paneSize = 49.9}
+          ,1000
+        )
+      
       });
     });
   },
@@ -301,6 +311,8 @@ export default {
         encodeURIComponent(JSON.stringify(params)) +
         "&annotationState=on&layout=" +
         this.layout;
+
+      
       
     }
   },
@@ -346,9 +358,9 @@ export default {
       this.height = window.innerHeight;
     },
     
-    exec2main(url) {
+    async exec2main(url) {
 
-      axios
+      await axios
         .get(url)
         .then(response => {
           let xml_node = response.data;
@@ -363,8 +375,8 @@ export default {
         });
     },
 
-    exec2sub(url) {
-      axios
+    async exec2sub(url) {
+      await axios
         .get(url)
         .then(response => {
           let xml_node = response.data;
@@ -407,5 +419,13 @@ body,
 #app {
   height: 100%;
   margin: 0;
+}
+
+.splitpanes__pane {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.6);
 }
 </style>
