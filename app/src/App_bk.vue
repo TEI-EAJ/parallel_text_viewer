@@ -2,7 +2,7 @@
   <v-app>
     <v-content>
       <v-toolbar :dark="true" flat>
-        <v-toolbar-title>{{ title }}</v-toolbar-title>
+        <v-toolbar-title>{{title}}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon @click.stop="dialog_info = true" v-show="start">
           <v-icon>mdi-information</v-icon>
@@ -31,18 +31,8 @@
 
         <p class="mt-5">例１：校異源氏物語</p>
 
-        <v-btn
-          color="primary"
-          to="/?u=https://tei-eaj.github.io/koui/data/01_with_wit.xml"
-          class="mx-2 my-1"
-          >可視化例を見る</v-btn
-        >
-        <v-btn
-          href="https://tei-eaj.github.io/koui/data/01_with_wit.xml"
-          target="_blank"
-          class="mx-2 my-1"
-          >サンプルデータを見る</v-btn
-        >
+        <v-btn color="primary" to="/?u=https://tei-eaj.github.io/koui/data/01_with_wit.xml" class="mx-2 my-1">可視化例を見る</v-btn>
+        <v-btn href="https://tei-eaj.github.io/koui/data/01_with_wit.xml" target="_blank" class="mx-2 my-1">サンプルデータを見る</v-btn>
 
         <br />
         <br />
@@ -53,35 +43,29 @@
           color="primary"
           to="/?u=https://tei-eaj.github.io/koui/data/nakamura.xml"
           class="mx-2 my-1"
-          >可視化例を見る</v-btn
-        >
+        >可視化例を見る</v-btn>
         <v-btn
           href="https://tei-eaj.github.io/koui/data/nakamura.xml"
           target="_blank"
           class="mx-2 my-1"
-          >サンプルデータを見る</v-btn
-        >
+        >サンプルデータを見る</v-btn>
 
         <br />
         <br />
 
         <p class="mt-5">
           例３：Emily Dickinson ‘Faith is a fine invention’ from
-          <a href="http://v-machine.org/samples/">Versioning Machine</a>
+          <a
+            href="http://v-machine.org/samples/"
+          >Versioning Machine</a>
         </p>
 
-        <v-btn
-          color="primary"
-          to="/?u=https://tei-eaj.github.io/koui/data/faith.xml"
-          class="mx-2 my-1"
-          >可視化例を見る</v-btn
-        >
+        <v-btn color="primary" to="/?u=https://tei-eaj.github.io/koui/data/faith.xml" class="mx-2 my-1">可視化例を見る</v-btn>
         <v-btn
           href="http://v-machine.org/samples/faith.xml"
           target="_blank"
           class="mx-2 my-1"
-          >サンプルデータを見る</v-btn
-        >
+        >サンプルデータを見る</v-btn>
 
         <br />
         <br />
@@ -96,9 +80,9 @@
         </p>
       </v-container>
 
-      <router-view />
+      <router-view/>
 
-      <div :style="'height: ' + height + 'px;'" v-show="start">
+      <div :style="'height: '+height+'px;'" v-show="start">
         <splitpanes class="default-theme">
           <pane>
             <iframe
@@ -106,7 +90,7 @@
               :src="mirador_path"
               seamless="seamless"
               width="100%"
-              :height="height + 'px'"
+              :height="height+'px'"
               style="border: none;"
               allow="fullscreen"
             ></iframe>
@@ -118,12 +102,10 @@
                   <v-card-text class="mx-2 text--primary">
                     <h2 class="text--primary">
                       本文
-                      <span v-if="target">{{ target }}</span>
+                      <span v-if="target">{{target}}</span>
                     </h2>
 
                     <br />
-
-                    <!-- <Hello :elements="data.elements"></Hello> -->
 
                     <p v-for="(p_arr2, index) in p_arr" :key="index">
                       <span v-for="(element, index2) in p_arr2" :key="index2">
@@ -131,7 +113,7 @@
                           <p @click="clickIcon(element.id)">
                             <img
                               src="https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png"
-                              style="width: 30px; cursor: pointer;"
+                              style="width: 30px"
                               class="mr-2"
                             />
                           </p>
@@ -140,9 +122,7 @@
                           <br />
                         </template>
                         <template v-if="element.type == 'text'">
-                          <span>{{
-                            element.text != null ? element.text.trim() : ""
-                          }}</span>
+                          <span>{{element.text != null ? element.text.trim() : ""}}</span>
                         </template>
                         <template v-if="element.type == 'app'">
                           <!-- 
@@ -152,12 +132,8 @@
                           >
                           -->
                           <span
-                            :style="
-                              selected_id == element.id
-                                ? 'border: solid 1px #ff5252; background-color : #fed8b1;'
-                                : 'background-color : #FFFF99;'
-                            "
-                            :id="'main_' + element.id"
+                            :style="selected_id == element.id ? 'border: solid 1px #ff5252; background-color : #fed8b1;' : 'background-color : #FFFF99;'"
+                            :id="'main_'+element.id"
                           >
                             <!-- @click="test(element.app, element.id, element.index)" -->
                             <!-- 
@@ -168,54 +144,27 @@
                               v-on="on"
 
                             -->
-                            <span
-                              :style="
-                                element.iiif_param.length > 0
-                                  ? 'background-color : #BBDEFB;'
-                                  : ''
-                              "
-                            >
-                              <template v-if="target == null">
-                                <span
-                                  @click="
-                                    selected_id = element.id;
-                                    scroll(element.id, 'sub');
-                                    show_iiif(element.iiif_param);
-                                  "
-                                  >{{
-                                    element.text != null
-                                      ? element.text.trim()
-                                      : ""
-                                  }}</span
-                                >
-                              </template>
-                              <template v-else>
-                                <span
-                                  @click="
-                                    selected_id = element.id;
-                                    scroll(element.id, 'sub');
-                                    show_iiif(element.iiif_param);
-                                  "
-                                >
-                                  <template
-                                    v-for="(app, index2) in element.app"
+                            <span :style="element.iiif_param.length > 0 ? 'background-color : #BBDEFB;' : ''">
+                            <template v-if="target == null">
+                              <span @click="selected_id = element.id; scroll(element.id, 'sub'); show_iiif(element.iiif_param);"
+                              >{{element.text != null ? element.text.trim() : ""}}</span>
+                            </template>
+                            <template v-else>
+                              <span
+                                @click="selected_id = element.id; scroll(element.id, 'sub'); show_iiif(element.iiif_param);"
+                              >
+                                <template v-for="(app, index2) in element.app">
+                                  <span
+                                    v-if="app.attributes && app.attributes.wit && app.attributes.wit.split(' ').indexOf(target) != -1"
+                                    :key="index2"
+                                    
+                                    v-html="app.text"
                                   >
-                                    <span
-                                      v-if="
-                                        app.attributes &&
-                                          app.attributes.wit &&
-                                          app.attributes.wit
-                                            .split(' ')
-                                            .indexOf(target) != -1
-                                      "
-                                      :key="index2"
-                                      v-html="app.text"
-                                    >
-                                      <!-- :style="app.name == 'rdg' ? 'color : #ff5252' : ''" -->
-                                    </span>
-                                  </template>
-                                </span>
-                              </template>
+                                  <!-- :style="app.name == 'rdg' ? 'color : #ff5252' : ''" -->
+                                  </span>
+                                </template>
+                              </span>
+                            </template>
                             </span>
                             <!-- 
                               </template>
@@ -232,61 +181,33 @@
                 <v-card class="scroll vertical" :flat="true" id="sub">
                   <v-list-item>
                     <v-card-text class="mx-2 text--primary">
-                      <h2 class="text--primary ml-4" @click="target = null">
-                        異文
-                      </h2>
+                      <h2 class="text--primary ml-4" @click="target=null">異文</h2>
 
                       <v-card
                         v-for="(app, index2) in ibun_map"
                         :key="index2"
                         class="mx-5"
                         :id="index2"
-                        :style="
-                          index2 == selected_id
-                            ? 'background-color : #FFFF99;'
-                            : ''
-                        "
+                        :style="index2 == selected_id ? 'background-color : #FFFF99;' : ''"
                       >
                         <v-card-text class="mx-2 text--primary">
-                          <a
-                            @click="
-                              scroll('main_' + index2, 'main');
-                              selected_id = index2;
-                            "
-                          >
-                            <b>{{ app.index }}</b>
+                          <a @click="scroll('main_'+index2, 'main'); selected_id = index2;">
+                            <b>{{app.index}}</b>
                           </a>
 
                           <br />
 
                           <ul class="mt-2">
-                            <li
-                              v-for="(element, index) in app.wits"
-                              :key="index"
-                            >
-                              <template v-if="element.type == 'rdg'">
-                                <span
-                                  v-html="
-                                    (element.text = '' ? ' * ' : element.text)
-                                  "
-                                ></span>
+                            <li v-for="(element, index) in app.wits" :key="index">
+                              <template v-if="element.type=='rdg'">
+                                <span v-html="element.text = '' ?  ' * ' : element.text"></span>
                               </template>
                               <template v-else>
                                 <!-- Temporal -->
-                                <b
-                                  v-if="element.type == 'other'"
-                                  style="color : green; border : solid 2px green;"
-                                  >???</b
-                                >
+                                <b v-if="element.type == 'other'" style="color : green; border : solid 2px green;">???</b>
                                 <span
-                                  :style="
-                                    element.type == 'other'
-                                      ? 'color : gray'
-                                      : ''
-                                  "
-                                  v-html="
-                                    (element.text = '' ? ' * ' : element.text)
-                                  "
+                                  :style="element.type == 'other' ? 'color : gray' : ''"
+                                  v-html="element.text = '' ?  ' * ' : element.text"
                                 ></span>
                               </template>
 
@@ -296,18 +217,9 @@
                                   class="mb-1"
                                   v-for="(e, index3) in index.split(' ')"
                                   :key="index3"
-                                  :style="
-                                    e == target
-                                      ? 'background-color : #fed8b1;'
-                                      : ''
-                                  "
-                                  @click="
-                                    target = e;
-                                    scroll('main_' + index2, 'main');
-                                    selected_id = index2;
-                                  "
-                                  >{{ e }}</span
-                                >
+                                  :style="e == target ? 'background-color : #fed8b1;' : ''"
+                                  @click="target=e; scroll('main_'+index2, 'main'); selected_id = index2;"
+                                >{{e}}</span>
                                 <span>)</span>
                               </template>
                             </li>
@@ -328,20 +240,16 @@
           <v-card-text>
             <br />
 
-            <h2 class="mt-5">{{ title }}</h2>
+            <h2 class="mt-5">{{title}}</h2>
 
             <br />
 
             <h3 class="mt-5">Witness List</h3>
 
             <ul class="mt-5">
-              <li
-                class="mr-2 mb-2"
-                v-for="(obj, index) in witness"
-                :key="index"
-              >
-                <b>{{ index }}:</b>
-                {{ obj }}
+              <li class="mr-2 mb-2" v-for="(obj, index) in witness" :key="index">
+                <b>{{index}}:</b>
+                {{obj}}
               </li>
             </ul>
           </v-card-text>
@@ -355,22 +263,13 @@
 
             <h3 class="mt-5">底本との編集距離</h3>
 
-            <chart
-              :height="300"
-              class="mb-4"
-              :data="ibun_map"
-              :witness="witness"
-            ></chart>
+            <chart :height="300" class="mb-4" :data="ibun_map" :witness="witness"></chart>
 
             <br />
 
             <h3 class="mt-5">異文番号毎の異なり数</h3>
 
-            <Chart4Diff
-              :height="300"
-              class="mb-4"
-              :data="ibun_map"
-            ></Chart4Diff>
+            <Chart4Diff :height="300" class="mb-4" :data="ibun_map"></Chart4Diff>
           </v-card-text>
         </v-card>
       </v-dialog>
@@ -394,10 +293,7 @@
                       <tr v-for="(value, index2) in obj.wits" :key="index2">
                         <td width="40%">
                           <ul>
-                            <li
-                              v-for="(e, index3) in index2.split(' ')"
-                              :key="index3"
-                            >
+                            <li v-for="(e, index3) in index2.split(' ')" :key="index3">
                               {{ witness[e] }}
                               <br />
                             </li>
@@ -405,7 +301,7 @@
                         </td>
                         <td width="10%">{{ obj.index }}</td>
                         <td width="40%" v-html="value.text"></td>
-                        <td width="10%">{{ value.type }}</td>
+                        <td width="10%">{{value.type}}</td>
                       </tr>
                     </tbody>
                   </template>
@@ -425,13 +321,12 @@ import { Splitpanes, Pane } from "splitpanes";
 import axios from "axios";
 import Chart from "./components/Chart.vue";
 import Chart4Diff from "./components/Chart4Diff.vue";
-//import Hello from "./components/Hello.vue";
 
 let mirador_prefix = "mirador/";
 var convert = require("xml-js");
 
 export default {
-  components: { Splitpanes, Pane, Chart, Chart4Diff /*, Hello*/ },
+  components: { Splitpanes, Pane, Chart, Chart4Diff },
   data: function() {
     return {
       width: window.innerWidth,
@@ -459,18 +354,13 @@ export default {
       dialog_info: false,
       selected_id: "",
 
-      title: "校本風異文可視化ツール",
-
-      //パラメータ
-      data: {},
-      e: null,
-      xml: null,
+      title: "校本風異文可視化ツール"
     };
   },
   watch: {
     $route: function() {
       this.init();
-    },
+    }
   },
   mounted: function() {
     this.init();
@@ -528,14 +418,13 @@ export default {
       return data;
     },
     clickIcon(zone_id) {
-      const zone_map = this.zone_map;
-      let obj = zone_map[zone_id];
+      let obj = this.zone_map[zone_id];
 
       let params = [
         {
           manifest: obj.manifest,
-          canvas: obj.canvas,
-        },
+          canvas: obj.canvas
+        }
       ];
 
       this.mirador_path =
@@ -582,9 +471,9 @@ export default {
     exec2main(url) {
       axios
         .get(url, {
-          responseType: "document",
+          responseType: "document"
         })
-        .then((response) => {
+        .then(response => {
           let xml = response.data;
           this.handleXml(xml);
         });
@@ -593,8 +482,8 @@ export default {
       //witness
 
       let title = xml.querySelector("title");
-      if (title) {
-        this.title = title.textContent;
+      if(title){
+        this.title = title.textContent
       }
 
       let listWit = xml.querySelector("listWit");
@@ -611,6 +500,9 @@ export default {
         let wit = listWit[i];
         this.witness["#" + wit.attributes["xml:id"]] = wit.elements[0].text; //wit.attributes["xml:id"];
       }
+
+      console.log("witnessのリスト")
+      console.log(this.witness)
 
       //facs
 
@@ -633,7 +525,7 @@ export default {
             let h = Number(zone["lry"]) - y;
             this.zone_map["#" + id] = {
               manifest: manifest,
-              canvas: canvas + "#xywh=" + x + "," + y + "," + w + "," + h,
+              canvas: canvas + "#xywh=" + x + "," + y + "," + w + "," + h
             };
           }
         }
@@ -641,8 +533,8 @@ export default {
         if (i == 0) {
           let params = [
             {
-              manifest: manifest,
-            },
+              manifest: manifest
+            }
           ];
 
           this.mirador_path =
@@ -654,53 +546,10 @@ export default {
         }
       }
 
-      //facs 2
-      let facs = xml.querySelector("facsimile");
-      if (facs) {
-        let source = facs.attributes.source;
-        if (source) {
-          let manifest = source.value;
-          let surfaces = xml.querySelectorAll("surface");
-          for (let i = 0; i < surfaces.length; i++) {
-            let surface = surfaces[i];
-            let canvas = surface.attributes.source.value;
-            let zone = surface.querySelector("zone");
-            let id = zone.attributes["xml:id"].value;
-            this.zone_map["#" + id] = {
-              manifest: manifest,
-              canvas: canvas,
-            };
-
-            if (i == 0) {
-              let params = [
-                {
-                  manifest: manifest,
-                },
-              ];
-
-              this.mirador_path =
-                mirador_prefix +
-                "?params=" +
-                encodeURIComponent(JSON.stringify(params)) +
-                "&annotationState=on&layout=" +
-                this.layout;
-            }
-          }
-        }
-      }
+      console.log("zonesのリスト")
+      console.log(this.zone_map)
 
       //text
-
-      /************ */
-
-      //xmlの読み込みのために必須
-      let xml_str = new XMLSerializer().serializeToString(
-        xml.querySelector("body")
-      );
-      var result = convert.xml2json(xml_str, { compact: false, spaces: 4 });
-      this.data = JSON.parse(result);
-
-      /************ */
 
       let body = xml.querySelector("body");
       body = this.conv2json(body).elements;
@@ -724,8 +573,8 @@ export default {
           p_arr.push(row_arr);
           row_arr = [
             {
-              type: "p",
-            },
+              type: "p"
+            }
           ];
           p_arr.push(row_arr);
           row_arr = [];
@@ -734,7 +583,7 @@ export default {
         } else if (name == "pb" && obj.attributes && obj.attributes.facs) {
           row_arr.push({
             id: obj.attributes.facs,
-            type: "zone",
+            type: "zone"
           });
         } else if (name == "app") {
           let apps = obj.elements;
@@ -749,6 +598,8 @@ export default {
               iiif_param.push(obj);
             }
           }
+
+          //console.log("----------")
 
           //明示されていないwitを補足
           if (apps[0].name == "lem") {
@@ -783,10 +634,10 @@ export default {
 
             let app_other = {
               attributes: {
-                wit: wit_other.join(" "),
+                wit: wit_other.join(" ")
               },
               elements: apps[0].elements,
-              name: "other",
+              name: "other"
             };
 
             apps[apps.length] = app_other;
@@ -806,16 +657,10 @@ export default {
                   if (lem_rdg.type == "text") {
                     text += lem_rdg.text;
                   } else if (lem_rdg.name == "del") {
-                    text +=
-                      "<del style='color : #990000;'>" +
-                      lem_rdg.elements[0].text +
-                      "</del>";
+                    text += "<del style='color : #990000;'>" + lem_rdg.elements[0].text + "</del>";
                   } else if (lem_rdg.name == "add" && lem_rdg.elements) {
                     //text += "<span style='border: dotted 1px black;'>" + lem_rdg.elements[0].text + "</span>";
-                    text +=
-                      "<span style='color : green;'>" +
-                      lem_rdg.elements[0].text +
-                      "</span>";
+                    text += "<span style='color : green;'>" + lem_rdg.elements[0].text + "</span>";
                   } else if (lem_rdg.elements && lem_rdg.elements[0].text) {
                     text += lem_rdg.elements[0].text;
                   }
@@ -824,7 +669,7 @@ export default {
             }
 
             if (text == "") {
-              text += ""; //" * ";
+              text += ""//" * ";
             }
 
             app.text = text;
@@ -840,7 +685,7 @@ export default {
             app: apps,
             id: "app_" + i,
             index: index,
-            iiif_param: iiif_param,
+            iiif_param: iiif_param
           });
           index += 1;
         }
@@ -876,7 +721,7 @@ export default {
               if (wit != "") {
                 test2[wit] = {
                   text: app.text,
-                  type: app.name,
+                  type: app.name
                 };
               }
             }
@@ -884,7 +729,7 @@ export default {
             if (contain_flg) {
               ibun_map[obj.id] = {
                 index: index,
-                wits: test2,
+                wits: test2
               };
             }
 
@@ -893,22 +738,24 @@ export default {
         }
       }
 
+      console.log("異文情報")
+      console.log(ibun_map)
+
+
       this.ibun_map = ibun_map;
 
       //------------
 
       this.p_arr = p_arr;
+
+      console.log("p_arr")
+      console.log(p_arr)
     },
   },
 
   beforeDestroy: function() {
     window.removeEventListener("resize", this.handleResize);
-  },
-  /*,
-  messageLog(message) {
-    this.e = message;
-  },
-  */
+  }
 };
 </script>
 
@@ -931,6 +778,6 @@ body,
   margin: 0;
 }
 .v-btn {
-  text-transform: none !important;
+  text-transform:none !important;
 }
 </style>

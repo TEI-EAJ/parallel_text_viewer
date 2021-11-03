@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>01 きりつぼ</title>
+        <respStmt>
+          <resp when="2019-10-30">Transcription</resp>
+          <name>Misa Nakamura</name>
+        </respStmt>
+        <respStmt>
+          <resp when="2019-10-30">Transcription</resp>
+          <name>Takashi Tamura</name>
+        </respStmt>
+        <respStmt>
+          <resp when="2019-10-30">TEI Encoding</resp>
+          <name>Satoru Nakamura</name>
+        </respStmt>
+        <respStmt>
+          <resp when="2019-10-30">Advisor</resp>
+          <resp when="2019-12-09">Parallel encoding on 33.jpg, 34.jpg</resp>
+          <name>Kiyonori Nagasaki</name>
+        </respStmt>
+        <respStmt>
+          <resp>Parallel encoding on 24.jpg</resp>
+          <name>王</name>
+          <name>茂原</name>
+        </respStmt>
+        <respStmt>
+          <resp>Parallel encoding on 25.jpg</resp>
+          <name>村田</name>
+        </respStmt>
+        <respStmt>
+          <resp>Parallel encoding on 26.jpg</resp>
+          <name>山本</name>
+        </respStmt>
+        <respStmt>
+          <resp>Parallel encoding on 28.jpg</resp>
+          <name>小川</name>
+        </respStmt>
+        <respStmt>
+          <resp>Parallel encoding on 30.jpg</resp>
+          <name>宮本</name>
+        </respStmt>
+        <respStmt>
+          <resp>Parallel encoding on 31.jpg</resp>
+          <name>王一凡</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <distributor>源氏物語・研究活用プロジェクト</distributor>
+        <date when="2019-10-30">2019年10月30日</date>
+        <availability>
+          <p>
+            <ref target="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</ref></p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <author>池田亀鑑</author>
+          <title>校異源氏物語</title>
+          <publisher>中央公論社</publisher>
+        </bibl>
+        <listWit>
+          <witness xml:id="校異">校異源氏物語</witness>
+          <witness xml:id="靑池">靑表紙本系 池田本</witness>
+          <witness xml:id="靑横">靑表紙本系 横山本</witness>
+          <witness xml:id="靑肖">靑表紙本系 肖柏本</witness>
+          <witness xml:id="靑三">靑表紙本系 三條西家本</witness>
+          <witness xml:id="靑大">靑表紙本系 大島本</witness>
+          <witness xml:id="河">河内本系</witness>
+          <witness xml:id="河宮">河内本系　高松宮本</witness>
+          <witness xml:id="河尾">河内本系　尾州家本</witness>
+          <witness xml:id="河爲">河内本系　爲家本</witness>
+          <witness xml:id="河平">河内本系　平瀬本</witness>
+          <witness xml:id="河大">河内本系　大島本</witness>
+          <witness xml:id="別">別本</witness>
+          <witness xml:id="御">別本 御物本</witness>
+          <witness xml:id="別國">別本 國冬本</witness>
+          <witness xml:id="別陽">別本 陽明本</witness>
+          <witness xml:id="別麥">別本 麥生本</witness>
+          <witness xml:id="国絵">国文学研究資料館 絵入り源氏</witness>
+        </listWit>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <variantEncoding location="internal" method="parallel-segmentation"/>
+    </encodingDesc>
+  </teiHeader>
+  <facsimile>
+    <surfaceGrp facs="https://www.dl.ndl.go.jp/api/iiif/3437686/manifest.json">
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/22" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000022/full/full/0/default.jpg"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0005"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/23" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000023/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0006"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0007"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/24" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000024/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0008"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0009"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/25" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000025/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0010"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0011"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/26" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000026/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0012"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0013"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/27" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000027/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0014"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0015"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/28" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000028/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0016"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0017"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/29" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000029/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0018"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0019"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/30" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000030/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0020"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0021"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/31" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000031/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0022"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0023"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/32" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000032/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0024"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0025"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/33" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000033/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0026"/>
+        <zone lrx="3445" lry="4706" ulx="0" uly="0" xml:id="zone_0027"/>
+      </surface>
+      <surface>
+        <graphic n="https://www.dl.ndl.go.jp/api/iiif/3437686/canvas/34" url="https://www.dl.ndl.go.jp/api/iiif/3437686/R0000034/full/full/0/default.jpg"/>
+        <zone lrx="6890" lry="4706" ulx="3445" uly="0" xml:id="zone_0028"/>
+      </surface>
+    </surfaceGrp>
+  </facsimile>
+  <text>
+    <body>
+      <p> 
+        <app>
+          <lem wit="#校異 #靑池 #靑横 #靑肖 #靑三 #靑大 #河 #河宮 #河尾 #河爲 #河平 #河大 #別 #御 #別陽 #別麥 #国絵"> ひかるきみと 
+            <app>
+              <lem wit="#校異 #靑池 #靑横 #靑肖 #靑三 #靑大 #河 #河宮 #河尾 #河爲 #河平 #河大 #別 #御 #別麥 #国絵">いふ名</lem>
+              <rdg wit="#別陽"/>
+            </app> 
+            はこまうとの
+            <lb corresp="https://w3id.org/kouigenjimonogatari/data/0028-06.json" source="#校異"/>めて
+            <app>
+              <lem wit="#校異 #靑池 #靑横 #靑肖 #靑三 #靑大 #河 #河宮 #河尾 #河爲 #河平 #河大 #別 #御 #別麥 #国絵">きこえ</lem>
+              <rdg wit="#別陽"/>
+            </app>
+            てつけたてまつり 
+            <app>
+              <lem wit="#校異 #靑池 #靑横 #靑肖 #靑三 #靑大 #河 #河宮 #河尾 #河爲 #河平 #河大 #別 #御 #別麥 #国絵"> けるとそいひつたへたる</lem>
+              <rdg wit="#別陽">たる名なり</rdg>
+            </app>
+          </lem>
+          <rdg wit="#別國"/>
+        </app>
+        <app>
+          <lem wit="#校異 #靑池 #靑横 #靑肖 #靑三 #靑大 #河 #河宮 #河尾 #河爲 #河平 #河大 #別 #御 #別國 #別麥 #国絵">となむ</lem>
+          <rdg wit="#別陽">とそ</rdg>
+        </app>
+      </p>
+    </body>
+  </text>
+</TEI>
