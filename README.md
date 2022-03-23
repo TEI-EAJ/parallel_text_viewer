@@ -1,4 +1,8 @@
-# koui2
+# 校本風異文可視化ツール
+
+https://tei-eaj.github.io/koui
+
+[![github pages](https://github.com/TEI-EAJ/koui/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/TEI-EAJ/koui/actions/workflows/gh-pages.yml)
 
 ## Build Setup
 

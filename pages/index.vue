@@ -84,15 +84,7 @@
           >サンプルデータを見る</v-btn
         >
 
-        <br />
-        <br />
-        <br />
-
-        <hr />
-
-        <br />
-
-        <p class="text-center my-5">
+        <p class="text-center mt-10 mb-5">
           <a href="https://github.com/TEI-EAJ">TEI-C東アジア/日本語分科会</a>
         </p>
       </v-container>
@@ -105,7 +97,7 @@
               :src="mirador_path"
               seamless="seamless"
               width="100%"
-              :height="height + 'px'"
+              :height="height - barHeight + 'px'"
               style="border: none"
               allow="fullscreen"
             ></iframe>
