@@ -12,7 +12,8 @@
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix && npm run lint:style -- --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES NODE_ENV=\"production\" nuxt generate"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --cache",

@@ -1,3 +1,22 @@
+const lang = 'ja'
+const siteName = 'カレンダー検索'
+const siteDesc = 'カレンダー形式の可視化を行います。'
+const shortName = 'カレンダー'
+const siteKeywords = ['IIIF', 'デジタルアーカイブ'].join(', ')
+const gtag = ''
+const hostname = 'https://TEI-EAJ.github.io'
+const baseUrl = hostname + '/koui'
+
+// `DEPLOY_ENV` が `GH_PAGES` の場合のみ `router.base = '/<repository-name>/'` を追加する
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/koui/',
+        },
+      }
+    : {}
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -7,16 +26,63 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - koui',
-    title: 'koui',
+    titleTemplate: `%s`,
+    title: siteName,
     meta: [
       { charset: 'utf-8' },
+      { 'http-equiv': 'x-ua-compatible', content: 'ie=edge' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
+      {
+        name: 'format-detection',
+        content: 'telephone=no, email=no, address=no',
+      },
+      // SEO関連
+      { hid: 'description', name: 'description', content: siteDesc },
+      { hid: 'keywords', name: 'keywords', content: siteKeywords },
+      // ogp関連
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: siteName,
+      },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      // { hid: 'og:url', property: 'og:url', content: basePath },
+      { hid: 'og:title', property: 'og:title', content: siteName },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: siteDesc,
+      },
+      /*
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: `${ogpImages}home.jpg`,
+      },
+      */
+      { name: 'twitter:card', content: 'summary' },
+      // pwa iOS
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black-translucent',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+
+  manifest: {
+    lang,
+    name: siteName,
+    short_name: shortName,
+    description: siteDesc,
+    background_color: '#ffffff',
+    theme_color: '#ffffff',
+    display: 'standalone',
+    orientation: 'portrait',
+  },
+
+  loading: { color: '#E64A19', height: '5px' },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -56,7 +122,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en',
+      lang,
     },
   },
 
@@ -64,10 +130,10 @@ export default {
   content: {},
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-  },
+  vuetify: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  ...routerBase,
 }
