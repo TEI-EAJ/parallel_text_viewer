@@ -1,9 +1,9 @@
 const lang = 'ja'
-const siteName = 'カレンダー検索'
-const siteDesc = 'カレンダー形式の可視化を行います。'
-const shortName = 'カレンダー'
-const siteKeywords = ['IIIF', 'デジタルアーカイブ'].join(', ')
-const gtag = ''
+const siteName = '校本風異文可視化ツール'
+const siteDesc = '校本風異文可視化ツール'
+const shortName = '校本'
+const siteKeywords = ['IIIF', 'TEI'].join(', ')
+const gtag = 'G-62MR8MLSEH'
 const hostname = 'https://TEI-EAJ.github.io'
 const baseUrl = hostname + '/koui'
 
@@ -111,7 +111,18 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/google-gtag',
+    '@nuxtjs/sitemap',
   ],
+
+  'google-gtag': {
+    id: gtag,
+  },
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname,
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
