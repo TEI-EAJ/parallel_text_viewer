@@ -4,17 +4,17 @@
 
 ### 絵入源氏物語（国文研所蔵） + 与謝野晶子訳（青空文庫）
 
-https://tei-eaj.github.io/parallel_text_viewer/app/#/?u=https://tei-eaj.github.io/parallel_text_viewer/data/pt/config.json
+https://tei-eaj.github.io/parallel_text_viewer/?u=https://tei-eaj.github.io/parallel_text_viewer/data/pt/config.json
 
 ### [デジタル源氏物語](https://genji.dl.itc.u-tokyo.ac.jp/)
 
-https://tei-eaj.github.io/parallel_text_viewer/app/#/v2?u=https://genji.dl.itc.u-tokyo.ac.jp/data/vol/01/config.json
+https://tei-eaj.github.io/parallel_text_viewer/v2?u=https://genji.dl.itc.u-tokyo.ac.jp/data/vol/01/config.json
 
 ## 使い方
 
 次に述べる設定情報を含むJSONファイルを引数として指定する
 
-https://tei-eaj.github.io/parallel_text_viewer/app/#/v2?u=[設定情報を含むJSONファイルのURL]
+https://tei-eaj.github.io/parallel_text_viewer/v2?u=[設定情報を含むJSONファイルのURL]
 
 ## 設定内容
 
