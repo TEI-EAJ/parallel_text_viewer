@@ -1,72 +1,30 @@
-# 校本風異文可視化ツール
+# TEI Parallel Text Viewer
 
-https://tei-eaj.github.io/koui
+## Example
 
-[![github pages](https://github.com/TEI-EAJ/koui/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/TEI-EAJ/koui/actions/workflows/gh-pages.yml)
+### 絵入源氏物語（国文研所蔵） + 与謝野晶子訳（青空文庫）
 
-## Build Setup
+https://tei-eaj.github.io/parallel_text_viewer/app/#/?u=https://tei-eaj.github.io/parallel_text_viewer/data/pt/config.json
 
-```bash
-# install dependencies
-$ npm install
+### [デジタル源氏物語](https://genji.dl.itc.u-tokyo.ac.jp/)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+https://tei-eaj.github.io/parallel_text_viewer/app/#/v2?u=https://genji.dl.itc.u-tokyo.ac.jp/data/vol/01/config.json
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## 使い方
 
-# generate static project
-$ npm run generate
-```
+次に述べる設定情報を含むJSONファイルを引数として指定する
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+https://tei-eaj.github.io/parallel_text_viewer/app/#/v2?u=[設定情報を含むJSONファイルのURL]
 
-## Special Directories
+## 設定内容
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+| 必須 | 用途 |　項目 | 値 | 備考  |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| *  | データ  | url_main  | 画面右上に表示するメインテキスト（翻刻テキストなど）  | 現代語訳との対応付け（anchor）がなされている場合には、ハイライト表示が連動する  |
+| *  | データ  | url_sub  | 画面右下に表示するサブテキスト（現代語訳文など）  |   |
+|   | データ  | image_map  | 画面左部に表示する画像情報  | [IIIF Curation](http://codh.rois.ac.jp/iiif/curation/)形式で、メインテキストの行と画像を紐づける  |
+|   | 表示用  | return_url  | ホームボタンのリンク  |   |
+|   | 表示用  | return_label  | ホームボタンのラベル  |   |
+|   | 表示用  | direction  | テキストの表示方向  | 縦書きの場合はverticalを指定する  |
 
-### `assets`
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
