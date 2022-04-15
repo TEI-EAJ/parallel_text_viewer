@@ -103,7 +103,7 @@ import Hello from "@/components/Hello.vue";
 
 const { scroller } = require('vue-scrollto/src/scrollTo')
 
-const miradorPrefix = "/mirador/"; // 要修正
+const miradorPrefix = process.env.baseUrl + "/mirador/"; // 要修正
 
 const convert = require("xml-js");
 
