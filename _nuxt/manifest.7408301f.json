@@ -1,0 +1,12 @@
+{
+  "name": "Parallel Text Viewer with TEI & IIIF",
+  "short_name": "Parallel Text",
+  "description": "Parallel Text Viewer with TEI & IIIF",
+  "icons": [],
+  "start_url": "/parallel_text_viewer/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "ja",
+  "orientation": "portrait"
+}

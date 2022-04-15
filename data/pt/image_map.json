@@ -1,0 +1,273 @@
+{
+    "@context": [
+        "http://iiif.io/api/presentation/2/context.json",
+        "http://codh.rois.ac.jp/iiif/curation/1/context.json"
+    ],
+    "@id": "ex:test",
+    "@type": "cr:Curation",
+    "label": "Curating list",
+    "selections": [
+        {
+            "@id": "ex:test/range1",
+            "@type": "sc:Range",
+            "label": "Manual curation by IIIF Curation Viewer",
+            "members": [
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/2#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000001"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/3#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000012"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/3#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000023"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/4#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000034"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/4#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000045"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/5#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000056"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/6#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000066"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/6#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000077"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/7#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000088"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/7#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000099"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/8#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000110"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/8#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000121"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/9#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000132"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/9#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000143"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/10#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000154"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/10#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000165"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/11#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000172"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/12#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000183"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/12#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000194"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/13#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000205"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/13#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000216"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/14#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000227"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/14#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000238"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/15#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000249"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/15#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000260"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/16#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000271"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/17#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000282"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/17#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000293"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/18#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000304"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/18#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000315"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/19#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000326"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/19#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000337"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/20#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000348"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/21#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000359"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/21#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000370"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/22#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000381"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/22#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000392"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/23#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000403"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/23#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000414"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/24#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000425"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/24#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000436"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/25#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000447"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/25#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000458"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/26#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000464"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/27#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000475"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/27#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000486"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/28#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000497"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/28#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000508"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/29#xywh=2808,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000519"
+                },
+                {
+                    "@id": "https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/29#xywh=0,0,2808,3744",
+                    "@type": "sc:Canvas",
+                    "line_id": "nij03-nijl_nijl_nijl_genjimonogatari_0000000530"
+                }
+            ],
+            "within": {
+                "@id": "https://nakamura196.github.io/jpsearch/data/genji/manifest/01.json",
+                "@type": "sc:Manifest",
+                "label": "源氏物語 第1冊（国文学研究資料館）"
+            }
+        }
+    ]
+}

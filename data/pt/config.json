@@ -1,0 +1,12 @@
+{
+    "url_main": "https://tei-eaj.github.io/parallel_text_viewer/data/pt/01.xml",
+    "url_sub": "https://tei-eaj.github.io/parallel_text_viewer/data/yosano.xml",
+    "url_map": "https://tei-eaj.github.io/parallel_text_viewer/data/pt/map.json",
+    "image_map": "https://tei-eaj.github.io/parallel_text_viewer/data/pt/image_map.json",
+    "label_main": "絵入源氏物語テキスト・きりつぼ",
+    "label_sub": "青空文庫・与謝野晶子訳",
+    "query_main": "line[*|id]",
+    "query_sub": "s[*|id]",
+    "direction": "vertical",
+    "layout": "1x1"
+  }
