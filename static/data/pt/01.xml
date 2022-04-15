@@ -1,0 +1,448 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>源氏物語 第1冊</title>
+            <author>紫式部</author>
+            <respStmt>
+               <orgName ref="https://jpsearch.go.jp">Japan Search</orgName>
+               <resp>Publisher</resp>
+            </respStmt>
+            <respStmt>
+               <orgName ref="https://www.nihu.jp/">大学共同利用機関法人 人間文化研究機構</orgName>
+               <resp>Publisher</resp>
+            </respStmt>
+            <respStmt>
+               <orgName ref="http://base1.nijl.ac.jp/infolib/meta_pub/G0001501genji">絵入源氏物語</orgName>
+               <resp>Publisher</resp>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-07-11">TEI Encoding</resp>
+               <name>Satoru Nakamura</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-07-14">TEI Encoding Contributor</resp>
+               <name>Kazuhiro Okada</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-07-14">TEI Encoding Contributor</resp>
+               <name>Kiyonori Nagasaki</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-07-14">TEI Encoding Contributor</resp>
+               <name>Yasuyuki Kano</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-07-14">TEI Encoding Contributor</resp>
+               <name>So Miyagawa</name>
+            </respStmt>
+            <respStmt>
+               <resp when="2019-07-14">TEI Encoding Contributor</resp>
+               <name>Yuna Murata</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <distributor>Satoru Nakamura</distributor>
+            <date when="2019-07-11">2019年7月11日</date>
+            <availability>
+               <p>
+                  <ref target="http://creativecommons.org/licenses/by-nc/4.0/">クリエイティブ・コモンズ 表示 - 非営利 4.0 国際 ライセンス</ref></p>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <title ref="https://kotenseki.nijl.ac.jp/biblio/200003803/">源氏物語</title>
+               <author>紫式部</author>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <sourceDoc>
+      <surfaceGrp facs="https://nakamura196.github.io/jpsearch/data/genji/manifest/01.json">
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/2" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00002.tif/full/full/0/default.jpg"/>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0001">
+               <lb/>
+               <line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000001">
+                  <anchor corresp="yosano_genji_ids.xml#YG0000000100"/> いづれの御時にか女御更衣あまたさふらひ給ける </line>
+               <lb/>
+               <line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000002"> なかに。いとやむごとなききはにはあらぬが。 </line>
+               <lb/>
+               <line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000003"> すぐれてときめき給ふありけり <anchor corresp="yosano_genji_ids.xml#YG0000000200"/> はじめよりわれ </line>
+               <lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000004">はと思ひあがり給へる御かた＋＋＄。めざましきもの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000005">におとしめそねみ給。<anchor corresp="yosano_genji_ids.xml#YG0000000300"/>おなしほど。それより</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000006">下らうの更衣たちはましてやすからず<anchor corresp="yosano_genji_ids.xml#YG0000000400"/>あさゆふ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000007">のみやづかへにつけても。人のこゝろをうごかし。う</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000008">らみをおふつもりにやありけむいとあづしく</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000009">なりゆきもの心ぼそげにさとがちなるをいよ＋＋</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000010"
+                  >あかずあはれなるものにおほゝして。人のそし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000011">りをもえはゞからせ給はず。<anchor corresp="yosano_genji_ids.xml#YG0000000500"/>世のためしにもなり</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/3" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00003.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0002"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000012">ぬべき御もてなしなり。<anchor corresp="yosano_genji_ids.xml#YG0000000600"/>かんだちめ。うへ人＄なども。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000013">あひなくめをそばめつゝいとまばゆき人の御覚え</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000014">なり<anchor corresp="yosano_genji_ids.xml#YG0000000700"/>もろこしにもかゝることのをごりにこそ世も</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000015">みだれあしかりけれと。<anchor corresp="yosano_genji_ids.xml#YG0000000800"/>やう＋＋あめのしたにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000016">あぢきなう人のもてなやみぐさになりて<anchor corresp="yosano_genji_ids.xml#YG0000000900"
+                  />楊貴</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000017">妃のためしもひきいでつべうなりゆくに。<anchor corresp="yosano_genji_ids.xml#YG0000001000"/>いと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000018">はしたなきことおほかれどかたじけなき御心ばへの</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000019">たぐひなきをたのみにてまじらひ給<anchor corresp="yosano_genji_ids.xml#YG0000001100"/>ちゝの大納言</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000020">はなくなりて<anchor corresp="yosano_genji_ids.xml#YG0000001200"
+                  />はゝ北のかたなんいにしへの人のよしあ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000021">るにておやうちぐしさしあたりて世の覚え花</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000022">やかなる御かた＋＋＄にもおとらず。<anchor corresp="yosano_genji_ids.xml#YG0000001300"/>何事＄のぎしき</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0003"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000023">をももてなし給けれど。とりたてゝはか＋＋＄し</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000024">き御うしろみしなければ。ことある時はなをより</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000025">所なく心ぼそげなり<anchor corresp="yosano_genji_ids.xml#YG0000001400"/>さきの世にも御ちぎりやふか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000026">かりけん世になくきよらなるたまのおのこみこ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000027">さへむまれ給ぬ<anchor corresp="yosano_genji_ids.xml#YG0000001500"/>いつしかと心もとながらせ給て</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000028">いそぎまいらせて御覧ずるに<anchor corresp="yosano_genji_ids.xml#YG0000001600"
+                  />めづらかなるちご</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000029">の御かたちなり<anchor corresp="yosano_genji_ids.xml#YG0000001700"/>一のみこは右大臣の女御の御はら</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000030">にて。よせおもくうたがひなきまうけのきみと。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000031">世にもてかしづき聞ゆれどこの御にほひにはなら</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000032">び給べくもあらざりければ。おほかたのやんごとなき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000033"
+                  >御おもひにてこのきみをばわたくしものにおほゝし</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/4" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00004.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0004"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000034">かしづき給事かぎりなし<anchor corresp="yosano_genji_ids.xml#YG0000001800"/>はじめよりをしなべ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000035"
+                  >てのうへ宮づかへし給べききはにはあらざりき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000036"><anchor corresp="yosano_genji_ids.xml#YG0000001900"/>おぼえいとやむごとなく上ずめかしけれどわり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000037"
+                  >なくまつはさせ給あまりに。さるべき御あそびの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000038">おり＋＋。なに事＄にもゆへあることのふし＋＋＄には。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000039">まづまうのぼらせ給ふある時にはおほとのご</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000040">もりすぐして。やがてさふらはせ給など。あながち</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000041">におまへさらずもてなさせ給し程にをのづから</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000042"
+                  >かろきかたにもみえじをこのみこむまれ給て</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000043">のちはいと心ことにおもほしをきてたれば坊にも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000044">ようせずはこのみこのゐ給べきなめりと一の</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0005"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000045">みこの女御はおぼしうたがへり<anchor corresp="yosano_genji_ids.xml#YG0000002000"/>人よりさきに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000046"
+                     >まいり給て。<anchor corresp="yosano_genji_ids.xml#YG0000002100"/>やむごとなき御思ひなべてならず。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000047"><anchor corresp="yosano_genji_ids.xml#YG0000002200"/>みこたちなどもおはしませば此御かたの御いさめを</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000048">のみぞなをわづらはしく心ぐるしう思ひ聞えさせ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000049">給ける<anchor corresp="yosano_genji_ids.xml#YG0000002300"/>かしこき御かげをばたのみきこえながらおと</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000050">しめきずをもとめ給ふ人はおほくわが身はかよ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000051">はく。ものはかなきありさまにて。なか＋＋なるもの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000052">おもひをぞし給ふ<anchor
+                     corresp="yosano_genji_ids.xml#YG0000002400"/>御つぼねはきりつぼなり<anchor corresp="yosano_genji_ids.xml#YG0000002500"/>あまた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000053">の御かた＋＋＄をすぎさせ給つゝ。ひまなき御まへわ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000054">たりに人の御こゝろをつくし給もげにことはり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000055">とみえたり。<anchor corresp="yosano_genji_ids.xml#YG0000002600"/>まうのぼり給にも。あまりうちしきる</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/5" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00005.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0006"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000056">おり＋＋はうちはしわた殿こゝかしこのみちに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000057">あやしきわざをしつゝ。御をくりむかへの人のきぬ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000058">のすそたへがたう。まさなきことゞもあり。<anchor corresp="yosano_genji_ids.xml#YG0000002700"/>又ある</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000059">時は。えさらぬめだうのとをさしこめ。こなたかなた</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000060">心をあはせて。はしたなめわづらはせ給時もおほ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000061">かり。<anchor corresp="yosano_genji_ids.xml#YG0000002800"/>ことにふれてかずしらずくるしきことのみ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000062">まさればいといたう思ひわびたるをいとゞあはれと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000063">御覧じて後凉殿にもとよりさふらひ給更衣</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000064"
+                  >のざうしを。ほかにうつさせ給て。うへつぼねにた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000065">まはす。<anchor corresp="yosano_genji_ids.xml#YG0000002900"/>そのうらみましてやらんかたなし</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/6" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00006.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0008"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000066">
+                  <anchor corresp="yosano_genji_ids.xml#YG0000003000"/>このみこみつになり給とし御はかまぎのこと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000067">
+                  <anchor corresp="yosano_genji_ids.xml#YG0000003100"/>一の宮にたてまつりしにをとらずくらづかさ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000068">おさめとのゝものをつくして。いみじうせさせ給ふ。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000069">
+                  <anchor corresp="yosano_genji_ids.xml#YG0000003200"/>それにつけても世のそしりのみおほかれど。この</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000070">みこのをよすけもておはする御かたち心ばへあり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000071"
+                  >がたくめづらしきまでみえ給を。えそねみあへ給は</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000072">ず。 <anchor corresp="yosano_genji_ids.xml#YG0000003300"/>ものゝ心しり給人は。かゝる人も世にいでおはするも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000073"
+                  >のなりけりと。あさましきまでめをおどろかし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000074">給ふ <anchor corresp="yosano_genji_ids.xml#YG0000003400"/>そのとしの夏 <anchor corresp="yosano_genji_ids.xml#YG0000003500"/>みやす所はかなきこゝちに</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000075">わづらひてまかでなむとし給をいとまさらに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000076">ゆるさせ給はず。 <anchor corresp="yosano_genji_ids.xml#YG0000003600"/>としごろつねのあづしさになり</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0009"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000077">給へれば。御めなれて猶しばしこゝろみよとのたまは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000078">するに日々にをもり給てたゞ五六日のほどに</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000079">いとよはうなれば。 <anchor corresp="yosano_genji_ids.xml#YG0000003700"/>はゝぎみなく＋＋そうして。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000080">まかでさせたてまつり給ふ。 <anchor corresp="yosano_genji_ids.xml#YG0000003800"
+                  />かゝるおりにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000081">あるまじきはぢもこそと。こゝろづかひ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000082">してみこをばとゞめたてまつりて忍びて出給ふ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000083">
+                  <anchor corresp="yosano_genji_ids.xml#YG0000003900"/>かぎりあればさのみもえとゞめさせ給はず御覧</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000084">じだにをくらぬおぼつかなさを。いふかたなく</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000085">おぼさるいとにほひやかに<anchor
+                     corresp="yosano_genji_ids.xml#YG0000004000"/>うつくしげなる人の</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000086">いたうおもやせて。いとあはれと物を思ひしみ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000087">ながらことにいでゝも聞えやらず<anchor
+                     corresp="yosano_genji_ids.xml#YG0000004100"/>あるかなきか</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/7" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00007.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0010"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000088">にきえいりつゝものし給を御らんずるにきし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000089">かた行末おぼしめされず<anchor
+                     corresp="yosano_genji_ids.xml#YG0000004200"/>よろづのことをなく</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000090">＋＋ちぎりのたまはすれど御いらへもえきこえ給</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000091">はず。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000004300"/>まみなどもいとたゆげにて。いとゞなよ＋＋</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000092">とわれかのけしきにてふしたればいかさまにかと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000093">おぼしめしまどはる。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000004400"/>てぐるまのせんじなどの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000094">給はせても。又いらせ給てはさらにゆるさせ給は</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000095">ず。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000004500"/>かぎりあらんみちにも。をくれさきだゝじと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000096">ちぎらせ給けるを。さりともうちすてゝはえゆ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000097">きやらじとの給はするを女もいといみじと</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000098">みたてまつりて</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0011"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000099">△△かぎりとてわかるゝ道のかなしきにいかま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000100">ほしきは命成けりいとかく思ふ給へましかばと</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000101">いきもたえつゝきこえまほしげなることは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000102">ありげなれどいとくるしげにたゆげなれば<anchor corresp="yosano_genji_ids.xml#YG0000004600"/>かく</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000103">ながらともかくもならんを御らんじはてんとお</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000104">ぼしめすに。けふはじむべきいのりどもさるべき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000105"
+                  >人々＄うけたまはれる。こよひよりと聞えいそがせ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000106">ば。わりなくおもほしながらまかでさせ給ひつ。<anchor corresp="yosano_genji_ids.xml#YG0000004700"/>御</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000107"
+                  >むねのみつとふたがりて。つゆまどろまれずあかし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000108">かねさせ給。<anchor corresp="yosano_genji_ids.xml#YG0000004800"/>御つかひのゆきかふほどもなきに。なを</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000109"
+               >いぶせさをかぎりなくの給はせつるを。夜なかうち</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/8" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00008.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0012"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000110">すぐるほどになんたえはて給ぬるとてなきさは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000111">げば御つかひもいとあへなくてかへりまいりぬ<anchor
+                     corresp="yosano_genji_ids.xml#YG0000004900"/>き</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000112">こしめす御心まどひ。なに事＄もおぼしめしわか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000113">れずこもりおはします<anchor corresp="yosano_genji_ids.xml#YG0000005000"
+                  />みこはかくてもいと御らん</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000114">ぜまほしけれど。かゝるほどにさふらひ給れいなき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000115">ことなれば。まかで給なんとす。なにごとかあらん共</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000116">おもほしたらずさふらふ人々のなきまどひうへも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000117">御なみだのひまなくながれおはしますを。あやしと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000118"
+                  >みたてまつり給へるを。よろしきことにだに。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000119">かゝるわかれのかなしからぬはなきわざなるを。ま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000120">してあはれにいふかひなし。かぎりあればれいの</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0013"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000121">さほうにおさめたてまつるを。はゝ北のかたおなじ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000122">けふりにものぼりなんとなきこがれ給て。御をくり</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000123">の女房のくるまにしたひのり給てをたぎといふ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000124">所に。いといかめしうそのさほうしたるに。おはし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000125"
+                  >つきたるこゝちいかばかりかはありけんむなしき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000126">御からをみる＋＋。猶おはするものと思ふがいとかひ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000127">なければはいになり給はんをみたてまつりて今は</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000128">なき人とひたふるに思ひなりなんと。さかしう</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000129">の給つれど。くるまよりおちぬべうまどひ給へば。さ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000130"
+                  >は思ひつかしと人々もてわづらひ聞ゆうちより</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000131">御つかひあり三位のくらゐをくり給よし<anchor corresp="yosano_genji_ids.xml#YG0000006000"/>勅使き</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/9" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00009.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0014"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000132">てその宣命よむなんかなしきことなりける<anchor corresp="yosano_genji_ids.xml#YG0000006200"/>女御と</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000133"
+                  >だにいはせずなりぬるが。あかずくちおしうおぼ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000134">さるれば。いまひときざみのくらゐをだにと。をくら</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000135">せ給なりけり。<anchor corresp="yosano_genji_ids.xml#YG0000006300"
+                  />是につけてもにくみ給人＋＋＄おほ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000136">かり。<anchor corresp="yosano_genji_ids.xml#YG0000006400"/>物おもひしり給ふは。さまかたちなどのめでた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000137"
+                  >かりしこと。心ばせのなだらかにめやすくにくみ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000138">がたかりし事など。いまぞおぼしいづる。<anchor corresp="yosano_genji_ids.xml#YG0000006500"/>さまあし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000139"
+                  >き御もてなしゆへこそ。すげなうそねみ給しが。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000140"><anchor corresp="yosano_genji_ids.xml#YG0000006600"/>人がらのあはれになさけありし御心をうへの女房な</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000141">ども恋しのびあへり<anchor
+                     corresp="yosano_genji_ids.xml#YG0000006700"/>なくてぞとはかゝるおりに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000142">やとみえたり<anchor corresp="yosano_genji_ids.xml#YG0000006800"/>はかなく日比すぎて後のわざなどにも</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0015"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000143">こまかにとふらはせ給ふほど<anchor corresp="yosano_genji_ids.xml#YG0000006900"/>ふるまゝにせんかた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000144"
+                  >なうかなしうおぼさるゝに。御かた＋＋＄のとのゐ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000145">などもたえてし給はず。<anchor corresp="yosano_genji_ids.xml#YG0000007000"/>たゞなみだにひちてあか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000146"
+                  >しくらさせ給へばみたてまつる人さへ露けき秋</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000147">なり。なきあとまで人のむねあくまじかりける</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000148">人の御おぼえかなとぞ弘徽殿などには猶ゆるし</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000149">なうの給ける一の宮をみたてまつらせ給ふにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000150">わかみやの御恋しさのみおもほしいでつゝした</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000151"
+                  >しき女房御めのとなどをつかはしつゝありさま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000152">をきこしめす野分だちてにはかにはたさむ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000153">き夕暮のほどつねよりもおぼしいづること</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/10" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00010.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0016"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000154">おほくてゆげひの命婦といふをつかはす</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000155">夕づく夜のおかしきほどにいだしたてさせ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000156">給ふてやがてながめおはします。かうやうのおりは。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000157">御あそびなどせさせ給しに。心ことなる物のねを</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000158"
+                  >かきならしきこえ出ることの葉も人よりはこと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000159">なりしけはひかたちの。おもかげにつとそひてお</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000160">ぼさるゝにもやみのうつゝにはなををとりけり命</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000161">婦かしこにまかでつきてかどひきいるゝよりけは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000162">ひあはれなり<anchor corresp="yosano_genji_ids.xml#YG0000008000"/>やもめずみなれど人ひとりの御かし</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000163">づきにとかくつくろひたてゝ。めやすきほどに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000164">てすぐし給つるをやみにくれてふし給へる</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0017"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000165">ほどにくさもたかくなり<anchor corresp="yosano_genji_ids.xml#YG0000008100"/>野分にいとゞあれ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000166"
+                  >たるこゝちして月かげばかりぞやへむぐらにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000167">さはらずさし入たる。みなみおもてにおろして。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000168">はゝぎみとみにえものもの給はず<anchor corresp="yosano_genji_ids.xml#YG0000008200"
+                  />いまゝで</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000169">とまり侍るがいとうきをかゝる御つかひのよも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000170">ぎふのつゆわけ入給につけても。はづかしう</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000171"
+                  >なんとて。げにえたふまじくない給ふ</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/11" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00011.tif/full/full/0/default.jpg"/>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0019"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000172"><anchor corresp="yosano_genji_ids.xml#YG0000008300"/>まいりてはいとゞ心ぐるしう心ぎもゝつくるやう</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000173"
+                  >になんと内侍のすけのそうしたまひしを</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000174">もの思ひ給へしらぬこゝちにも。げにこそいと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000175">しのびがたう侍けれとて。やゝためらひておほ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000176">せごとつたえ聞ゆ。<anchor corresp="yosano_genji_ids.xml#YG0000008400"/>しばしはゆめかとのみたどら</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000177">れしを。やう＋＋おもひしづまるにしも。さむべ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000178">きかたなくたへがたきは。<anchor corresp="yosano_genji_ids.xml#YG0000008500"/>いかにすべきわざにか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000179">とも。とひあはすべき人だになきを。<anchor corresp="yosano_genji_ids.xml#YG0000008600"
+                  />しのびて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000180">はまいり給なんや<anchor corresp="yosano_genji_ids.xml#YG0000008700"/>わかみやのいとおぼつかなく露</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000181">けきなかにすぐし給も。心ぐるしうおぼさるゝ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000182">を。とくまいり給へなど。<anchor corresp="yosano_genji_ids.xml#YG0000008701"/>はか＋＋＄しうものたま</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/12" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00012.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0020"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000183">はせやらず。むせかへらせ給つゝ。かつは人も心よは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000184">くみたてまつるらんと。おぼしつゝまぬにしも</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000185">あらぬ御けしきの心ぐるしさにうけたまはり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000186">もはてぬやうにてなんまかで侍りぬるとて。御文</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000187">たてまつる<anchor
+                     corresp="yosano_genji_ids.xml#YG0000008800"/>めもみえ侍らぬにかくかしこきおほせごと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000188">をひかりにてなんとてみ給ほど<anchor corresp="yosano_genji_ids.xml#YG0000008900"/>へばすこしうち</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000189">まぎるゝこともやと。まちすぐす月日にそへて。いと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000190">しのびがたきはわりなきわざになん。<anchor corresp="yosano_genji_ids.xml#YG0000009000"/>いはけなき</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000191">人もいかにと思ひやりつゝ。もろともにはぐゝまぬ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000192">おぼつかなさを。いまはなをむかしのかたみになず</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000193">らへてものし給へ<anchor
+                     corresp="yosano_genji_ids.xml#YG0000009100"/>など。こまやかにかゝせ給へり</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0021"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000194"><anchor corresp="yosano_genji_ids.xml#YG0000009200"/>△△みやぎのゝつゆふきむすぶ風のをとに小萩</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000195"
+                     >がもとを思ひこそやれとあれどえ見給はてず<anchor corresp="yosano_genji_ids.xml#YG0000009300"/>いの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000196">ちながさのいとつらうおもふ給へしらるゝに松のお</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000197"
+                  >もはんことだにはづかしう思給へ侍ればもゝしぎ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000198">にゆきかひ侍らんことは。ましていとはゞかりおほ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000199">くなん。<anchor corresp="yosano_genji_ids.xml#YG0000009400"
+                  />かしこきおほせごとをたび＋＋うけたま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000200">はりながら。身づからはえなん思ひ給へたつまじき。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000201"><anchor corresp="yosano_genji_ids.xml#YG0000009500"
+                  />わか宮はいかにおもほししるにかまいり給はんこと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000202">をのみなんおぼしいそぐめれば。ことはりにかな</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000203">しうみたてまつり侍るなど。うち＋＋に思給へる</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000204">さまをそうし給へ。<anchor corresp="yosano_genji_ids.xml#YG0000009600"/>ゆゝしき身にはべれば。かく</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/13" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00013.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0022"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000205">ておはしますもいま＋＋しうかたじけなくなど</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000206">の給<anchor corresp="yosano_genji_ids.xml#YG0000009700"
+                     />宮はおほとのごもりにけり<anchor corresp="yosano_genji_ids.xml#YG0000009800"/>みたてまつりて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000207">くはしく御有さまもそうし侍らまほしきをま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000208"
+                  >ちおはしますらんを夜ふけ侍りぬべしとていそぐ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000209"><anchor corresp="yosano_genji_ids.xml#YG0000009900"/>くれまどふ心のやみもたへがたきかたはしをだに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000210"
+                  >はるくばかりに聞えまほしう侍をわたくしにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000211">心のどかにまかでたまへ。<anchor corresp="yosano_genji_ids.xml#YG0000010000"/>としごろうれしくおも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000212"
+                  >だゝしきつゐでにてたちより給し物を。かゝる</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000213">御せうそこにてみたてまつる。<anchor corresp="yosano_genji_ids.xml#YG0000010100"/>返々つれなき命</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000214">にも侍かな。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000010200"/>むまれし時よりおもふ心ありし人</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000215">にて故大納言いまはとなるまでたゞ此人の宮づかへ</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0023"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000216">のほいかならずとげさせたてまつれ我なくなりぬ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000217">とてくちおしう思ひくづおるなと返々いさめを</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000218">かれ侍しかば。はか＋＋＄しううしろみ思ふ人なきま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000219">じらひは。中＋＋なるべきことゝおもふたまへながら。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000220"
+                  >たゞかのゆいごむをたがへじとばかりに。いだし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000221">たて侍しを身にあまるまでの御心ざしのよろづ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000222">にかたじけなきに。人げなきはぢをかくしつゝまじ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000223">らひ給ふめりつるを。人のそねみふかくつもり。やすから</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000224">ぬことおほくなりそひ侍に。よこさまなるやうにて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000225"
+                  >つゐにかくなり侍ぬれば。かへりてはつらくなん。かし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000226">こき御心ざしを思ふ給へられ侍るこれもわりなき</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/14" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00014.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0024"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000227">心のやみになどいひもやらず。むせかへり給ほどに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000228">夜もふけぬ<anchor
+                     corresp="yosano_genji_ids.xml#YG0000010300"/>うへもしかなん<anchor corresp="yosano_genji_ids.xml#YG0000010400"/>わが御心ながらあな</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000229">がちに人めおどろくばかりおぼされしも。ながゝる</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000230">まじき成けりと。<anchor corresp="yosano_genji_ids.xml#YG0000010500"/>いまはつらかりける人のちぎり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000231">になん。世にいさゝかも人の心をまげたることはあら</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000232">じとおもふを。たゞこの人ゆへにて。あまたさる</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000233">まじき人のうらみをおひし。はて＋＋はかううち</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000234"
+                  >すてられて。心おさめむかたなきに。いとゞ人わろう</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000235">かたくなになりはべるもさきの世ゆかしうなんと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000236">うち返しつゝ御しほたれがちにのみおはし</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000237">ますとかたりて。つきせず<anchor corresp="yosano_genji_ids.xml#YG0000010600"/>なく＋＋夜いたうふけぬ</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0025"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000238">れば。こよひすぐさず御かへりそうせんといそぎま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000239">いる<anchor corresp="yosano_genji_ids.xml#YG0000010700"
+                  />月は入がたの空きようすみわたれるにかぜ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000240">いと凉しく吹て草村の虫のこゑ＋＋もよほし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000241">がほなるも。いとたちはなれにくき草のもとなり</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000242"><anchor corresp="yosano_genji_ids.xml#YG0000010800"/>△△すゞ虫のこゑのかぎりをつくしてもながき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000243">夜あかずふるなみだかなえものりやらず</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000244"><anchor corresp="yosano_genji_ids.xml#YG0000010900"/>△△いとゞしく虫のねしげきあさぢふに露をき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000245">そふる雲のうへ人かごとも聞えつべくなんといはせ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000246">給ふ。<anchor corresp="yosano_genji_ids.xml#YG0000011000"/>おかしき御をくりものなどあるべきおりにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000247">あらねばたゞかの御形見にとてかゝるようもやとの</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000248">こし給へりける御さうぞくひとくだり御くし</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/15" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00015.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0026"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000249">あげのでうどめく物そへ給ふ<anchor corresp="yosano_genji_ids.xml#YG0000011100"/>わかき人々かなしき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000250"
+                  >ことはさらにもいはず内わたりを朝夕にならひて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000251">いとさう＋＋しくうへの御ありさまなどおもひいで</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000252">聞ゆれば。とくまいり給はんことをそゞのかし聞</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000253">ゆれど。かくいま＋＋しき身のそひたてまつらんも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000254">いと人きゝうかるべし。またみたてまつらでしばしも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000255"
+                  >あらんはいとうしろめたう思ひ聞え給て。すか＋＋</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000256">ともえまいらせたてまつりたまはぬなりけり。<anchor corresp="yosano_genji_ids.xml#YG0000011200"/>命婦＄</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000257"
+                  >はまだおほとのごもらせたまはざりけるをあはれに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000258">みたてまつる。<anchor corresp="yosano_genji_ids.xml#YG0000011300"/>おまへのつぼせんざいのいとおもしろき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000259"
+                  >さかりなるを御らんずるやうにて。忍びやかに心にくき</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0027"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000260">かぎりの女房四五人さふらはせ給て御物語せさせ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000261">給成けり<anchor corresp="yosano_genji_ids.xml#YG0000011400"
+                  />此比あけくれ御らんずる長恨哥の御ゑ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000262">亭子院のかゝせ給ていせつらゆきによませ給へる</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000263">やまと言のはをももろこしのうたをもたゞその</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000264">すぢをぞまくらことにせさせ給。<anchor corresp="yosano_genji_ids.xml#YG0000011500"/>いとこまやかに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000265">有さまをとはせ給<anchor corresp="yosano_genji_ids.xml#YG0000011600"
+                  />哀なりつること忍びやかに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000266">そうす<anchor corresp="yosano_genji_ids.xml#YG0000011700"/>御返り御らんずれば<anchor corresp="yosano_genji_ids.xml#YG0000011800"/>いともかしこきはをき所も</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000267">侍らず。<anchor corresp="yosano_genji_ids.xml#YG0000011900"/>かゝるおほせごとにつけても。かきくらすみだり心＄ちになん</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000268"><anchor corresp="yosano_genji_ids.xml#YG0000012000"
+                  />△△あらき風ふせぎしかげのかれしよりこはぎ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000269">がうへぞしづ心なき。などやうにみだりがはしき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000270">を心おさめざりけるほどゝ御らんじゆるすべし</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/16" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00016.tif/full/full/0/default.jpg"/>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0029"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000271"><anchor corresp="yosano_genji_ids.xml#YG0000012100"/>いとかうしもみえじとおぼししづむれどさらに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000272"
+                     >え忍びあへさせ給はず<anchor corresp="yosano_genji_ids.xml#YG0000012200"/>御らんじはじめし年月</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000273">のことさへかきあつめ。<anchor corresp="yosano_genji_ids.xml#YG0000012300"/>よろづにおぼしつゞけら</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000274">れて時のまもおぼつかなかりしをかくても月</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000275">日はへにけりと。あさましうおぼしめさる。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000276"><anchor
+                     corresp="yosano_genji_ids.xml#YG0000012400"/>故大納言のゆいごむあやまたず宮づかへのほいふ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000277">かくものしたりしよろこびは。かひあるさまに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000278">とこそ思ひわたりつれ。いふかひなしやとうちの</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000279">たまはせていと哀におぼしやる<anchor corresp="yosano_genji_ids.xml#YG0000012500"/>かくてもをの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000280">づからわか宮などおひいで給はゞ。さるべきつい</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000281">でもありなん。<anchor corresp="yosano_genji_ids.xml#YG0000012600"/>命ながくとこそおもひねんぜめ</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/17" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00017.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0030"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000282">などの給はす<anchor corresp="yosano_genji_ids.xml#YG0000012700"/>かのをくりもの御らんぜさす<anchor corresp="yosano_genji_ids.xml#YG0000012800"/>なき</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000283">人のすみかたづねいでたりけん。しるしのかんざし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000284">ならましかばとおもほすもいとかひなし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000285"><anchor
+                     corresp="yosano_genji_ids.xml#YG0000012900"/>△△尋ね行まぼろしもがなつてにても玉のあ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000286">りかをそことしるべくゑにかける楊貴妃のかたち</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000287">はいみじきゑしといへども筆かぎりありければ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000288">いとにほひなし<anchor corresp="yosano_genji_ids.xml#YG0000013000"/>大液の芙蓉未央の柳もげに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000289">かよひたりしかたちを。からめいたるよそひはうるは</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000290">しうこそありけめ。なつかしうらうたげなりし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000291">をおぼしいづるに花鳥の色にもねにもよそふべ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000292">きかたぞなき<anchor
+                     corresp="yosano_genji_ids.xml#YG0000013100"/>朝夕のことくさにはねをならべえだを</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0031"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000293">かはさむとちぎらせ給しにかなはざりける命の</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000294">ほどぞつきせず<anchor
+                     corresp="yosano_genji_ids.xml#YG0000013200"/>うらめしき風のをと虫のねに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000295">つけてものゝみかなしうおぼさるゝに弘徽殿に</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000296">はひさしううへの御つぼねにもまうのぼり給</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000297">はず。月のおもしろきに夜ふくるまであそびをぞ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000298">し給なるいとすさまじうものしときこしめす</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000299"><anchor
+                     corresp="yosano_genji_ids.xml#YG0000013300"/>此比の御けしきをみたてまつるうへ人女房などは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000300">かたはらいたしときゝけり<anchor corresp="yosano_genji_ids.xml#YG0000013400"/>いとをしだちかど＋＋</line><lb/><line
+                        xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000301">しき所ものし給ふ御かたにて。ことにもあらず</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000302">おぼしけちてもてなし給なるべし。<anchor corresp="yosano_genji_ids.xml#YG0000013500"/>月もいりぬ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000303"><anchor
+                           corresp="yosano_genji_ids.xml#YG0000013600"/>△△雲のうへもなみだにくるゝ秋の月いかですむ</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/18" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00018.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0032"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000304">覧あさぢふの宿おぼしやりつゝともし火をかゝ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000305">げつくしておきおはします<anchor
+                     corresp="yosano_genji_ids.xml#YG0000013700"/>右近のつかさのとの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000306">ゐ申のこゑ聞ゆるはうしになりぬる成べし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000307"><anchor corresp="yosano_genji_ids.xml#YG0000013800"
+                  />人めをおぼしてよるのおとゞにいらせ給ても</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000308">まどろませ給ことかたし。<anchor corresp="yosano_genji_ids.xml#YG0000013900"/>あしたにおきさせ給ふ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000309"
+                  >とてもあくるもしらでとおぼしいづるにも猶あさ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000310">まつりごとはをこたらせ給ぬべかめり。<anchor corresp="yosano_genji_ids.xml#YG0000014000"/>ものなども</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000311">きこしめさず。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000014100"/>あさがれゐのけしきばかりふれさせ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000312">給て大床子の御ものなどはいとはるかにおぼし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000313">めしたれば。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000014200"/>はいぜんにさふらふかぎりは。心ぐるしき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000314">御けしきをみたてまつりなげく<anchor corresp="yosano_genji_ids.xml#YG0000014300"/>すべてちかう</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0033"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000315">さふらふかぎりはおとこ女いとわりなきわざかな</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000316">といひあはせつゝなげく。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000014400"/>さるべきちぎりこそはお</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000317">はしましけめ。そこらの人のそしりうらみをもはゞ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000318">からせ給はず。この御ことにふれたることをば。だう</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000319">りをもうしなはせたまひ。いまはたかく世のなかの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000320">ことをもおぼしすてたるやうになりゆくは。いと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000321"
+                  >たい＋＋＄しきわざなりと。人のみかどのためしまで</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000322">ひきいでさゝめきなげきけり<anchor corresp="yosano_genji_ids.xml#YG0000014500"/>月日へてわか宮</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000323">まいり給ぬ。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000014600"/>いとゞこの世の物ならずきよらにおよ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000324">すけ給へればいとゞゆゝしうおぼしたり<anchor corresp="yosano_genji_ids.xml#YG0000014700"/>あくる</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000325">としのはる坊さだまり給にも<anchor corresp="yosano_genji_ids.xml#YG0000014800"/>いとひきこさまほし</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/19" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00019.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0034"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000326">うおぼせど。御うしろみすべき人もなく。また世の</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000327">うけひくまじきことなれば。中々あやうく覚しはゞ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000328">かりて。色にもいださせ給はずなりぬるを。<anchor corresp="yosano_genji_ids.xml#YG0000015000"/>さばかり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000329">おぼしたれど。かぎりこそありけれと。世の人もき</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000330">こえ女御も御こゝろおちゐ給ぬ<anchor corresp="yosano_genji_ids.xml#YG0000015100"/>かの御おば北のかた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000331">なぐさむかたなくおぼししづみておはすらむ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000332">所にだにたづねゆかんとねがひ給ししるしに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000333">やつゐにうせ給ぬれば<anchor corresp="yosano_genji_ids.xml#YG0000015200"/>またこれをかなしひ覚す</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000334">ことかぎりなし<anchor corresp="yosano_genji_ids.xml#YG0000015300"/>みこむつになり給としなれば</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000335">この度は覚ししりて恋なき給ふ<anchor corresp="yosano_genji_ids.xml#YG0000015400"
+                  />年比なれむつ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000336">びきこえ給へるを。みたてまつりをくかなしひを</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0035"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000337">なん返々の給ひける<anchor corresp="yosano_genji_ids.xml#YG0000015500"/>いまはうちにのみさふらひ給</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000338"
+                     ><anchor corresp="yosano_genji_ids.xml#YG0000015600"/>なゝつになり給へば。ふみはじめなどせさせ給ひて。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000339">世にしらずさとうかしこくおはすれば。あまりに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000340">おそろしきまで御覧ず<anchor
+                     corresp="yosano_genji_ids.xml#YG0000015700"/>今はたれも＋＋えにく</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000341">みたまはじ。<anchor corresp="yosano_genji_ids.xml#YG0000015800"/>はゝ君＄なくてだにらうたうし給へとて。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000342">弘徽殿などにもわたらせ給ふ御ともにはやがて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000343">みすのうちにいれたてまつり給。<anchor corresp="yosano_genji_ids.xml#YG0000015900"/>いみじきものゝふ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000344">あたかたきなりとも。みてはうちゑまれぬべきさま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000345">のし給へればえさしはなちたまはず<anchor corresp="yosano_genji_ids.xml#YG0000016000"/>女御子たち</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000346">ふた所此御はらにおはしませどなずらひ給べき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000347">だにぞなかりける。<anchor corresp="yosano_genji_ids.xml#YG0000016100"/>御かた＋＋＄もかくれ給はず。いまよ</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/20" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00020.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0036"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000348">りなまめかしうはづかしげにおはすればいとおか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000349">しううちとけぬあそびぐさに。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000016200"/>たれも＋＋思ひ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000350">聞え給へりわざとの御がくもんはさるものにて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000351">ことふえのねにも雲ゐをひゞかし<anchor
+                     corresp="yosano_genji_ids.xml#YG0000016300"/>すべていひつゞ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000352">けば。こと＋＋しううたてぞなりぬべきひとの御</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000353">さまなりける。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000016400"/>そのころこまうどのまいれるがなか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000354">に。かしこきさうにんありけるをきこしめして。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000355"><anchor
+                     corresp="yosano_genji_ids.xml#YG0000016500"/>宮のうちにめさむことは。うだのみかどの御いまし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000356">めあればいみじうしのびてこのみこを鴻臚館に</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000357">つかはしたり。御うしろみたちてつかうまつる。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000358">右大辨のこのやうにおもはせてゐてたてまつる</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/21" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00021.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0038"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000359"><anchor corresp="yosano_genji_ids.xml#YG0000016600"/>相人おどろきてあまたたびかたふきあやしふ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000360"
+                     ><anchor corresp="yosano_genji_ids.xml#YG0000016700"/>くにのおやと成て帝王のかみなきくらゐにのぼ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000361">るべき相おはします人のそなたにてみればみだれ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000362">うれふることやあらん。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000016800"/>おほやけのかためとなりて。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000363">天下をたすくるかたにてみればまたその相たがふべし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000364">といふ<anchor
+                     corresp="yosano_genji_ids.xml#YG0000016900"/>弁もいとざえかしこきはかせにていひかは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000365">したることゞもなん。<anchor corresp="yosano_genji_ids.xml#YG0000017000"/>いとけうありけるふみなど</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000366">つくりかはして。けふあすかへりさりなんとするに。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000367">かくありがたき人にたいめんしたるよろこび。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000368"
+                  >かへりてはかなしかるべき心ばへを。おもしろくつ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000369">くりたるに<anchor corresp="yosano_genji_ids.xml#YG0000017100"/>みこもいとあはれなるくをつくり給</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0039"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000370">へるを。かぎりなうめでたてまつりて。いみじきを</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000371">くりものどもをさゝげたてまつる。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000017200"/>おほやけより</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000372">もおほくものたまはす<anchor corresp="yosano_genji_ids.xml#YG0000017300 yosano_genji_ids.xml#YG0000017400"/>をのづからことひろごりても</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000373">らさせ給はねど春宮のおほぢおとゞなどいかなる</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000374">ことにかとおぼしうたがひてなんありける。<anchor corresp="yosano_genji_ids.xml#YG0000017500"/>みかど</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000375">かしこき御心にやまとさうをおほせておぼし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000376">よりにけるすぢなればいまゝでこのきみをみこにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000377">なさせ給はざりけるを<anchor
+                     corresp="yosano_genji_ids.xml#YG0000017600"/>相人はまことにかしこかり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000378">けりと覚しあはせて<anchor corresp="yosano_genji_ids.xml#YG0000017700"/>無品親王の外戚のよせなきにて</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000379">はたゞよはさじ。わが御世もいとさだめなきを。たゝ人</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000380">にておほやけの御うしろみをするなん行さきも</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/22" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00022.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0040"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000381">たのもしげなることゝおぼしさだめて。いよ＋＋みち</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000382">＋＋のざえをならはさせ給ふ。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000017800"/>きはことにかしこく</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000383">て。たゝ人にはいとあたらしけれど。みことなりた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000384">まひなば。世のうたがひおひ給ぬべくものし給へば。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000385"><anchor corresp="yosano_genji_ids.xml#YG0000017900"/>すくえうのかしこきみちの人にかんがへさせ給にも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000386">おなじさまに申せば源氏になしたてまつる</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000387">べくおぼしをきてたり<anchor corresp="yosano_genji_ids.xml#YG0000018000"/>年月にそへてみや</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000388">す所の御ことをおぼしわするゝおりなし<anchor corresp="yosano_genji_ids.xml#YG0000018100"
+                  />なぐ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000389">さむやとさるべき人々＄をまいらせ給へど。なずら</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000390">ひにおぼさるゝだにいとかたき世かなと。うとま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000391"
+                     >しうのみよろづにおぼしなりぬるに<anchor corresp="yosano_genji_ids.xml#YG0000018200"/>先帝の</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0041"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000392">四の宮の御かたちすぐれ給へるきこえたかくおは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000393">します。はゝぎさきよになくかしづききこえ給ふ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000394">をうへにさふらふ内侍のすけは先帝の御時の人</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000395">にて。かの宮にもしたしうまいりなれたりければ。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000396"
+                  >いはけなくおはしましゝ時よりみたてまつり。いま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000397">もほのみたてまつりて<anchor corresp="yosano_genji_ids.xml#YG0000018300"/>うせ給にしみやす所の御か</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000398"
+                  >たちにゝ給へる人を三代のみやづかへにつたはり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000399">ぬるにえみたてまつりつけぬにきさいの宮のひめ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000400">君こそいとようおぼえておひいでさせ給へりけれ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000401"><anchor corresp="yosano_genji_ids.xml#YG0000018400"/>ありがたきかたち人＄になんとそうしけるに。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000402">まことにやと御こゝろとまりてねんごろに</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/23" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00023.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0042"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000403">きこえさせ給けり。<anchor corresp="yosano_genji_ids.xml#YG0000018500"/>はゝぎさきのあなおそろしや。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000404">春宮の女御のいとさがなくてきりつぼの更衣の</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000405">あらはにはかなくもてなされしためしもゆゝ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000406"
+                  >しうとおぼしつゝみて。すか＋＋しうもおぼし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000407">たゝざりけるほどに。<anchor corresp="yosano_genji_ids.xml#YG0000018600"/>きさきもうせ給ぬ。<anchor corresp="yosano_genji_ids.xml#YG0000018700"/>心ぼそき</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000408">さまにておはしますにたゞわが女みこたちと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000409">おなじつらに思ひ聞えんと。いとねんごろにきこえ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000410">させたまふ。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000018800"/>さふらふ人々＄。御うしろみたち。御せう</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000411">との兵部卿のみこなどかく心ぼそくておはしまさ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000412">んよりはうちずみせさせ給て御心もなくさむ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000413">べくおぼしなりて。まいらせたてまつり給へり。<anchor corresp="yosano_genji_ids.xml#YG0000018900"/>ふぢ</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0043"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000414">つぼときこゆ。<anchor corresp="yosano_genji_ids.xml#YG0000019000"/>げに御かたちありさまあやしきまで</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000415"
+                     >ぞおぼえ給へる。<anchor corresp="yosano_genji_ids.xml#YG0000019100"/>これは人の御きはまさりて。 思ひなし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000416">
+                  <anchor corresp="yosano_genji_ids.xml#YG0000019200"/>めでたく人もえおとしめ聞え給はねば うけばり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000417">てあかぬ事なし かれは人もゆるしきこえざりし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000418">に <anchor
+                     corresp="yosano_genji_ids.xml#YG0000019300"/>御心ざしあやにくなりしぞかし<anchor corresp="yosano_genji_ids.xml#YG0000019400 #YG0000019500"/>おぼしまぎるゝ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000419">とはなけれどをのづから御心うつろひてこよなく</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000420">おぼしなぐさむやうなるもあはれなるわざなり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000421">けり<anchor corresp="yosano_genji_ids.xml#YG0000019600"/>源氏の君<anchor corresp="yosano_genji_ids.xml#YG0000019700"
+                     />は御あたりさり給はぬを<anchor corresp="yosano_genji_ids.xml#YG0000019800"/>ましてし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000422">げくわたらせ給<anchor corresp="yosano_genji_ids.xml#YG0000019900"/>御かたはえはぢあへ給はず。<anchor corresp="yosano_genji_ids.xml#YG0000020000"
+                  />いづれ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000423">の御かたもわれ人におとらんとおぼいたるやはある。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000424">とり＋＋にいとめでたけれどうちおとなび</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/24" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00024.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0044"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000425">たまへるに<anchor corresp="yosano_genji_ids.xml#YG0000020100"/>いとわかううつくしげにてせちにか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000426"
+                     >くれ給へどをのづからもりみたてまつる<anchor corresp="yosano_genji_ids.xml#YG0000020200"/>はゝみや</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000427">す所＄はかげだにおぼえ給はぬを。いとように</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000428"
+                  >給へりと内侍のすけのきこえけるをわかき御心ち</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000429">にいとあはれとおもひきこえ給て。つねにまいらま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000430">ほしうなづさひみたてまつらばやとおぼえ給。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000431"><anchor corresp="yosano_genji_ids.xml#YG0000020300"/>うへもかぎりなき御思ひどちにて<anchor corresp="yosano_genji_ids.xml#YG0000020400"/>なうとみ給ひ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000432">そ。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000020500"/>あやしくよそへきこえつべき心ちなんする。<anchor corresp="yosano_genji_ids.xml#YG0000020600"/>な</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000433">めしとおぼさでらうたうし給へ。<anchor corresp="yosano_genji_ids.xml#YG0000020700"
+                  />つらつきまみなど</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000434">はいとようにたりしゆへ。かよひてみえ給もにげ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000435">なからずなんなど聞えつげたまへればおさなごゝ</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0045"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000436">ちにもはかなき花もみぢにつけても心ざしをみえ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000437">たてまつり。こよなう心よせ聞えたまへれば。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000020800"/>こき</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000438">でんの女御またこの宮とも御なかそば＋＋しきゆへ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000439">うちそへてもとよりのにくさもたちいでゝ。物しと</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000440">おぼしたり。<anchor corresp="yosano_genji_ids.xml#YG0000020900"/>世にたぐひなしとみたてまつり給ひ。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000441">名たかうおはする宮の御かたちにもなをにほはし</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000442">さはたとへんかたなくうつくしげなるを。世のひと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000443">ひかる君と聞ゆ<anchor corresp="yosano_genji_ids.xml#YG0000021000"/>ふぢつぼならび給て御おぼえも</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000444">とり＋＋なればかゝやくひの宮と聞ゆ<anchor corresp="yosano_genji_ids.xml#YG0000021100"/>このきみの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000445">御わらはすがたいとかへまうくおぼせど。十二にて御</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000446">元服し給ゐたちおぼしいとなみてかぎりある</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/25" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00025.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0046"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000447">ことに<anchor corresp="yosano_genji_ids.xml#YG0000021200"/>ことをそへさせ給ふ<anchor corresp="yosano_genji_ids.xml#YG0000021300"/>ひとゝせの春宮の御元</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000448">服南殿にてありしぎしきのよそほしかりし御</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000449">ひゞきにをとらせ給はず所々の饗などくらづか</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000450"
+                  >さごくさう院などおほやけごとにつかうまつれる</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000451">をろそかなることもぞと。とりわきおほせごとあり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000452">てきよらをつくしてつかうまつれりおはします</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000453"><anchor corresp="yosano_genji_ids.xml#YG0000021400"/>殿のひんがしのひさしひがしむきにいしたてゝ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000454">くわんざの御座ひきいれの大臣の御座御前に</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000455">あり<anchor corresp="yosano_genji_ids.xml#YG0000021500"/>さるの時にて源氏まいり給<anchor corresp="yosano_genji_ids.xml#YG0000021600"/>みづらゆひ給</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000456"
+                  >へるつらつきかほのにほひ。さまかへ給はんことお</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000457">しげなり<anchor corresp="yosano_genji_ids.xml#YG0000021700"/>大藏卿くら人つかうまつる<anchor corresp="yosano_genji_ids.xml#YG0000021800"/>いときよら</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0047"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000458">なる御ぐしをそぐほど心ぐるしげなるを<anchor corresp="yosano_genji_ids.xml#YG0000021900"/>うへは</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000459"
+                  >みやす所のみましかばとおぼしいづるにたへがた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000460">きを心づよくねんじかへさせ給ふ<anchor corresp="yosano_genji_ids.xml#YG0000022000"/> かうふりし給て</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000461"
+                  >御やすみ所＄にまかで給て。御ぞたてまつり</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000462">かへて。はいしたてまつり給さまに。<anchor corresp="yosano_genji_ids.xml#YG0000022100"/>みな人なみ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000463">だおとし給</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/26" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00026.tif/full/full/0/default.jpg"/>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0049"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000464"><anchor corresp="yosano_genji_ids.xml#YG0000022200"/>みかどはた。ましてえしのびあへ給はず。<anchor corresp="yosano_genji_ids.xml#YG0000022300"/>おぼしまぎ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000465">るゝおりもありつるを。むかしのこととりかへしかなし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000466">くおぼさる。<anchor corresp="yosano_genji_ids.xml#YG0000022400"/>いとかう。きびはなるほどは。あげをとり</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000467">やとうたがはしくおぼされつるを。あさましうう</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000468">つくしげさそひ給へり<anchor corresp="yosano_genji_ids.xml#YG0000022500"/>ひきいれの大臣のみこばら</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000469">にたゞひとりかしづき給御むすめ<anchor corresp="yosano_genji_ids.xml#YG0000022600"/>春宮よりも御け</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000470">しきあるをおぼしわづらふことありけるはこの君</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000471">にたてまつらんの御心なりけり<anchor corresp="yosano_genji_ids.xml#YG0000022700"/>内にも御けしきた</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000472">まはらせ給ければ。<anchor corresp="yosano_genji_ids.xml#YG0000022800"
+                  />さらばこのおりの御うしろみな</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000473">かめるをそひぶしにもともよほさせ給ければさ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000474">おぼしたり。<anchor corresp="yosano_genji_ids.xml#YG0000022900"/>さふらひにまかで給て。人々＄おほみき</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/27" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00027.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0050"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000475">などまいるほどみこたちの御座のすゑに源氏つ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000476">き給へり<anchor
+                     corresp="yosano_genji_ids.xml#YG0000023000"/>おとゞけしきばみ聞え給ことあれどものゝ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000477">つゝましきほどにて。ともかくもあへしらひきこえ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000478">給はず<anchor
+                     corresp="yosano_genji_ids.xml#YG0000023100"/>おまへより内侍宣旨うけたまはりつたへて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000479">おとゞまいり給べきめしあれば。まいり給。<anchor corresp="yosano_genji_ids.xml#YG0000023200"/>御ろくの</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000480">ものうへの命婦とりてたまふ<anchor corresp="yosano_genji_ids.xml#YG0000023300"/>しろきおほうち</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000481">きに。御ぞひとくだりれいのことなり。<anchor corresp="yosano_genji_ids.xml#YG0000023400"
+                  />御さかづ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000482">きのつゐでに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000483"><anchor corresp="yosano_genji_ids.xml#YG0000023500"/>△△いときなきはつもとゆひにながきよをちぎ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000484">る心はむすびこめつや御こゝろばへありておどろ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000485">かさせ給ふ</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0051"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000486"><anchor corresp="yosano_genji_ids.xml#YG0000023600"/>△△むすびつる心もふかきもとゆひにこきむら</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000487"
+                  >さきの色しあせずは。と。そうして。ながはしより</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000488">おりて。ぶたうし給ふ。<anchor corresp="yosano_genji_ids.xml#YG0000023700"/>ひだりのつかさの御むま。くら</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000489">人どころのたかすへてたまはりたまふ。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000023800"/>みはしの</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000490">もとに。みこたちかんだちめつらねて。ろくどもしな</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000491">＋＋＄にたまはり給ふ。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000023900"/>その日の御まへのおりひつもの。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000492">こ物など右大弁なんうけたまはりてつかうま</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000493">つらせける。とんじき。ろくのからひつどもなど。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000024000"/>と</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000494">ころせきまで春宮の御元服のおりにもかずまさ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000495">れり。中＋＋かぎりもなくいかめしうなん。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000024100"/>その夜</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000496">おとゞの御さとに源氏のきみまかでさせたまふ</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/28" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00028.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0052"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000497"><anchor corresp="yosano_genji_ids.xml#YG0000024200"/>さほうよにめづらしきまでもてかしづき聞え給</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000498"
+                     >へり。<anchor corresp="yosano_genji_ids.xml#YG0000024300"/>いときびはにておはしたるを。ゆゝしううつ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000499">くしと思ひきこえ給へり<anchor corresp="yosano_genji_ids.xml#YG0000024400"/>女君はすこしすぐし</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000500">給へるほどにいとわかうおはすればにげなくはづ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000501">かしとおぼいたり<anchor corresp="yosano_genji_ids.xml#YG0000024500"/>このおとゞの御おぼえいとやむ</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000502">ごとなきにはゝみや内のひとつきさいばらに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000503">なんおはしければ。いづかたにつけてもものあざや</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000504"
+                  >かなるにこの君さへかくおはしそひぬれば春宮</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000505">の御おほぢにてつゐに世中をしり給べき右の</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000506">おとゞの御いきほひは。ものにもあらずおされ給へり。</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000507"><anchor corresp="yosano_genji_ids.xml#YG0000024600"/>御子どもあまたはら＋＋にものし給ふ<anchor corresp="yosano_genji_ids.xml#YG0000024700"/>みやの御</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0053"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000508">はらはくら人の少將にていとわかうおかしきを右</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000509">のおとゞの中はいとよからねどえみすぐし給は</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000510">で。かしづき給ふ。四の君にあはせ給へり。<anchor corresp="yosano_genji_ids.xml#YG0000024800"/>おとらず</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000511">もてかしづきたるは。あらまほしき御あはひど</line><lb/><line
+                  xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000512">もになん<anchor corresp="yosano_genji_ids.xml#YG0000024900"/>源氏の君はうへのつねにめしまつはせ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000513">ばこゝろやすくさとずみもえし給はす<anchor corresp="yosano_genji_ids.xml#YG0000025000"
+                  />心のうち</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000514">には。たゞふぢつぼの御ありさまをたぐひなしと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000515">思ひ聞えて。さやうならん人をこそみめ。にるひと</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000516"
+                  >なくもおはしけるかなおほいとのゝ君いとおかしげに</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000517">かしづかれたる人とはみゆれど。こゝろにもつかずおぼ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000518">え給て。おさなきほどの御ひとへごゝろにかゝり</line></zone>
+         </surface>
+         <surface>
+            <graphic n="https://kotenseki.nijl.ac.jp/biblio/200003803/canvas/29" url="https://kotenseki.nijl.ac.jp/api/iiif/200003803/v4/NIIP/SA4-0026/SA4-0026-00029.tif/full/full/0/default.jpg"/>
+            <zone lrx="5616" lry="3744" ulx="2808" uly="0" xml:id="zone_0001_0054"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000519">て。いとくるしきまでぞおはしける。<anchor corresp="yosano_genji_ids.xml#YG0000025100"/>おとなにな</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000520"
+                  >り給てのちは。ありしやうにみすのうちにも</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000521">いれ給はず<anchor corresp="yosano_genji_ids.xml#YG0000025200"/>御あそびのおり＋＋こと笛のねにきゝ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000522"
+                  >かよひ。ほのかなる御こゑをなぐさめにて。うちず</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000523">みのみこのましうおぼえ給ふ。<anchor corresp="yosano_genji_ids.xml#YG0000025300"/>五六日さふらひ給</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000524"
+                  >ひておほいとのに二三日などたえ＋＋にまかで</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000525">たまへど。たゞいまはおさなき御ほどにつみなく</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000526">おぼして。いとなみかしづき聞え給ふ。<anchor corresp="yosano_genji_ids.xml#YG0000025400"
+                  />御かた＋＋＄の人々＄。</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000527">世の中にをしなべたらぬを。えりとゝのへすぐ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000528">りてさふらはせたまふ御心につくべき御あそび</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000529"
+                     >をしおほな＋＋おぼしいたづく<anchor corresp="yosano_genji_ids.xml#YG0000025500"/>内にはもとの</line></zone>
+            <zone lrx="2808" lry="3744" ulx="0" uly="0" xml:id="zone_0001_0055"><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000530">しげいさを御ざうしにてはゝみやす所の御</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000531">かた＋＋の人々まかでちらずさふらはせたまふ<anchor
+                     corresp="yosano_genji_ids.xml#YG0000025600"/>さ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000532">との殿は修理職たくみづかさに宣旨くだりて</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000533">になうあらためつくらせ給ふ<anchor
+                     corresp="yosano_genji_ids.xml#YG0000025700"/>もとの木だち山</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000534">のたゝずまひ。おもしろきところなるを。いけ</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000535">のこゝろひろくしなして。<anchor
+                     corresp="yosano_genji_ids.xml#YG0000025800"/>めでたくつくりのゝし</line><lb/><line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000536">る<anchor corresp="yosano_genji_ids.xml#YG0000025900"/>かゝるところにおもふやうならん人をすへて</line><lb/>
+               <line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000537"> すまばやとのみ。なげかしうおぼしわたる。 <anchor corresp="yosano_genji_ids.xml#YG0000026000"/> ひか </line>
+               <lb/>
+               <line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000538"> るきみといふ名はこまうどのめできこえて </line>
+               <lb/>
+               <line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000539"> つけたてまつりけるとぞいひつたへ </line>
+               <lb/>
+               <line xml:id="nij03-nijl_nijl_nijl_genjimonogatari_0000000540"> たるとなん </line>
+            </zone>
+         </surface>
+      </surfaceGrp>
+   </sourceDoc>
+</TEI>

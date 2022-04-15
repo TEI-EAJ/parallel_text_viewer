@@ -1,18 +1,19 @@
 const lang = 'ja'
-const siteName = '校本風異文可視化ツール'
-const siteDesc = '校本風異文可視化ツール'
-const shortName = '校本'
+const siteName = 'Parallel Text Viewer with TEI & IIIF'
+const siteDesc = 'Parallel Text Viewer with TEI & IIIF'
+const shortName = 'Parallel Text'
 const siteKeywords = ['IIIF', 'TEI'].join(', ')
-const gtag = 'G-62MR8MLSEH'
+const gtag = '' // G-62MR8MLSEH
 const hostname = 'https://TEI-EAJ.github.io'
-const baseUrl = hostname + '/koui'
+const slug = "parallel_text_viewer"
+const baseUrl = hostname + '/' + slug
 
 // `DEPLOY_ENV` が `GH_PAGES` の場合のみ `router.base = '/<repository-name>/'` を追加する
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
         router: {
-          base: '/koui/',
+          base: `/${slug}/`,
         },
       }
     : {}
@@ -85,7 +86,7 @@ export default {
   loading: { color: '#E64A19', height: '5px' },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/css/CETEIcean.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -112,7 +113,9 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/google-gtag',
+    'nuxt-i18n',
     '@nuxtjs/sitemap',
+    
   ],
 
   'google-gtag': {
@@ -135,6 +138,18 @@ export default {
     manifest: {
       lang,
     },
+  },
+
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en_US', file: 'en.json' },
+      { code: 'ja', iso: 'ja_JP', file: 'ja.json' },
+    ],
+    defaultLocale: 'ja',
+    vueI18nLoader: true,
+    lazy: true,
+    langDir: 'lang/',
+    // strategy: 'no_prefix'
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

@@ -2,475 +2,195 @@
   <v-app>
     <v-main>
       <v-toolbar id="bar" :dark="true" flat>
-        <v-toolbar-title>{{ title }}</v-toolbar-title>
+        <v-toolbar-title>Parallel Text Viewer with TEI & IIIF</v-toolbar-title>
+
         <v-spacer></v-spacer>
-        <v-btn v-show="start" icon @click.stop="dialog_info = true">
+
+        <!-- 
+        <v-toolbar-items>
+          <v-btn text :to="{name : 'test', query : {'u': $route.query.u}}">新しいUIを試す</v-btn>
+        </v-toolbar-items>
+        -->
+        <v-btn icon @click.stop="dialogSettings = true">
+          <v-icon>mdi-settings</v-icon>
+        </v-btn>
+        <v-btn icon @click.stop="dialogInformation = true">
           <v-icon>mdi-information</v-icon>
         </v-btn>
-        <v-btn v-show="start" icon @click.stop="dialog_chart = true">
-          <v-icon>mdi-chart-bar</v-icon>
-        </v-btn>
-        <v-btn v-show="start" icon @click.stop="dialog_table = true">
-          <v-icon>mdi-table</v-icon>
-        </v-btn>
-        <v-btn icon href="./">
-          <v-icon>mdi-home</v-icon>
-        </v-btn>
+        <v-toolbar-items v-show="returnUrl">
+          <v-btn text :href="returnUrl">{{returnLabel}}</v-btn>
+        </v-toolbar-items>
       </v-toolbar>
 
-      <!-- 登録画面 -->
-      <v-container v-show="!start" class="my-5">
-        <h2 class="mb-5">校本風異文可視化ツール</h2>
-        <p>異文情報を含むTEI/XMLファイルを選択してください。</p>
-        <input id="files" type="file" multiple @change="handleFileSelect" />
-
-        <output id="list" class="mt-5"></output>
-
-        <br />
-        <br />
-        <br />
-
-        <p class="mt-5">例１：校異源氏物語</p>
-
-        <v-btn
-          color="primary"
-          to="?u=https://tei-eaj.github.io/koui/data/01_with_wit.xml"
-          class="mx-2 my-1"
-          >可視化例を見る</v-btn
-        >
-        <v-btn
-          href="https://tei-eaj.github.io/koui/data/01_with_wit.xml"
-          target="_blank"
-          class="mx-2 my-1"
-          >サンプルデータを見る</v-btn
-        >
-
-        <br />
-        <br />
-
-        <p class="mt-5">例２：（ダミーデータ）中村式五十音</p>
-
-        <v-btn
-          color="primary"
-          to="?u=https://tei-eaj.github.io/koui/data/nakamura.xml"
-          class="mx-2 my-1"
-          >可視化例を見る</v-btn
-        >
-        <v-btn
-          href="https://tei-eaj.github.io/koui/data/nakamura.xml"
-          target="_blank"
-          class="mx-2 my-1"
-          >サンプルデータを見る</v-btn
-        >
-
-        <br />
-        <br />
-
-        <p class="mt-5">
-          例３：Emily Dickinson ‘Faith is a fine invention’ from
-          <a href="http://v-machine.org/samples/">Versioning Machine</a>
-        </p>
-
-        <v-btn
-          color="primary"
-          to="?u=https://tei-eaj.github.io/koui/data/faith.xml"
-          class="mx-2 my-1"
-          >可視化例を見る</v-btn
-        >
-        <v-btn
-          href="http://v-machine.org/samples/faith.xml"
-          target="_blank"
-          class="mx-2 my-1"
-          >サンプルデータを見る</v-btn
-        >
-
-        <p class="text-center mt-10 mb-5">
-          <a href="https://github.com/TEI-EAJ">TEI-C東アジア/日本語分科会</a>
-        </p>
-      </v-container>
-
-      <div v-show="start" :style="`height: ${height - barHeight}px`">
+      <div :style="`height: ${height - barHeight}px`">
         <splitpanes class="default-theme">
-          <pane>
+          <pane min-size="20">
+            <!-- class="py-2 px-2" -->
             <iframe
-              class="py-2 px-2"
-              :src="mirador_path"
+              
+              :src="miradorPath"
               seamless="seamless"
               width="100%"
-              :height="height - barHeight + 'px'"
-              style="border: none"
+              :height="`${height - barHeight}px`"
+              style="border: none;"
               allow="fullscreen"
             ></iframe>
           </pane>
           <pane>
             <splitpanes class="default-theme" horizontal="horizontal">
-              <pane class="py-2 px-2">
+              <pane class=""> <!-- py-2 mx-2 -->
                 <v-card id="main" class="scroll vertical" :flat="true">
-                  <v-card-text class="text--primary">
-                    <h2 class="text--primary">
-                      本文
-                      <span v-if="target">{{ target }}</span>
-                    </h2>
+                  <div class="pa-2">
+                    <h2 class="text--primary">{{labelMain}}</h2>
 
                     <br />
 
-                    <!-- <Hello :elements="data.elements"></Hello> -->
-
-                    <p v-for="(pArr2, index) in pArr" :key="index">
-                      <span v-for="(element, index2) in pArr2" :key="index2">
-                        <template v-if="element.type === 'zone'">
-                          <p @click="clickIcon(element.id)">
-                            <img
-                              src="https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png"
-                              style="width: 30px; cursor: pointer"
-                              class="mr-2"
-                            />
-                          </p>
-                        </template>
-                        <template v-if="element.type === 'p'">
-                          <br />
-                        </template>
-                        <template v-if="element.type === 'text'">
-                          <span>{{
-                            element.text != null ? element.text.trim() : ''
-                          }}</span>
-                        </template>
-                        <template v-if="element.type === 'app'">
-                          <!-- 
-                          <span
-                            :style="selected_id === element.id ? 'border-style: solid; border-color : #ff5252; background-color : #FFFF99;' : 'background-color : #FFFF99;'"
-                            :id="'main_'+element.id"
-                          >
-                          -->
-                          <span
-                            :id="'main_' + element.id"
-                            :style="
-                              selected_id === element.id
-                                ? 'border: solid 1px #ff5252; background-color : #fed8b1;'
-                                : 'background-color : #FFFF99;'
-                            "
-                          >
-                            <!-- @click="test(element.app, element.id, element.index)" -->
-                            <!-- 
-                            <v-tooltip right>
-                            <template v-slot:activator="{ on }">
-                              
-                              v-on="on"
-                              v-on="on"
-
-                            -->
-                            <span
-                              :style="
-                                element.iiifParam.length > 0
-                                  ? 'background-color : #BBDEFB;'
-                                  : ''
-                              "
-                            >
-                              <template v-if="target === null">
-                                <span
-                                  @click="
-                                    selected_id = element.id
-                                    scroll(element.id, 'sub')
-                                    show_iiif(element.iiifParam)
-                                  "
-                                  >{{
-                                    element.text != null
-                                      ? element.text.trim()
-                                      : ''
-                                  }}</span
-                                >
-                              </template>
-                              <template v-else>
-                                <span
-                                  @click="
-                                    selected_id = element.id
-                                    scroll(element.id, 'sub')
-                                    show_iiif(element.iiifParam)
-                                  "
-                                >
-                                  <template
-                                    v-for="(app, index2) in element.app"
-                                  >
-                                    <span
-                                      v-if="
-                                        app.attributes &&
-                                        app.attributes.wit &&
-                                        app.attributes.wit
-                                          .split(' ')
-                                          .indexOf(target) != -1
-                                      "
-                                      :key="index2"
-                                      v-html="app.text"
-                                    >
-                                      <!-- :style="app.name === 'rdg' ? 'color : #ff5252' : ''" -->
-                                    </span>
-                                  </template>
-                                </span>
-                              </template>
-                            </span>
-                            <!-- 
-                              </template>
-                              <span>{{element.index}}</span>
-                            </v-tooltip>-->
-                          </span>
-                        </template>
+                    <p v-for="(row, index) in dataMainE" :key="index">
+                      <span v-if="row.manifest">
+                        <!-- <b>p.{{ row.manifest }}</b
+                        >-->
+                        <img
+                          src="https://iiif.dl.itc.u-tokyo.ac.jp/images/iiif.png"
+                          style="width: 30px"
+                          class="mr-2"
+                          @click="clickIcon(row.id)"
+                        />
+                        <br />
                       </span>
+                      <span
+                        v-for="(w, index2) in row.words"
+                        :id="w.id"
+                        :key="index2"
+                        :style="hightlights.indexOf(w.id) !== -1 ? 'background-color : yellow;' : null"
+                        @mouseover="mouseoverMain"
+                        @click="scroll(w.id)"
+                      >{{w.value}}</span>
                     </p>
-                  </v-card-text>
+                  </div>
                 </v-card>
               </pane>
-              <pane class="py-2 px-2">
+              <pane><!--  class="py-2 mx-2" -->
                 <v-card id="sub" class="scroll vertical" :flat="true">
-                  <v-list-item>
-                    <v-card-text class="text--primary">
-                      <h2 class="text--primary ml-4" @click="target = null">
-                        異文
-                      </h2>
+                  
+                    <div class="pa-2"> <!-- mx-2 text--primary -->
+                      <h2 class="text--primary">{{labelSub}}</h2>
 
-                      <v-card
-                        v-for="(app, index2) in ibunMap"
-                        :id="index2"
-                        :key="index2"
-                        flat
-                        outlined
-                        class="mx-5"
-                        :style="
-                          index2 === selected_id
-                            ? 'background-color : #FFFF99;'
-                            : ''
-                        "
-                      >
-                        <v-card-text class="mx-2 text--primary">
-                          <a
-                            @click="
-                              scroll('main_' + index2, 'main')
-                              selected_id = index2
-                            "
-                          >
-                            <b>{{ app.index }}</b>
-                          </a>
+                      <br />
 
-                          <br />
-
-                          <ul class="mt-2">
-                            <li
-                              v-for="(element, index) in app.wits"
-                              :key="index"
-                            >
-                              <template v-if="element.type === 'rdg'">
-                                <span
-                                  v-html="
-                                    (element.text = '' ? ' * ' : element.text)
-                                  "
-                                ></span>
-                              </template>
-                              <template v-else>
-                                <!-- Temporal -->
-                                <b
-                                  v-if="element.type === 'other'"
-                                  style="color: green; border: solid 2px green"
-                                  >???</b
-                                >
-                                <span
-                                  :style="
-                                    element.type === 'other'
-                                      ? 'color : gray'
-                                      : ''
-                                  "
-                                  v-html="
-                                    (element.text = '' ? ' * ' : element.text)
-                                  "
-                                ></span>
-                              </template>
-
-                              <template v-if="index != 'undefined'">
-                                <span class="mt-5">(</span>
-                                <span
-                                  v-for="(e, index3) in index.split(' ')"
-                                  :key="index3"
-                                  class="mb-1"
-                                  :style="
-                                    e === target
-                                      ? 'background-color : #fed8b1;'
-                                      : ''
-                                  "
-                                  @click="
-                                    target = e
-                                    scroll('main_' + index2, 'main')
-                                    selected_id = index2
-                                  "
-                                  >{{ e }}</span
-                                >
-                                <span>)</span>
-                              </template>
-                            </li>
-                          </ul>
-                        </v-card-text>
-                      </v-card>
-                    </v-card-text>
-                  </v-list-item>
+                      <div v-for="(row, index) in dataSub" :key="index">
+                        <span
+                          :id="row.id"
+                          :style="hightlights.indexOf(row.id) !== -1 ? 'background-color : yellow;' : null"
+                          @mouseover="mouseover"
+                          @click="scroll(row.id)"
+                        >{{row.value}}</span>
+                      </div>
+                    </div>
+                  
                 </v-card>
               </pane>
             </splitpanes>
           </pane>
         </splitpanes>
       </div>
-
-      <v-dialog v-model="dialog_info" width="80%">
-        <v-card>
-          <v-card-text>
-            <br />
-
-            <h2 class="mt-5">{{ title }}</h2>
-
-            <br />
-
-            <h3 class="mt-5">Witness List</h3>
-
-            <ul class="mt-5">
-              <li
-                v-for="(obj, index) in witness"
-                :key="index"
-                class="mr-2 mb-2"
-              >
-                <b>{{ index }}:</b>
-                {{ obj }}
-              </li>
-            </ul>
-          </v-card-text>
-        </v-card>
-      </v-dialog>
-
-      <v-dialog v-model="dialog_chart" width="80%">
-        <v-card>
-          <v-card-text>
-            <br />
-
-            <h3 class="mt-5">底本との編集距離</h3>
-
-            <chart
-              v-if="Object.keys(ibunMap).length > 0"
-              style="height: 300px"
-              class="mb-4"
-              :data="ibunMap"
-              :witness="witness"
-            ></chart>
-
-            <br />
-
-            <h3 class="mt-5">異文番号毎の異なり数</h3>
-
-            <Chart4Diff
-              style="height: 300px"
-              class="mb-4"
-              :data="ibunMap"
-            ></Chart4Diff>
-          </v-card-text>
-        </v-card>
-      </v-dialog>
-
-      <v-dialog v-model="dialog_table" width="80%">
-        <v-card style="border-radius: 0; background-color: lightgray">
-          <v-container>
-            <div v-for="(obj, index) in ibunMap" :key="index" class="my-5">
-              <v-simple-table>
-                <template #default>
-                  <thead>
-                    <tr>
-                      <th class="text-left">Witness</th>
-                      <th class="text-left">異文番号</th>
-                      <th class="text-left">相違点</th>
-                      <th class="text-left">タイプ</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="(value, index2) in obj.wits" :key="index2">
-                      <td width="40%" class="py-2">
-                        <ul>
-                          <li
-                            v-for="(e, index3) in index2.split(' ')"
-                            :key="index3"
-                          >
-                            {{ witness[e] }}
-                            <br />
-                          </li>
-                        </ul>
-                      </td>
-                      <td width="10%">{{ obj.index }}</td>
-                      <td width="40%" v-html="value.text"></td>
-                      <td width="10%">{{ value.type }}</td>
-                    </tr>
-                  </tbody>
-                </template>
-              </v-simple-table>
-            </div>
-          </v-container>
-        </v-card>
-      </v-dialog>
     </v-main>
+
+    <v-dialog v-model="dialogInformation" width="600px">
+      <v-card>
+        <v-card-title class="headline">Information</v-card-title>
+
+        <v-card-text class="mt-5">
+          <a target="_blank" :href="$route.query.u">{{$route.query.u}}</a>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn color="secondary" @click="dialogInformation = false">閉じる</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+
+    <v-dialog v-model="dialogSettings" width="600px">
+      <v-card>
+        <v-card-title class="headline">Settings</v-card-title>
+
+        <v-card-text class="mt-5">
+          <v-text-field v-model="layout" label="Mirador表示レイアウト Ex. 1x1, 2x2, ..." class="mb-5"></v-text-field>
+
+          <v-switch
+            v-for="(obj, index) in selectedManifests"
+            :key="index"
+            v-model="obj.selected"
+            :label="obj.label"
+          ></v-switch>
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn color="secondary" @click="dialogSettings = false">閉じる</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
 <script>
 // In your VueJS component.
+import { Splitpanes, Pane } from "splitpanes";
+import axios from "axios";
 import 'splitpanes/dist/splitpanes.css'
-import axios from 'axios'
-import Chart4Diff from '~/components/Chart4Diff.vue'
-import Chart from '~/components/Chart.vue'
-const { Splitpanes, Pane } = require('splitpanes')
+const miradorPrefix = "mirador/";
 
+const crypto = require("crypto");
 const { scroller } = require('vue-scrollto/src/scrollTo')
 
-const miradorPrefix = 'mirador/'
-const convert = require('xml-js')
+// var convert = require("xml-js");
+
+
+function md5hex(str /*: string */) {
+  const md5 = crypto.createHash("md5");
+  return md5.update(str, "binary").digest("hex");
+}
 
 export default {
-  components: { Splitpanes, Pane, Chart, Chart4Diff /*, Hello */ },
-  layout: 'empty',
+  components: { Splitpanes, Pane },
   data() {
     return {
       width: window.innerWidth,
       height: window.innerHeight,
       barHeight: 0,
-      url_main: '',
-      data_main: [],
-      data_main_e: [],
-      mirador_path: '',
-      direction: 'vertical',
-      layout: '1x1',
-
-      pArr: [],
-      witness: {},
-      zoneMap: {},
-
-      start: false,
-      xmlDoc: null,
-
-      target: null,
-
-      ibunMap: {},
-
-      dialog_table: false,
-      dialog_chart: false,
-      dialog_info: false,
-      selected_id: '',
-
-      title: '校本風異文可視化ツール',
-
-      // パラメータ
-      data: {},
-      e: null,
-      xml: null,
-    }
+      returnUrl: null,
+      returnLabel: null,
+      dialogInformation: false,
+      dialogSettings: false,
+      urlMain: "",
+      urlSub: "",
+      test: "",
+      dataMain: [],
+      dataSub: [],
+      dataMainE: [],
+      dataSubE: [],
+      hightlights: [],
+      mSIdMap: [],
+      sMIdMap: [],
+      wLIdMap: {},
+      lWIdMap: {},
+      imageMap: {},
+      labelMain: "",
+      labelSub: "",
+      selectedManifests: [],
+      miradorPath: "",
+      direction: "vertical",
+      layout: "2x2"
+    };
   },
   watch: {
     $route() {
-      this.init()
-    },
+      this.search();
+    }
   },
   mounted() {
-    this.init()
-
     const bar = document.getElementById('bar')
     if (bar) {
       this.barHeight = bar.clientHeight
@@ -485,24 +205,192 @@ export default {
     containerSub.addEventListener('wheel', (e) => {
       containerSub.scrollLeft -= e.deltaY
     })
+
+    // -------------
+
+    window.addEventListener("resize", this.handleResize);
+
+    if (this.$route.query.u === null && location.hostname !== "localhost") {
+      location.href = "https://github.com/TEI-EAJ/parallelText_viewer/";
+    }
+
+    ///
+
+    const u = this.$route.query.u;
+
+    axios.get(u).then(response => {
+      const result = response.data;
+
+      this.returnUrl = result.return_url;
+      this.returnLabel = result.return_label;
+      this.urlMain = result.url_main;
+
+      this.labelMain = result.label_main;
+      this.labelSub = result.label_sub;
+
+      const queryMain = result.query_main;
+      const querySub = result.query_sub;
+
+      this.direction = result.direction;
+
+      if (result.layout) {
+        this.layout = result.layout;
+      }
+
+      // 画像との対応表の作成
+      const imageMapUrl = result.image_map;
+
+      axios.get(imageMapUrl).then(response => {
+        // Miradorの初期表示パラメータ
+        const params = [];
+
+        const curationData = response.data;
+
+        const manifestLines = [];
+
+        const imageMap = {};
+
+        const selections = curationData.selections;
+        for (let i = 0; i < selections.length; i++) {
+          const selection = selections[i];
+          const within = selection.within;
+          const selectionLabel = within.label;
+          const manifest = within["@id"];
+          imageMap[selectionLabel] = {
+            manifest,
+            data: {}
+          };
+          // 初期表示用パラメータ
+          params.push({
+            manifest
+          });
+          // 選択済み（表示用）manifestの一覧
+          this.selectedManifests.push({
+            label: selectionLabel,
+            selected: true
+          });
+
+          const members = selection.members;
+          for (let j = 0; j < members.length; j++) {
+            const member = members[j];
+
+            if (!member.lineId) {
+              continue;
+            }
+
+            let manifestLineId = member.lineId;
+            // line idの置換（http対応）
+            manifestLineId = this.convertUri(manifestLineId);
+            if (!manifestLines[manifestLineId]) {
+              manifestLines.push(manifestLineId);
+            }
+            imageMap[selectionLabel].data[manifestLineId] = member["@id"];
+          }
+        }
+
+        // mirador表示用の辞書
+        this.imageMap = imageMap;
+
+        this.miradorPath =
+          miradorPrefix +
+          "?params=" +
+          encodeURIComponent(JSON.stringify(params)) +
+          "&annotationState=on&layout=" +
+          this.layout;
+
+        this.exec2map(result.url_map);
+        this.exec2main(result.url_main, manifestLines, queryMain);
+        this.exec2sub(result.url_sub, querySub);
+      });
+    });
   },
 
   beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener("resize", this.handleResize);
   },
   methods: {
-    show_iiif(iiifParam) {
-      if (iiifParam.length > 0) {
-        this.mirador_path =
+    clickIcon(lineId) {
+    
+      const selectedManifests = this.selectedManifests;
+      const params = [];
+
+      for (let i = 0; i < selectedManifests.length; i++) {
+        const selectedManifest = selectedManifests[i];
+        if (!selectedManifest.selected) {
+          continue;
+        }
+        const manifestLabel = selectedManifest.label;
+        const manifestMap = this.imageMap[manifestLabel].data;
+
+        if (manifestMap[lineId]) {
+          let memberId = manifestMap[lineId]
+          const tmp = memberId.split("#xywh=")
+          const canvas = tmp[0]
+          const xywh = tmp[1].split(",")
+          const y = Number(xywh[1]) - 150
+          const h = Number(xywh[3]) + 150
+          memberId = canvas+"#xywh="+xywh[0]+","+y + ","+xywh[2] + "," + h
+          params.push({
+            manifest: this.imageMap[manifestLabel].manifest,
+            canvas: memberId
+          });
+        }
+        
+        this.miradorPath =
           miradorPrefix +
-          '?params=' +
-          encodeURIComponent(JSON.stringify(iiifParam)) +
-          '&annotationState=on'
+          "?params=" +
+          encodeURIComponent(JSON.stringify(params)) +
+          "&annotationState=on&layout=" +
+          this.layout;
+        
       }
     },
-    scroll(targetId, query) {
-      let options = null
-      if (this.direction === 'vertical') {
+    scroll(id) {
+      let targetIds = [];
+      let query = "";
+      if (this.mSIdMap[this.wLIdMap[id]]) {
+        targetIds = this.mSIdMap[this.wLIdMap[id]];
+        query = "sub";
+      } else if (this.lWIdMap[this.sMIdMap[id][0]]) {
+        targetIds = this.lWIdMap[this.sMIdMap[id][0]];
+        query = "main";
+      }
+
+      if (targetIds.length > 0) {
+        let options = null
+        const targetId = targetIds[0];
+        /*
+        if (this.direction === "vertical") {
+          this.$SmoothScroll(
+            document.querySelector("#" + targetId).getBoundingClientRect()
+              .left +
+              document.querySelector("#" + query).scrollLeft -
+              document.querySelector("#" + query).getBoundingClientRect().left -
+              document.querySelector("#" + query).getBoundingClientRect()
+                .width /
+                2 +
+              document.querySelector("#" + targetId).getBoundingClientRect()
+                .width,
+            0.1,
+            null,
+            document.querySelector("#" + query),
+            "x"
+          );
+        } else {
+          this.$SmoothScroll(
+            document.querySelector("#" + targetId).getBoundingClientRect()
+              .top +
+              document.querySelector("#" + query).scrollTop -
+              document.querySelector("#" + query).getBoundingClientRect().top,
+            0.1,
+            null,
+            document.querySelector("#" + query),
+            "y"
+          );
+        }
+        */
+
+       if (this.direction === 'vertical') {
         const containerDiv = document.querySelector('#' + query)
         const idDiv = document.querySelector('#' + targetId)
 
@@ -526,399 +414,223 @@ export default {
       }
       const scrollTo = scroller()
       scrollTo('#' + targetId, 500, options)
-    },
-    init() {
-      window.addEventListener('resize', this.handleResize)
-      const u = this.$route.query.u === null ? null : this.$route.query.u // "01_with_wit.xml"
-      if (u) {
-        this.exec2main(u)
       }
     },
-    conv2json(xml) {
-      xml = new XMLSerializer().serializeToString(xml)
-      const result = convert.xml2json(xml, { compact: false, spaces: 4 })
-
-      let data = JSON.parse(result)
-      data = data.elements[0]
-      return data
-    },
-    clickIcon(zoneId) {
-      const zoneMap = this.zoneMap
-      const obj = zoneMap[zoneId]
-
-      const params = [
-        {
-          manifest: obj.manifest,
-          canvas: obj.canvas,
-        },
-      ]
-
-      this.mirador_path =
-        miradorPrefix +
-        '?params=' +
-        encodeURIComponent(JSON.stringify(params)) +
-        '&annotationState=on&layout=' +
-        this.layout
-    },
-
-    handleResize() {
-      // resizeのたびにこいつが発火するので、ここでやりたいことをやる
-      this.width = window.innerWidth
-      this.height = window.innerHeight
-    },
-    rec(arr, data) {
-      for (let i = 0; i < arr.length; i++) {
-        const obj = arr[i]
-        data.push(obj)
-
-        if (obj.elements && obj.name !== 'app') {
-          const elements = obj.elements
-          data = this.rec(elements, data)
+    mouseoverMain(data) {
+      if (
+        data.target.attributes.length > 0 &&
+        data.target.attributes[0].name === "id"
+      ) {
+        // 単語IDの取得
+        const wordId = data.target.attributes[0].value;
+        // MainのLine IDの取得
+        const lineId = this.wLIdMap[wordId];
+        let hightlights = [];
+        if (this.mSIdMap[lineId]) {
+          // SubのLine IDの取得
+          const subIds = this.mSIdMap[lineId];
+          hightlights = subIds;
+          // Sub IDについて回す
+          for (let i = 0; i < subIds.length; i++) {
+            const subId = subIds[i];
+            // MainのLine IDを取得する
+            const mainIds = this.sMIdMap[subId];
+            for (let j = 0; j < mainIds.length; j++) {
+              const mainId = mainIds[j];
+              // MainのWord IDSを取得する
+              const wordIds = this.lWIdMap[mainId];
+              hightlights = hightlights.concat(wordIds);
+            }
+          }
         }
-      }
-      return data
-    },
-    handleFileSelect(evt) {
-      const files = evt.target.files // FileList object
-
-      for (let i = 0; i < files.length; i++) {
-        const f = files[i]
-        const reader = new FileReader()
-        reader.readAsText(f)
-
-        const vm = this
-        reader.onload = function () {
-          const dpObj = new DOMParser()
-          const xmlDoc = dpObj.parseFromString(reader.result, 'text/xml')
-          vm.handleXml(xmlDoc)
-        }
+        this.hightlights = hightlights;
       }
     },
-    exec2main(url) {
-      axios
-        .get(url, {
-          responseType: 'document',
-        })
-        .then((response) => {
-          const xml = response.data
-          this.handleXml(xml)
-        })
-    },
-    handleXml(xml) {
-      const title = xml.querySelector('title')
-      if (title) {
-        this.title = title.textContent
-      }
-
-      let listWit = xml.querySelector('listWit')
-      listWit = this.conv2json(listWit).elements
-
-      if (listWit.length > 0) {
-        this.start = true
-      } else {
-        this.start = false
+    mouseover(data) {
+      if(Object.keys(this.wLIdMap) === 0){
         return
       }
-
-      for (let i = 0; i < listWit.length; i++) {
-        const wit = listWit[i]
-        this.witness['#' + wit.attributes['xml:id']] = wit.elements[0].text // wit.attributes["xml:id"];
-      }
-
-      // facs
-
-      const facses = xml.querySelectorAll('surfaceGrp')
-
-      for (let i = 0; i < facses.length; i++) {
-        const facs = this.conv2json(facses[i])
-        const manifest = facs.attributes.facs
-
-        const surfaces = facs.elements
-        for (let i = 0; i < surfaces.length; i++) {
-          const surface = surfaces[i].elements
-          const canvas = surface[0].attributes.n
-          for (let j = 1; j < surface.length; j++) {
-            const zone = surface[j].attributes
-            const id = zone['xml:id']
-            const x = Number(zone.ulx)
-            const y = Number(zone.uly)
-            const w = Number(zone.lrx) - x
-            const h = Number(zone.lry) - y
-            this.zoneMap['#' + id] = {
-              manifest,
-              canvas: canvas + '#xywh=' + x + ',' + y + ',' + w + ',' + h,
-            }
+      if (
+        data.target.attributes.length > 0 &&
+        data.target.attributes[0].name === "id"
+      ) {
+        const lineId = data.target.attributes[0].value;
+        let hightlights = [lineId];
+        if (this.sMIdMap[lineId]) {
+          const mainIds = this.sMIdMap[lineId];
+          for (let j = 0; j < mainIds.length; j++) {
+            const mainId = mainIds[j];
+            // MainのWord IDSを取得する
+            const wordIds = this.lWIdMap[mainId];
+            hightlights = hightlights.concat(wordIds);
           }
         }
-
-        if (i === 0) {
-          const params = [
-            {
-              manifest,
-            },
-          ]
-
-          this.mirador_path =
-            miradorPrefix +
-            '?params=' +
-            encodeURIComponent(JSON.stringify(params)) +
-            '&annotationState=on&layout=' +
-            this.layout
-        }
+        this.hightlights = hightlights;
       }
-
-      // facs 2
-      const facs = xml.querySelector('facsimile')
-      if (facs) {
-        const source = facs.attributes.source
-        if (source) {
-          const manifest = source.value
-          const surfaces = xml.querySelectorAll('surface')
-          for (let i = 0; i < surfaces.length; i++) {
-            const surface = surfaces[i]
-            const canvas = surface.attributes.source.value
-            const zone = surface.querySelector('zone')
-            const id = zone.attributes['xml:id'].value
-            this.zoneMap['#' + id] = {
-              manifest,
-              canvas,
-            }
-
-            if (i === 0) {
-              const params = [
-                {
-                  manifest,
-                },
-              ]
-
-              this.mirador_path =
-                miradorPrefix +
-                '?params=' +
-                encodeURIComponent(JSON.stringify(params)) +
-                '&annotationState=on&layout=' +
-                this.layout
-            }
-          }
-        }
-      }
-
-      // text
-
-      /** ********** */
-
-      // xmlの読み込みのために必須
-      const xmlStr = new XMLSerializer().serializeToString(
-        xml.querySelector('body')
-      )
-      const result = convert.xml2json(xmlStr, { compact: false, spaces: 4 })
-      this.data = JSON.parse(result)
-
-      /** ********** */
-
-      let body = xml.querySelector('body')
-      body = this.conv2json(body).elements
-
-      const bodyArr = this.rec(body, [])
-
-      const pArr = []
-
-      let rowArr = []
-
-      let index = 1
-
-      for (let i = 0; i < bodyArr.length; i++) {
-        const obj = bodyArr[i]
-        const name = obj.name
-        const type = obj.type
-        if (name === 'lb' || name === 'l') {
-          pArr.push(rowArr)
-          rowArr = []
-        } else if (name === 'p') {
-          pArr.push(rowArr)
-          rowArr = [
-            {
-              type: 'p',
-            },
-          ]
-          pArr.push(rowArr)
-          rowArr = []
-        } else if (type === 'text') {
-          rowArr.push(obj)
-        } else if (name === 'pb' && obj.attributes && obj.attributes.facs) {
-          rowArr.push({
-            id: obj.attributes.facs,
-            type: 'zone',
-          })
-        } else if (name === 'app') {
-          const apps = obj.elements
-
-          // 該当箇所のIIIF対応用データ
-          const iiifParam = []
-          if (obj.attributes && obj.attributes.facs) {
-            const facs = obj.attributes.facs.split(' ')
-            for (let i = 0; i < facs.length; i++) {
-              const id = facs[i]
-              const obj = this.zoneMap[id]
-              iiifParam.push(obj)
-            }
-          }
-
-          // 明示されていないwitを補足
-          if (apps[0].name === 'lem') {
-            const wits = []
-            for (let m = 0; m < apps.length; m++) {
-              if (apps[m].attributes) {
-                const witsTmp = apps[m].attributes.wit.split(' ')
-                for (let l = 0; l < witsTmp.length; l++) {
-                  const witTmp = witsTmp[l]
-                  if (!wits.includes(witTmp)) {
-                    wits.push(witTmp)
-                  }
-                }
-              }
-            }
-
-            // err対策
-            if (!apps[0].attributes) {
-              apps[0].attributes = {}
-            }
-
-            const witOther = []
-
-            // リストに上がっているwitnessについて、
-            for (const wit in this.witness) {
-              // 明示されていない場合に、
-              if (!wits.includes(wit)) {
-                // 元のwitnessに追加
-                witOther.push(wit)
-              }
-            }
-
-            const appOther = {
-              attributes: {
-                wit: witOther.join(' '),
-              },
-              elements: apps[0].elements,
-              name: 'other',
-            }
-
-            apps[apps.length] = appOther
-          }
-
-          // テキスト作成
-          let textLem = ''
-          for (let i = 0; i < apps.length; i++) {
-            let text = ''
-            const app = apps[i]
-            if (app.elements) {
-              const elements = app.elements
-
-              for (let j = 0; j < elements.length; j++) {
-                const lemRdg = elements[j]
-                if (lemRdg != null) {
-                  if (lemRdg.type === 'text') {
-                    text += lemRdg.text
-                  } else if (lemRdg.name === 'del') {
-                    text +=
-                      "<del style='color : #990000;'>" +
-                      lemRdg.elements[0].text +
-                      '</del>'
-                  } else if (lemRdg.name === 'add' && lemRdg.elements) {
-                    // text += "<span style='border: dotted 1px black;'>" + lemRdg.elements[0].text + "</span>";
-                    text +=
-                      "<span style='color : green;'>" +
-                      lemRdg.elements[0].text +
-                      '</span>'
-                  } else if (lemRdg.elements && lemRdg.elements[0].text) {
-                    text += lemRdg.elements[0].text
-                  }
-                }
-              }
-            }
-
-            if (text === '') {
-              text += '' // " * ";
-            }
-
-            app.text = text
-
-            if (app.name === 'lem') {
-              textLem = text
-            }
-          }
-
-          rowArr.push({
-            text: textLem,
-            type: 'app',
-            app: apps,
-            id: 'app_' + i,
-            index,
-            iiifParam,
-          })
-          index += 1
-        }
-      }
-
-      pArr.push(rowArr)
-
-      // -- テーブル用 --
-
-      index = 1
-
-      const all = pArr
-      const ibunMap = {}
-      for (let i = 0; i < all.length; i++) {
-        const objs = all[i]
-        for (let j = 0; j < objs.length; j++) {
-          const obj = objs[j]
-          if (obj.type === 'app') {
-            const apps = obj.app
-
-            const test2 = {}
-
-            const containFlg = true
-
-            for (let k = 0; k < apps.length; k++) {
-              const app = apps[k]
-
-              let wit = ''
-              if (app.attributes) {
-                wit = app.attributes.wit
-              }
-
-              if (wit !== '') {
-                test2[wit] = {
-                  text: app.text,
-                  type: app.name,
-                }
-              }
-            }
-
-            if (containFlg) {
-              ibunMap[obj.id] = {
-                index,
-                wits: test2,
-              }
-            }
-
-            index += 1
-          }
-        }
-      }
-
-      this.ibunMap = ibunMap
-
-      // ------------
-
-      this.pArr = pArr
     },
-  },
-  /*,
-  messageLog(message) {
-    this.e = message;
-  },
-  */
-}
+    handleResize() {
+      // resizeのたびにこいつが発火するので、ここでやりたいことをやる
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+    },
+    exec2map(url) {
+      axios.get(url).then(response => {
+        const sMIdMap = response.data;
+
+        // scroll用にidの置換
+        for (const subId in sMIdMap) {
+          const mainIdArr = sMIdMap[subId];
+          const newMainIdArr = [];
+          for (let i = 0; i < mainIdArr.length; i++) {
+            const mainId = mainIdArr[i];
+            const newMainId = this.convertUri(mainId);
+            newMainIdArr.push(newMainId);
+          }
+          sMIdMap[subId] = newMainIdArr;
+        }
+
+        // create mSMap
+        const mSIdMap = {};
+        for (const subId in sMIdMap) {
+          const mainIdArr = sMIdMap[subId];
+          for (let i = 0; i < mainIdArr.length; i++) {
+            const mainId = mainIdArr[i];
+            if (!mSIdMap[mainId]) {
+              mSIdMap[mainId] = [];
+            }
+            mSIdMap[mainId].push(subId);
+          }
+        }
+
+        this.mSIdMap = mSIdMap;
+        this.sMIdMap = sMIdMap;
+
+        // create wLIdMap
+        const wLIdMap = {};
+        const lWIdMap = {};
+        for (const mainId in mSIdMap) {
+          const tmp = mainId.split("#");
+          const lineId = tmp[0];
+          const range = tmp[1].split(":");
+          const start = Number(range[0]);
+          const end = Number(range[1]);
+
+          lWIdMap[mainId] = [];
+          for (let i = start; i < end; i++) {
+            const wordId = lineId + "-" + i; // #から置換
+            wLIdMap[wordId] = mainId;
+            lWIdMap[mainId].push(wordId);
+          }
+        }
+
+        this.wLIdMap = wLIdMap;
+        this.lWIdMap = lWIdMap;
+      });
+    },
+    exec2main(url, manifestLines, queryMain) {
+      axios
+        .get(url, {
+          responseType: "document"
+        })
+        .then(response => {
+          const xml = response.data;
+
+          const lines = xml.querySelectorAll(queryMain);
+
+          const dataMainE = [];
+
+          for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            let lineId = line.attributes[0].value;
+            // scroll用にidの置換
+            lineId = this.convertUri(lineId);
+
+            const nodes = line.childNodes;
+
+            let lineText = "";
+
+            const words = [];
+
+            for (let j = 0; j < nodes.length; j++) {
+              const node = nodes[j];
+              const text = node.innerText || node.textContent;
+              lineText += text.trim();
+            }
+
+            for (let i = 0; i < lineText.length; i++) {
+              const w = lineText.slice(i, i + 1);
+              words.push({
+                value: w,
+                id: lineId + "-" + i // #から置換
+              });
+            }
+
+            const lineObj = {
+              id: lineId,
+              words
+            };
+
+            // IIIF Manifestを表示する行の確認
+            if (manifestLines.includes(lineId)) {
+              lineObj.manifest = true;
+            } else if (line.attributes[0].value.includes("-01")) {
+              lineObj.manifest = true;
+            }
+
+            dataMainE.push(lineObj);
+
+            this.dataMainE = dataMainE;
+          }
+        });
+    },
+
+    exec2sub(url, querySub) {
+      axios
+        .get(url, {
+          responseType: "document"
+        })
+        .then(response => {
+          const xml = response.data;
+
+          const lines = xml.querySelectorAll(querySub);
+
+          const dataSub = [];
+
+          for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const lineId = line.attributes[0].value;
+
+            const nodes = line.childNodes;
+
+            let lineText = "";
+
+            for (let j = 0; j < nodes.length; j++) {
+              const node = nodes[j];
+              const text = node.innerText || node.textContent;
+              lineText += text.trim();
+            }
+
+            const lineObj = {
+              id: lineId,
+              value: lineText
+            };
+
+            dataSub.push(lineObj);
+          }
+
+          this.dataSub = dataSub;
+        });
+    },
+    convertUri(id) {
+      const tmp = id.split("#");
+      if (tmp.length !== 2) {
+        return "id-" + md5hex(id);
+      }
+
+      return "id-" + md5hex(tmp[0]) + "#" + tmp[1];
+    }
+  }
+};
 </script>
 
 <style>
@@ -928,8 +640,6 @@ export default {
 }
 
 .vertical {
-  /* -webkit-writing-mode: vertical-rl;
-  -ms-writing-mode: tb-rl; */
   writing-mode: vertical-rl;
 }
 
@@ -938,9 +648,5 @@ body,
 #app {
   height: 100%;
   margin: 0;
-}
-
-.v-btn {
-  text-transform: none !important;
 }
 </style>
